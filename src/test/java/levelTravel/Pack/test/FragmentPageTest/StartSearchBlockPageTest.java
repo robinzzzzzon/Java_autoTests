@@ -1,16 +1,15 @@
 package levelTravel.Pack.test.FragmentPageTest;
 
-import levelTravel.Pack.CountryPage.Classes.CountryList.*;
-import levelTravel.Pack.StartUpPage.Classes.StartSearchBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.*;
+import levelTravel.Pack.Pages.StartUpPage.Classes.StartSearchBlockPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import levelTravel.Pack.HelperClass.WaitMethodClass;
+import levelTravel.Pack.Pages.HelperClass.WaitMethodClass;
 
 import java.util.concurrent.TimeUnit;
 

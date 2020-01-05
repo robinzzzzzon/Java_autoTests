@@ -1,7 +1,7 @@
 package levelTravel.Pack.test.FragmentPageTest;
 
-import levelTravel.Pack.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
-import levelTravel.Pack.HelperClass.WaitMethodClass;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.HelperClass.WaitMethodClass;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

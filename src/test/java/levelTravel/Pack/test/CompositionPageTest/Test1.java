@@ -1,6 +1,6 @@
 package levelTravel.Pack.test.CompositionPageTest;
 
-import levelTravel.Pack.StartUpPage.Classes.StartPage;
+import levelTravel.Pack.Pages.StartUpPage.Classes.StartPage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

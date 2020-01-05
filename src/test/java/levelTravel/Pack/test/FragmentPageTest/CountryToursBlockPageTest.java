@@ -1,6 +1,6 @@
 package levelTravel.Pack.test.FragmentPageTest;
 
-import levelTravel.Pack.CountryPage.Classes.BaseCountryPage.CountryToursBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryToursBlockPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

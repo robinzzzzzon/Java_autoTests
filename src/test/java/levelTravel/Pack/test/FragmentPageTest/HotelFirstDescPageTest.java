@@ -1,7 +1,7 @@
 package levelTravel.Pack.test.FragmentPageTest;
 
-import levelTravel.Pack.HotelDescPage.HotelFirstDescPage;
-import levelTravel.Pack.HotelDescPage.HotelSecondDescPage;
+import levelTravel.Pack.Pages.HotelDescPage.HotelFirstDescPage;
+import levelTravel.Pack.Pages.HotelDescPage.HotelSecondDescPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

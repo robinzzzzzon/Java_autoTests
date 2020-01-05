@@ -1,8 +1,8 @@
 package levelTravel.Pack.test.MoreDifficultyTests;
 
-import levelTravel.Pack.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
-import levelTravel.Pack.CountryPage.Classes.CountryList.TurkeyPage;
-import levelTravel.Pack.StartUpPage.Classes.StartSearchBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.TurkeyPage;
+import levelTravel.Pack.Pages.StartUpPage.Classes.StartSearchBlockPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

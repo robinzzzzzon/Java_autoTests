@@ -1,6 +1,6 @@
 package levelTravel.Pack.test.FragmentPageTest;
 
-import levelTravel.Pack.StartUpPage.Classes.StartBestPriceBlockPage;
+import levelTravel.Pack.Pages.StartUpPage.Classes.StartBestPriceBlockPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

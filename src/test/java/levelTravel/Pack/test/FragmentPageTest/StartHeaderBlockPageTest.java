@@ -1,7 +1,7 @@
 package levelTravel.Pack.test.FragmentPageTest;
 
-import levelTravel.Pack.StartUpPage.Classes.StartHeaderBlockPage;
-import levelTravel.Pack.StartUpPage.SubPages.*;
+import levelTravel.Pack.Pages.StartUpPage.Classes.StartHeaderBlockPage;
+import levelTravel.Pack.Pages.StartUpPage.SubPages.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
