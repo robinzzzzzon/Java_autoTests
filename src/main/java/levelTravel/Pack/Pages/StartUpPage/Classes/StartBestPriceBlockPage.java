@@ -3,76 +3,69 @@ package levelTravel.Pack.Pages.StartUpPage.Classes;
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.HelperClass.CountryFactory;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.BestPricable;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 
 import java.util.List;
 
-public class StartBestPriceBlockPage extends AbstractBasePage implements BestPricable {
-
-    public StartBestPriceBlockPage(WebDriver driver) {
-        super(driver);
-    }
-
+@DefaultUrl("https://level.travel/")
+public class StartBestPriceBlockPage extends PageObject implements BestPricable {
 
     public StartBestPriceBlockPage clickCityStartDD(){
-        driver.findElement(cityStartDD).click();
+        find(cityStartDD).click();
         return this;
     }
 
-    private List<WebElement> getStartCityList(){
-        return driver.findElements(cityStartList);
+    private List<WebElementFacade> getStartCityList(){
+        return findAll(cityStartList);
     }
 
     public StartBestPriceBlockPage selectAnyStartCity(int number){
-        List <WebElement> webElements = getStartCityList();
+        List <WebElementFacade> webElements = getStartCityList();
         webElements.get(number - 1).click();
-        return new StartBestPriceBlockPage(driver);
+        return new StartBestPriceBlockPage();
     }
 
     //////////////////////////////////////////////////////////////
 
-    private List<WebElement> getCountOfNightsList(){
-        return driver.findElements(countPfNightsList);
+    private List<WebElementFacade> getCountOfNightsList(){
+        return findAll(countPfNightsList);
     }
 
     public StartBestPriceBlockPage selectAnyCountOfNights(int number){
-        List <WebElement> webElements = getCountOfNightsList();
+        List <WebElementFacade> webElements = getCountOfNightsList();
         webElements.get(number - 1).click();
-        return new StartBestPriceBlockPage(driver);
+        return new StartBestPriceBlockPage();
     }
 
     //////////////////////////////////////////////////////////////
 
-    private List<WebElement> getCountryGraphList(){
-        return driver.findElements(countryGraphList);
+    private List<WebElementFacade> getCountryGraphList(){
+        return findAll(countryGraphList);
     }
 
     public StartBestPriceBlockPage selectAnyCountry(int number){
         if (number > 5) {
-            driver.findElement(invisibleCountryDD).click();
-            List <WebElement> webElements = getCountryGraphList();
+            find(invisibleCountryDD).click();
+            List <WebElementFacade> webElements = getCountryGraphList();
             webElements.get(number - 1).click();
         }
-        List <WebElement> webElements = getCountryGraphList();
+        List <WebElementFacade> webElements = getCountryGraphList();
         webElements.get(number - 1).click();
-        return new StartBestPriceBlockPage(driver);
+        return new StartBestPriceBlockPage();
     }
 
     //////////////////////////////////////////////////////////////
 
-    private void clickRightButtonOfGraphList(){
-        driver.findElement(priceListRightButton).click();
-    }
-
-    private List<WebElement> getPriceGraphList(){
-        return driver.findElements(priceColumnList);
+    private List<WebElementFacade> getPriceGraphList(){
+        return findAll(priceColumnList);
     }
 
     public AbstractBasePage selectAnyPriceOfGraph(int number, String countryName){
-        List<WebElement> webElements = getPriceGraphList();
+        List<WebElementFacade> webElements = getPriceGraphList();
         webElements.get(number - 1).click();
-        return new CountryFactory(driver).createCountry(countryName);
+        return new CountryFactory(getDriver()).createCountry(countryName);
     }
 
 }

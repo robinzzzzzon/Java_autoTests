@@ -2,38 +2,56 @@ package levelTravel.Pack.Steps;
 
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartMessengerBlockPage;
 import net.thucydides.core.annotations.Step;
+import org.assertj.core.api.Assertions;
 
 public class StartMessengerBlockSteps {
 
-    StartMessengerBlockPage startMessengerBlockPage;
+    StartMessengerBlockPage page;
 
     @Step
-    public void openStartMessengerPage(){
-        startMessengerBlockPage.open();
+    public void openPage(){
+        page.open();
     }
 
     @Step
     public void getBigHeadingText(){
-        startMessengerBlockPage.getBigHeadingText();
+        page.getBigHeadingText();
     }
 
     @Step
     public void moveToGooglePlayPage(){
-        startMessengerBlockPage.moveToGooglePlayPage();
+        page.moveToGooglePlayPage();
     }
 
     @Step
     public void moveToAppStorePage(){
-        startMessengerBlockPage.moveToAppStorePage();
+        page.moveToAppStorePage();
     }
 
     @Step
     public void getHowItWorksBanner(){
-        startMessengerBlockPage.getHowItWorksBanner();
+        page.getHowItWorksBanner();
     }
 
     @Step
     public void closeHowItWorksBanner(){
-        startMessengerBlockPage.closeHowItWorksBanner();
+        page.closeHowItWorksBanner();
+    }
+
+    ///////////////////////////////////////////////
+
+    @Step
+    public void containsText(){
+        Assertions.assertThat(page.getBigHeadingText().containsText("Разумный способ путешествовать")).isTrue();
+    }
+
+    @Step
+    public void switchBack(){
+        page.switchBack();
+    }
+
+    @Step
+    public void checkOfHeadingVisible(){
+        Assertions.assertThat(page.getHeading().isDisplayed()).isTrue();
     }
 }

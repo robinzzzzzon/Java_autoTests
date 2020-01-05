@@ -9,7 +9,7 @@ public class StartPage extends AbstractBasePage {
     private StartHeaderBlockPage startHeaderBlockPage = new StartHeaderBlockPage(driver);
     //private StartMessengerBlockPage startMessengerBlockPage = new StartMessengerBlockPage(driver);
     private StartSearchBlockPage startSearchBlockPage = new StartSearchBlockPage(driver);
-    private StartBestPriceBlockPage startBestPriceBlockPage = new StartBestPriceBlockPage(driver);
+    //private StartBestPriceBlockPage startBestPriceBlockPage = new StartBestPriceBlockPage(driver);
 
     public StartPage(WebDriver driver) {
         super(driver);

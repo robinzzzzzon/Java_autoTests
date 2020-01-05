@@ -19,7 +19,34 @@ public class StartMessengerBlockPageTest {
 
     @Test
     public void getBigHeadingText(){
-        steps.openStartMessengerPage();
+        steps.openPage();
         steps.getBigHeadingText();
+        steps.containsText();
     }
+
+    @Test
+    public void moveToGooglePlayPage(){
+        steps.openPage();
+        steps.moveToGooglePlayPage();
+        steps.switchBack();
+        steps.containsText();
+    }
+
+    @Test
+    public void moveToAppStorePage(){
+        steps.openPage();
+        steps.moveToAppStorePage();
+        steps.switchBack();
+        steps.containsText();
+    }
+
+    @Test
+    public void checkHowItWorksBanner(){
+        steps.openPage();
+        steps.getHowItWorksBanner();
+        steps.closeHowItWorksBanner();
+        steps.checkOfHeadingVisible();
+    }
+
+
 }

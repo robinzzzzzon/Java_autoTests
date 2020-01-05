@@ -26,7 +26,7 @@ public class StartBestPriceBlockPageTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://level.travel/");
-        startBestPriceBlockPage = new StartBestPriceBlockPage(driver);
+        startBestPriceBlockPage = new StartBestPriceBlockPage();
     }
 
     @Test
