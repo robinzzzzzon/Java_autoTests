@@ -1,6 +1,8 @@
 package levelTravel.Pack.Pages.StartUpPage.Interfaces;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartSearchBlockPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -98,7 +100,7 @@ public interface Searchable {
     public StartSearchBlockPage clickSelectingStartPlace(String startPlace);
 
     //////////////////////////////////////
-    public AbstractBasePage clickSearchButton(String countryName);
+    public CountryPage clickSearchButton(String countryName);
 
     public void clickConfirmButtonWithAnyEmptyFields();
 }

@@ -1,6 +1,7 @@
 package levelTravel.Pack.Pages.CountryPage.Interfaces;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -34,7 +35,6 @@ public interface Filterable {
     By showAllTourOperators = By.xpath("//button[text()='Показать всех туроператоров']");
     By clearOneTypeFilter = By.xpath("//button[@class='filters__filter-clear']");
     By clearAllFiltersButton = By.xpath("//button[text()='Сбросить все фильтры']");
-
 
     //свитчер моментального подтверждения:
     public CountryFiltersBlockPage switchMomentConfirmTumbler(boolean b);
@@ -92,7 +92,7 @@ public interface Filterable {
     //////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по типам поверхности пляжа:
 
-    public List<WebElement> getTypesOfBeachList();
+    public List<WebElementFacade> getTypesOfBeachList();
 
     public WebElement getTypeOfBeach(int number);
 
@@ -129,7 +129,7 @@ public interface Filterable {
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по наличию wi-fi:
 
-    public List<WebElement> getWiFiRb();
+    public List<WebElementFacade> getWiFiRb();
 
     public CountryFiltersBlockPage selectWiFiInput(List<WebElement> Rb, int elementNumber);
 

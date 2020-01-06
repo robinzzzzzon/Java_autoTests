@@ -1,6 +1,8 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import levelTravel.Pack.Pages.HelperClass.TableForStartSearchBlockPage;
 import levelTravel.Pack.Pages.HelperClass.CountryFactory;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Searchable;
@@ -248,9 +250,9 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //В возвращаемое значение передаем новый экземпляр класса-хелпера с паттерном Factory,
     // который нам создает уже нужный объект страницы нашей страны:
 
-    public AbstractBasePage clickSearchButton(String countryName){
+    public CountryPage clickSearchButton(String countryName){
         driver.findElement(searchButton).click();
-        return new CountryFactory(driver).createCountry(countryName);
+        return new CountryFactory().createCountry(countryName);
     }
 
     public void clickConfirmButtonWithAnyEmptyFields(){

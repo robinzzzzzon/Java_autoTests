@@ -1,4 +1,4 @@
-package levelTravel.Pack.test.FragmentPageTest;
+package levelTravel.Pack.test.FragmentPageTest.SerenityTests;
 
 import levelTravel.Pack.Steps.StartMessengerBlockSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;

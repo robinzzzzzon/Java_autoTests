@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 
 public class StartPage extends AbstractBasePage {
 
-    private StartHeaderBlockPage startHeaderBlockPage = new StartHeaderBlockPage(driver);
-    //private StartMessengerBlockPage startMessengerBlockPage = new StartMessengerBlockPage(driver);
+    private StartHeaderBlockPage startHeaderBlockPage = new StartHeaderBlockPage();
+    private StartMessengerBlockPage startMessengerBlockPage = new StartMessengerBlockPage();
     private StartSearchBlockPage startSearchBlockPage = new StartSearchBlockPage(driver);
-    //private StartBestPriceBlockPage startBestPriceBlockPage = new StartBestPriceBlockPage(driver);
+    private StartBestPriceBlockPage startBestPriceBlockPage = new StartBestPriceBlockPage();
 
     public StartPage(WebDriver driver) {
         super(driver);

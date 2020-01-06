@@ -39,7 +39,7 @@ public class StartSearchBlockPageTest {
                     .clickGettingPopularCountry(startSearchBlockPage.getPopularCountry(1))
                     .clickCalendarInput()
                     .selectCalendarDate(startSearchBlockPage.getCalendarDateForWholeYear(4, 3, 2));
-                    TurkeyPage turkeyPage = (TurkeyPage) startSearchBlockPage.clickSearchButton("Turk");
+                    //TurkeyPage turkeyPage = (TurkeyPage) startSearchBlockPage.clickSearchButton("Turk");
                     //waiter.waitWhileElementWillBeClickable(By.xpath("//div[@class='filter-budget__cols']//button"), 10);
                     Assert.assertTrue(driver.findElement(By.xpath("//h1[@class='search-page-title']")).getText().contains("ц"));
 

@@ -1,11 +1,9 @@
 package levelTravel.Pack.Pages.CountryPage.Classes.CountryList;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import org.openqa.selenium.WebDriver;
 
-public class IsraelPage extends CountryFiltersBlockPage {
-    public IsraelPage(WebDriver driver) {
-        super(driver);
-    }
+public class IsraelPage extends CountryPage {
 
 }

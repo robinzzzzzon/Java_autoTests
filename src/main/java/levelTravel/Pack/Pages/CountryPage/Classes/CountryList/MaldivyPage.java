@@ -1,12 +1,9 @@
 package levelTravel.Pack.Pages.CountryPage.Classes.CountryList;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import org.openqa.selenium.WebDriver;
 
-public class MaldivyPage extends CountryFiltersBlockPage {
-
-    public MaldivyPage(WebDriver driver) {
-        super(driver);
-    }
+public class MaldivyPage extends CountryPage {
 
 }

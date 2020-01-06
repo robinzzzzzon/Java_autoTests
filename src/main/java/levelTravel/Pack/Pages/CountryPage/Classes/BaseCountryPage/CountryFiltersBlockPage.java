@@ -1,27 +1,21 @@
 package levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage;
 
-import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Interfaces.Filterable;
+import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class CountryFiltersBlockPage extends AbstractBasePage implements Filterable {
+public class CountryFiltersBlockPage extends PageObject implements Filterable {
 
-    //private WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
-    private JavascriptExecutor JSE = (JavascriptExecutor) driver;
-
-    public CountryFiltersBlockPage(WebDriver driver) {
-        super(driver);
-    }
-
+    private JavascriptExecutor JSE = (JavascriptExecutor) getDriver();
 
     //свитчер моментального подтверждения:
     public CountryFiltersBlockPage switchMomentConfirmTumbler(boolean b) {
-        WebElement element = driver.findElement(speedAcceptTumbler);
+        WebElement element = find(speedAcceptTumbler);
         if (!element.isSelected() == b){
             element.click();
         }
@@ -31,22 +25,22 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     ///////////////////////////////////////////////////////////////////////
     //Работа с ценовыми столбцами и интервалом цен в инпутах:
 
-    private List<WebElement> getListOfPriceTowers() {
-        return driver.findElements(priceTowers);
+    private List<WebElementFacade> getListOfPriceTowers() {
+        return findAll(priceTowers);
     }
 
     public WebElement getAnyPriceTower(int towerNumber) {
-        List<WebElement> webElements = getListOfPriceTowers();
+        List<WebElementFacade> webElements = getListOfPriceTowers();
        return webElements.get(towerNumber - 1);
     }
 
     public CountryFiltersBlockPage selectAnyPriceTower(@NotNull WebElement element) {
         element.click();
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
-    private List<WebElement> getPriceInputs() {
-        return driver.findElements(priceInputs);
+    private List<WebElementFacade> getPriceInputs() {
+        return findAll(priceInputs);
     }
 
     public CountryFiltersBlockPage writeMinIntervalPrice(String anyPrice) {
@@ -64,21 +58,21 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем отели по кол-ву звезд:
 
-    private List<WebElement> getHotelStarsListInputs() {
-        return driver.findElements(inputStarsOfHotels);
+    private List<WebElementFacade> getHotelStarsListInputs() {
+        return findAll(inputStarsOfHotels);
     }
 
-    private List<WebElement> getHotelStarsListSpans() {
-        return driver.findElements(spanStarsOfHotels);
+    private List<WebElementFacade> getHotelStarsListSpans() {
+        return findAll(spanStarsOfHotels);
     }
 
     public WebElement getInputOfStarsHotel(int number) {
-        List<WebElement> webElements = getHotelStarsListInputs();
+        List<WebElementFacade> webElements = getHotelStarsListInputs();
         return webElements.get(number - 1);
     }
 
     public WebElement getSpanOfStarsHotel(int number) {
-        List<WebElement> webElements = getHotelStarsListSpans();
+        List<WebElementFacade> webElements = getHotelStarsListSpans();
         return webElements.get(number - 1);
     }
 
@@ -97,20 +91,20 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //Ищем отель по наименованию:
 
     public CountryFiltersBlockPage writeHotelName(String hotelName) {
-        driver.findElement(inputHotelName).sendKeys(hotelName);
-        return new CountryFiltersBlockPage(driver);
+        find(inputHotelName).sendKeys(hotelName);
+        return new CountryFiltersBlockPage();
     }
 
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация отелей по рейтингу:
 
 
-    private List<WebElement> getRatingHotelsList() {
-        return driver.findElements(hotelsRating);
+    private List<WebElementFacade> getRatingHotelsList() {
+        return findAll(hotelsRating);
     }
 
     public WebElement getAnyRating(int number){
-        List<WebElement> webElements = getRatingHotelsList();
+        List<WebElementFacade> webElements = getRatingHotelsList();
         return webElements.get(number - 1);
     }
 
@@ -122,12 +116,12 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по удаленности от моря:
 
-    private List<WebElement> getDistanceToSeaList() {
-        return driver.findElements(distanceToSea);
+    private List<WebElementFacade> getDistanceToSeaList() {
+        return findAll(distanceToSea);
     }
 
     public WebElement getDistanceToSea(int number){
-        List<WebElement> webElements = getDistanceToSeaList();
+        List<WebElementFacade> webElements = getDistanceToSeaList();
         return webElements.get(number - 1);
     }
 
@@ -140,11 +134,11 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //Фильтрация частных пляжей:
 
     public WebElement getPrivateBeachInput (){
-        return driver.findElement(inputPrivateBeach);
+        return find(inputPrivateBeach);
     }
 
     public WebElement getPrivateBeachSpan (){
-        return driver.findElement(spanPrivateBeach);
+        return find(spanPrivateBeach);
     }
 
     public CountryFiltersBlockPage selectPrivateBeachInput(@NotNull WebElement span, WebElement input, boolean b){
@@ -157,12 +151,12 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по типам поверхности пляжа:
 
-    public List<WebElement> getTypesOfBeachList(){
-        return driver.findElements(typesOfBeach);
+    public List<WebElementFacade> getTypesOfBeachList(){
+        return findAll(typesOfBeach);
     }
 
     public WebElement getTypeOfBeach (int number){
-        List<WebElement> webElements = getTypesOfBeachList();
+        List<WebElementFacade> webElements = getTypesOfBeachList();
         return webElements.get(number - 1);
     }
 
@@ -181,16 +175,16 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     ///////////////////////////////////////////////////////////////////////////////////
     //Фильтруем по видам питания:
 
-    private List<WebElement>getFoodTypeList() {
-        return driver.findElements(foodTypes);
+    private List<WebElementFacade>getFoodTypeList() {
+        return findAll(foodTypes);
     }
 
     private void showAllTypesFood(){
-        driver.findElement(showAllFoodTypes).click();
+        find(showAllFoodTypes).click();
     }
 
     public CountryFiltersBlockPage selectTypeFood(int number){
-        List<WebElement> webElements = getFoodTypeList();
+        List<WebElementFacade> webElements = getFoodTypeList();
         if (!webElements.get(number - 1).isDisplayed()){
             showAllTypesFood();
             webElements.get(number - 1).click();
@@ -202,12 +196,12 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем по виду местности:
 
-    private List<WebElement> getRegionTypesList(){
-        return driver.findElements(regionTypes);
+    private List<WebElementFacade> getRegionTypesList(){
+        return findAll(regionTypes);
     }
 
     public WebElement getRegionType(int number){
-        List<WebElement> webElements = getRegionTypesList();
+        List<WebElementFacade> webElements = getRegionTypesList();
         return webElements.get(number - 1);
     }
 
@@ -219,13 +213,13 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     /////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем список регионов:
 
-    private List<WebElement>getRegionList() {
-        return driver.findElements(regionList);
+    private List<WebElementFacade>getRegionList() {
+        return findAll(regionList);
     }
 
     private void showAllRegions(){
         JSE.executeScript("window.scrollBy(0, 300)", "");
-        WebElement element = driver.findElement(showAllRegions);
+        WebElement element = find(showAllRegions);
         waitMethod(1000);
         if (element.isDisplayed()) element.click();
     }
@@ -234,7 +228,7 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     public CountryFiltersBlockPage selectAnyRegion(int number){
         JSE.executeScript("window.scrollBy(0, 300)", "");
         waitMethod(1000);
-        List<WebElement> webElements = getRegionList();
+        List<WebElementFacade> webElements = getRegionList();
         if (!webElements.get(number - 1).isDisplayed()){
             showAllRegions();
             webElements.get(number - 1).click();
@@ -247,7 +241,7 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     public CountryFiltersBlockPage selectAllRegions(){
         JSE.executeScript("window.scrollBy(0, 300)", "");
         waitMethod(1000);
-        List<WebElement> webElements = getRegionList();
+        List<WebElementFacade> webElements = getRegionList();
         showAllRegions();
         for (WebElement element: webElements) {
                 element.click();
@@ -258,14 +252,14 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем тип отеля:
 
-    private List<WebElement> getHotelTypesList(){
-        return driver.findElements(hotelTypes);
+    private List<WebElementFacade> getHotelTypesList(){
+        return findAll(hotelTypes);
     }
 
     public WebElement getHotelType(int number){
         JSE.executeScript("window.scrollBy(0, 400)", "");
         waitMethod(1000);
-        List<WebElement> webElements = getHotelTypesList();
+        List<WebElementFacade> webElements = getHotelTypesList();
         return webElements.get(number - 1);
     }
 
@@ -273,18 +267,18 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         JSE.executeScript("window.scrollBy(0, 400)", "");
         waitMethod(1000);
         element.click();
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по наличию wi-fi:
 
-    public List<WebElement> getWiFiRb() {
-        return driver.findElements(wiFiRb);
+    public List<WebElementFacade> getWiFiRb() {
+        return findAll(wiFiRb);
     }
 
-    private List<WebElement> getWiFiLabel() {
-        return driver.findElements(wiFiTypeLabel);
+    private List<WebElementFacade> getWiFiLabel() {
+        return findAll(wiFiTypeLabel);
     }
 
     public CountryFiltersBlockPage selectWiFiInput(@NotNull List<WebElement> Rb, int elementNumber){
@@ -293,18 +287,18 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         if (!Rb.get(elementNumber - 1).isSelected()){
             getWiFiLabel().get(elementNumber - 1).click();
         }
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
     //Наличие вида игр на воде:
 
-    private List<WebElement> getWaterGamesList(){
-        return driver.findElements(waterGames);
+    private List<WebElementFacade> getWaterGamesList(){
+        return findAll(waterGames);
     }
 
     public WebElement getWaterGame(int number){
-        List<WebElement> webElements = getWaterGamesList();
+        List<WebElementFacade> webElements = getWaterGamesList();
         return webElements.get(number - 1);
     }
 
@@ -312,18 +306,18 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         JSE.executeScript("window.scrollBy(0, 550)", "");
         waitMethod(1000);
         element.click();
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Удобства в номере отеля:
 
-    private List<WebElement> getHotelFacilitiesList(){
-        return driver.findElements(hotelFacilities);
+    private List<WebElementFacade> getHotelFacilitiesList(){
+        return findAll(hotelFacilities);
     }
 
     public WebElement getHotelFacility(int number){
-        List<WebElement> webElements = getHotelFacilitiesList();
+        List<WebElementFacade> webElements = getHotelFacilitiesList();
         return webElements.get(number - 1);
     }
 
@@ -331,18 +325,18 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         JSE.executeScript("window.scrollBy(0, 700)", "");
         waitMethod(1000);
         element.click();
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Работа со списком услуг для семей с детьми:
 
-    private List<WebElement> getFamilyWithChildrenList(){
-        return driver.findElements(forFamilyWithChildren);
+    private List<WebElementFacade> getFamilyWithChildrenList(){
+        return findAll(forFamilyWithChildren);
     }
 
     public WebElement getFamilyWithChildren(int number){
-        List<WebElement> webElements = getFamilyWithChildrenList();
+        List<WebElementFacade> webElements = getFamilyWithChildrenList();
         return webElements.get(number - 1);
     }
 
@@ -350,60 +344,60 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         JSE.executeScript("window.scrollBy(0, 1000)", "");
         waitMethod(1000);
         element.click();
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по списку операторов:
 
-    private List<WebElement>getTourOperatorsList() {
-        return driver.findElements(tourOperators);
+    private List<WebElementFacade>getTourOperatorsList() {
+        return findAll(tourOperators);
     }
 
     public CountryFiltersBlockPage showAllTourOperators(){
         JSE.executeScript("window.scrollBy(0, 1200)", "");
         waitMethod(1000);
-        driver.findElement(showAllTourOperators).click();
-        return new CountryFiltersBlockPage(driver);
+        find(showAllTourOperators).click();
+        return new CountryFiltersBlockPage();
     }
 
     public CountryFiltersBlockPage selectAnyTourOperator(int number){
-        List<WebElement> webElements = getTourOperatorsList();
+        List<WebElementFacade> webElements = getTourOperatorsList();
         if (!webElements.get(number - 1).isDisplayed()){
             showAllTourOperators();
             webElements.get(number - 1).click();
         }
             webElements.get(number - 1).click();
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     public CountryFiltersBlockPage selectAllTourOperators(){
-        List<WebElement> webElements = getTourOperatorsList();
+        List<WebElementFacade> webElements = getTourOperatorsList();
         showAllTourOperators();
         for (WebElement element: webElements) {
             element.click();
         }
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     //Сброс одной и более настроек фильтра:
 
     public CountryFiltersBlockPage clickLocalClearFilter(){
-        WebElement element = driver.findElement(clearOneTypeFilter);
+        WebElement element = find(clearOneTypeFilter);
         waitMethod(1000);
         element.click();
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     public CountryFiltersBlockPage clickFewLocalClearFilter(){
-        List<WebElement> webElements = driver.findElements(clearOneTypeFilter);
+        List<WebElementFacade> webElements = findAll(clearOneTypeFilter);
         if(webElements.size() > 0){
             for (WebElement element: webElements) {
                 element.click();
             }
         }
-        return new CountryFiltersBlockPage(driver);
+        return new CountryFiltersBlockPage();
     }
 
     //Сбросить все фильтры:
@@ -411,8 +405,8 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         waitMethod(1200);
         JSE.executeScript("window.scrollBy(0, 1200)", "");
         waitMethod(1200);
-        driver.findElement(clearAllFiltersButton).click();
-        return new CountryFiltersBlockPage(driver);
+        find(clearAllFiltersButton).click();
+        return new CountryFiltersBlockPage();
     }
 
 

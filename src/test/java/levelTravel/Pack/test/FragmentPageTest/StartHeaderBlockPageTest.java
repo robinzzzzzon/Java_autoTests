@@ -27,7 +27,7 @@ public class StartHeaderBlockPageTest {
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        waiter = new WebDriverWait(driver, 5);
        driver.get("https://level.travel/");
-       startHeaderBlockPage = new StartHeaderBlockPage(driver);
+       startHeaderBlockPage = new StartHeaderBlockPage();
    }
 
    @Test
@@ -84,14 +84,14 @@ public class StartHeaderBlockPageTest {
 
     @Test
     public void doSwitchOnTheVKSource(){
-       String mainHandle = startHeaderBlockPage.driver.getWindowHandle();
+       String mainHandle = startHeaderBlockPage.getDriver().getWindowHandle();
         startHeaderBlockPage.clickHeaderExit();
         VKPage vkPage = startHeaderBlockPage.clickVKLink();
         for (String windowHandle : driver.getWindowHandles()) {
             driver.switchTo().window(windowHandle);
         }
         driver.switchTo().window(mainHandle);
-        String backHandle = startHeaderBlockPage.driver.getWindowHandle();
+        String backHandle = startHeaderBlockPage.getDriver().getWindowHandle();
         Assert.assertEquals(mainHandle, backHandle);
     }
 

@@ -2,11 +2,9 @@ package levelTravel.Pack.Pages.CountryPage.Classes.CountryList;
 
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import org.openqa.selenium.WebDriver;
 
-public class SriLankaPage extends CountryFiltersBlockPage {
-    public SriLankaPage(WebDriver driver) {
-        super(driver);
-    }
+public class SriLankaPage extends CountryPage {
 
 }

@@ -1,11 +1,9 @@
 package levelTravel.Pack.Pages.CountryPage.Classes.CountryList;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import org.openqa.selenium.WebDriver;
 
-public class JamaicaPage extends CountryFiltersBlockPage {
-    public JamaicaPage(WebDriver driver) {
-        super(driver);
-    }
+public class JamaicaPage extends CountryPage {
 
 }

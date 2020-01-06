@@ -58,7 +58,7 @@ public class StartBestPriceBlockPageTest {
 
     @Test
     public void selectAnyPriceOfGraph(){
-        startBestPriceBlockPage.selectAnyPriceOfGraph(36, "Turkey");
+        startBestPriceBlockPage.selectAnyPriceOfGraph(36, "Turk");
         for (String windowHandle : driver.getWindowHandles()) {
             driver.switchTo().window(windowHandle);
         }

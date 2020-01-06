@@ -2,11 +2,9 @@ package levelTravel.Pack.Pages.CountryPage.Classes.CountryList;
 
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import org.openqa.selenium.WebDriver;
 
-public class ChernogoriaPage extends CountryFiltersBlockPage {
-    public ChernogoriaPage(WebDriver driver) {
-        super(driver);
-    }
+public class ChernogoriaPage extends CountryPage {
 
 }

@@ -1,12 +1,9 @@
 package levelTravel.Pack.Pages.CountryPage.Classes.CountryList;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import org.openqa.selenium.WebDriver;
 
-public class MexicoPage extends CountryFiltersBlockPage {
-    public MexicoPage(WebDriver driver) {
-        super(driver);
-    }
-
+public class MexicoPage extends CountryPage {
 
 }

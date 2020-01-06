@@ -29,7 +29,7 @@ public class GetResultContentTest {
         driver.manage().window().maximize();
         driver.get("https://level.travel/");
         searchBlockPage = new StartSearchBlockPage(driver);
-        filtersBlockPage = new CountryFiltersBlockPage(driver);
+        filtersBlockPage = new CountryFiltersBlockPage();
     }
 
     @Test
@@ -42,7 +42,7 @@ public class GetResultContentTest {
                 .plusNight()
                 .clickCountOfPassengers()
                 .minusPassenger();
-                filtersBlockPage = (TurkeyPage) searchBlockPage.clickSearchButton("Turk");
+                //filtersBlockPage = (TurkeyPage) searchBlockPage.clickSearchButton("Turk");
                 filtersBlockPage.selectAnyPriceTower(filtersBlockPage.getAnyPriceTower(2));
        List <WebElement> webElements = driver.findElements(By.xpath("//div[@class='ReactVirtualized__Grid__innerScrollContainer']//div"));
        Assert.assertTrue(webElements.get(0).isDisplayed() && webElements.size() > 200);

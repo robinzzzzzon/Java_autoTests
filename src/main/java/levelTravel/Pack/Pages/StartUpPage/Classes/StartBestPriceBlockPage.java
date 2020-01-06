@@ -1,7 +1,7 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
-import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.HelperClass.CountryFactory;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.TurkeyPage;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.BestPricable;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -17,7 +17,7 @@ public class StartBestPriceBlockPage extends PageObject implements BestPricable 
         return this;
     }
 
-    private List<WebElementFacade> getStartCityList(){
+     private List<WebElementFacade> getStartCityList(){
         return findAll(cityStartList);
     }
 
@@ -62,10 +62,11 @@ public class StartBestPriceBlockPage extends PageObject implements BestPricable 
         return findAll(priceColumnList);
     }
 
-    public AbstractBasePage selectAnyPriceOfGraph(int number, String countryName){
+    public CountryFiltersBlockPage selectAnyPriceOfGraph(int number, String countryName){
         List<WebElementFacade> webElements = getPriceGraphList();
         webElements.get(number - 1).click();
-        return new CountryFactory(getDriver()).createCountry(countryName);
+        //return new CountryFactory(getDriver()).createCountry(countryName);
+        return new CountryFiltersBlockPage();
     }
 
 }

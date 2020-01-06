@@ -1,81 +1,79 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
-import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Headerable;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.*;
+import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 
-public class StartHeaderBlockPage extends AbstractBasePage implements Headerable {
-
-    public StartHeaderBlockPage(WebDriver driver) {
-        super(driver);
-    }
+@DefaultUrl("https://level.travel/")
+public class StartHeaderBlockPage extends PageObject implements Headerable {
 
     /////////////////////////////////
     //Методы по работе с полем номера телефона:
 
     @Override
     public StartHeaderBlockPage refreshStartPage() {
-        driver.findElement(levelTravelLink).click();
-        return new StartHeaderBlockPage(driver);
+        find(levelTravelLink).click();
+        return new StartHeaderBlockPage();
     }
 
     public StartHeaderBlockPage clickNumberField() {
-        driver.findElement(numberField).click();
+        find(numberField).click();
         return this;
     }
 
     public StartHeaderBlockPage clickRecallMeButton(){
-        driver.findElement(recallMeButton).click();
+        find(recallMeButton).click();
         return this;
     }
 
     public StartHeaderBlockPage clickRecallMeRightNow() {
-        driver.findElement(recallMeRightNow).click();
+        find(recallMeRightNow).click();
         return this;
     }
 
     public WhatsUpPage clickMessageIcon() {
-        driver.findElement(linkWhatsUp).click();
-        return new WhatsUpPage(driver);
+        find(linkWhatsUp).click();
+        return new WhatsUpPage(getDriver());
     }
 
     public String readRecallMeHeading() {
-        return driver.findElement(recallMeHeading).getText();
+        return find(recallMeHeading).getText();
     }
 
     //////////////////////////////////
     //Работаем с дропдауном "Сервисы":
 
     public StartHeaderBlockPage clickHeaderServices(){
-        driver.findElement(headerServices).click();
+        find(headerServices).click();
         return this;
     }
 
     public WebElement selectHeaderServicesDD(int serviceNumber){
-        List<WebElement> webElements = driver.findElements(headerServicesDD);
+        List<WebElementFacade> webElements = findAll(headerServicesDD);
         return webElements.get(serviceNumber - 1);
     }
 
     public PromoPage clickSelectingServices(@NotNull WebElement webElement){
         webElement.click();
-        return new PromoPage(driver);
+        return new PromoPage(getDriver());
     }
 
     /////////////////////////////////////
     //Работаем с дропдауном "Мой список":
 
     public StartHeaderBlockPage clickHeaderMyWishList(){
-        driver.findElement(headerMyWishList).click();
+        find(headerMyWishList).click();
         return this;
     }
 
     public WebElement selectingPartOfHeaderMyWishList(int wishListNumber){
-        List<WebElement> webElements = driver.findElements(headerMyWishListDescription);
+        List<WebElementFacade> webElements = findAll(headerMyWishListDescription);
         return webElements.get(wishListNumber -1);
     }
 
@@ -87,34 +85,34 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     //Работаем с дропдауном "Помощь":
 
     public StartHeaderBlockPage clickHeaderHelper(){
-        driver.findElement(headerHelper).click();
+        find(headerHelper).click();
         return this;
     }
 
     public WebElement readHeaderHelper(int helperNumber){
-        List<WebElement> webElements = driver.findElements(headerHelperDD);
+        List<WebElementFacade> webElements = findAll(headerHelperDD);
         return webElements.get(helperNumber -1);
     }
 
     public PressPage clickSelectingHelper(@NotNull WebElement webElement){
         webElement.click();
-        return new PressPage(driver);
+        return new PressPage(getDriver());
     }
 
     //////////////////////////////
     //Раздел "Вход":
 
     public StartHeaderBlockPage clickHeaderExit(){
-        driver.findElement(headerExit).click();
+        find(headerExit).click();
         return this;
     }
 
     public String getMailHeadingExitText(){
-        return driver.findElement(mailHeadingExit).getText();
+        return find(mailHeadingExit).getText();
     }
 
     public StartHeaderBlockPage writeMailInputExit(String string){
-        driver.findElement(mailInputExit).sendKeys(string);
+        find(mailInputExit).sendKeys(string);
         return this;
     }
 
@@ -122,7 +120,7 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     //Работа с элементами при регистрации/входе уже зарегистрированного пользователя:
 
     public StartHeaderBlockPage clickGoOnButton(){
-        WebElement element = driver.findElement(goOnButton);
+        WebElement element = find(goOnButton);
         if(element.isEnabled()){
             element.click();
         }
@@ -130,21 +128,21 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     }
 
     public StartHeaderBlockPage clickRegisterButton(){
-        driver.findElement(registryButton).click();
+        find(registryButton).click();
         return this;
     }
 
     public StartHeaderBlockPage clickToCross(){
-        driver.findElement(cross).click();
+        find(cross).click();
         return this;
     }
 
     public String getTextEmptyFieldError(){
-        return driver.findElement(By.xpath("//div[@class='simple_tooltip_body']")).getText();
+        return find(By.xpath("//div[@class='simple_tooltip_body']")).getText();
     }
 
     public StartHeaderBlockPage verifySignUpButtonVisibility(){
-        WebElement element = driver.findElement(signUpButton);
+        WebElement element = find(signUpButton);
         if (element.isEnabled()){
             clickToCross();
         }
@@ -152,23 +150,23 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     }
 
     public FaceBookPage clickFaceBookLink(){
-        driver.findElement(fbButton).click();
-        return new FaceBookPage(driver);
+        find(fbButton).click();
+        return new FaceBookPage(getDriver());
     }
 
     public VKPage clickVKLink(){
-        driver.findElement(vkButton).click();
-        return new VKPage(driver);
+        find(vkButton).click();
+        return new VKPage(getDriver());
     }
 
 
     public StartHeaderBlockPage writePassInput(String pass) {
-        driver.findElement(signUpInputPass).sendKeys(pass);
+        find(signUpInputPass).sendKeys(pass);
         return this;
     }
 
     public void clickSignUpButton(){
-        driver.findElement(signUpButton).click();
+        find(signUpButton).click();
     }
 
 }

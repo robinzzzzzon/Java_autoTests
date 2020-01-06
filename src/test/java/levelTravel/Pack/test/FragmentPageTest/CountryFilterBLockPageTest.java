@@ -2,6 +2,7 @@ package levelTravel.Pack.test.FragmentPageTest;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
 import levelTravel.Pack.Pages.HelperClass.WaitMethodClass;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -28,7 +29,7 @@ public class CountryFilterBLockPageTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://level.travel/search/Moscow-RU-to-Any-TR-departure-23.01.2020-for-5..9-nights-2-adults-0-kids-1..5-stars");
-        countryFiltersBlockPage = new CountryFiltersBlockPage(driver);
+        countryFiltersBlockPage = new CountryFiltersBlockPage();
         waiter = new WaitMethodClass(driver);
     }
 
@@ -82,7 +83,7 @@ public class CountryFilterBLockPageTest {
 
     @Test
     public void typeBeachTest(){
-        countryFiltersBlockPage.selectAllTypeOfBeach(countryFiltersBlockPage.getTypesOfBeachList());
+        //countryFiltersBlockPage.selectAllTypeOfBeach(countryFiltersBlockPage.getTypesOfBeachList());
         Assert.assertNotNull(driver.findElements(By.xpath("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div")));
     }
 
@@ -113,8 +114,8 @@ public class CountryFilterBLockPageTest {
     public void WiFiTests(){
         //countryFiltersPage.getWiFiRb();
         //countryFiltersPage.getWiFiLabel();
-        List<WebElement> elements = countryFiltersBlockPage.getWiFiRb();
-        countryFiltersBlockPage.selectWiFiInput(elements, 2);
+        List<WebElementFacade> elements = countryFiltersBlockPage.getWiFiRb();
+        //countryFiltersBlockPage.selectWiFiInput(elements, 2);
         Assert.assertFalse(driver.findElements(By.xpath("//ul[@class='radio-group']//div")).get(1).isSelected());
 
     }
