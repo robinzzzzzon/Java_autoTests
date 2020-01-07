@@ -78,7 +78,7 @@ public class StartHeaderBlockPageTest {
        for (String windowHandle : driver.getWindowHandles()) {
            driver.switchTo().window(windowHandle);
        }
-       WebElement element = faceBookPage.driver.findElement(By.xpath("//a[text()='Forgotten account?']"));
+       WebElement element = faceBookPage.getDriver().findElement(By.xpath("//a[text()='Forgotten account?']"));
        Assert.assertTrue(element.isEnabled());
    }
 

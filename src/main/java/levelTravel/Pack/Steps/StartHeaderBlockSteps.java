@@ -1,12 +1,18 @@
 package levelTravel.Pack.Steps;
 
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartHeaderBlockPage;
+import levelTravel.Pack.Pages.StartUpPage.SubPages.PressPage;
+import levelTravel.Pack.Pages.StartUpPage.SubPages.PromoPage;
 import net.thucydides.core.annotations.Step;
+import org.assertj.core.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class StartHeaderBlockSteps {
 
     StartHeaderBlockPage page;
+    PromoPage promoPage;
+    PressPage pressPage;
 
     @Step
     public void openPage(){
@@ -49,8 +55,8 @@ public class StartHeaderBlockSteps {
     }
 
     @Step
-    public void selectHeaderServicesDD(int serviceNumber){
-        page.selectHeaderServicesDD(serviceNumber);
+    public WebElement selectHeaderServicesDD(int serviceNumber){
+        return page.selectHeaderServicesDD(serviceNumber);
     }
 
     @Step
@@ -64,8 +70,8 @@ public class StartHeaderBlockSteps {
     }
 
     @Step
-    public void selectingPartOfHeaderMyWishList(int number){
-        page.selectingPartOfHeaderMyWishList(number);
+    public WebElement selectingPartOfHeaderMyWishList(int number){
+        return page.selectingPartOfHeaderMyWishList(number);
     }
 
     @Step
@@ -142,4 +148,55 @@ public class StartHeaderBlockSteps {
     public void clickSignUpButton(){
         page.clickSignUpButton();
     }
+
+    ///////////////////////////////////////////////////////////
+
+    @Step
+    public String getWindowHandle(){
+       return page.getDriver().getWindowHandle();
+    }
+
+    @Step
+    public void switchBack(String backHandle){
+        page.getDriver().switchTo().window(backHandle);
+    }
+
+    @Step void navigateBack(){
+        page.getDriver().navigate().back();
+    }
+
+    @Step
+    public void switchToNextWindow(){
+        for (String windowHandle : page.getDriver().getWindowHandles()) {
+            page.getDriver().switchTo().window(windowHandle);
+        }
+    }
+
+    @Step
+    public void checkEqualStringsByPressPage(String anyString){
+        Assertions.assertThat(pressPage.getHeading()).isEqualTo(anyString);
+    }
+
+    @Step
+    public void checkContainsHeadingTextByPromoPage(String anyString){
+        Assertions.assertThat(promoPage.getHeading()).contains(anyString);
+    }
+
+    @Step
+    public void compareStringWithPartOfWishList(String anyString){
+        Assertions.assertThat(page.readSelectingWishList((page.selectingPartOfHeaderMyWishList(3))).compareTo(anyString));
+    }
+
+    @Step
+    public void checkEnableErrorText(String anyString){
+        Assertions.assertThat(page.getTextEmptyFieldError()).isEqualTo(anyString);
+    }
+
+    @Step
+    public void checkSuccessWelcomeHeading(String anyString){
+        String s = page.getDriver().findElement(By.xpath("//div[@class='auth_success']")).getText();
+        Assertions.assertThat("С возвращением, Патрик!").isEqualTo(anyString);
+    }
+
+
 }

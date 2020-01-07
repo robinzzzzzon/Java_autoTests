@@ -4,6 +4,7 @@ import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartSearchBlockPage;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
@@ -54,7 +55,7 @@ public interface Searchable {
     public StartSearchBlockPage clickGettingWholeCountry(WebElement webElement);
 
     /////////////////////////////
-    public List<WebElement> getErrors();
+    public List<WebElementFacade> getErrors();
 
     public String getErrorByText (int number);
 

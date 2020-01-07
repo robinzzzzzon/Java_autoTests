@@ -1,21 +1,12 @@
 package levelTravel.Pack.Pages.HotelDescPage;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class HotelFirstDescPage extends AbstractBasePage {
-
-    private WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
-
-    public HotelFirstDescPage(WebDriver driver) {
-        super(driver);
-    }
 
     private By circleHeader = By.xpath("//div[@class='pie-wrapper progress-79']");
     private By favoriteButton = By.xpath("//span[text()='В избранное']");
@@ -31,40 +22,40 @@ public class HotelFirstDescPage extends AbstractBasePage {
     private By crossByMoreInfoMenu = By.xpath("//i[@class='md-cross']");
 
     public HotelFirstDescPage clickCircleHeader(){
-        driver.findElement(circleHeader).click();
+        find(circleHeader).click();
         return this;
     }
 
     public HotelFirstDescPage clickFavoriteButton(){
-        driver.findElement(favoriteButton).click();
+        find(favoriteButton).click();
         return this;
     }
 
     public HotelFirstDescPage clickSeePriceButton(){
-        driver.findElement(seePriceButton).click();
+        find(seePriceButton).click();
         return this;
     }
 
     //////////////////////////////////////////////////////////////
 
-    private List<WebElement> getPhotoList(){
-        return driver.findElements(photoList);
+    private List<WebElementFacade> getPhotoList(){
+        return findAll(photoList);
     }
 
     public HotelFirstDescPage selectAnyPhoto(int number){
-        List<WebElement> webElements = getPhotoList();
+        List<WebElementFacade> webElements = getPhotoList();
         webElements.get(number - 1).click();
         return this;
     }
 
     /////////////////////////////////////////////////////////////
 
-    private List <WebElement> getPriceByDateList(){
-        return driver.findElements(priceByDateList);
+    private List <WebElementFacade> getPriceByDateList(){
+        return findAll(priceByDateList);
     }
 
     public HotelFirstDescPage selectAnyPriceByDate(int number){
-        List<WebElement> webElements = getPriceByDateList();
+        List<WebElementFacade> webElements = getPriceByDateList();
         webElements.get(number - 1).click();
         return this;
     }
@@ -72,58 +63,57 @@ public class HotelFirstDescPage extends AbstractBasePage {
     /////////////////////////////////////////////////////////////
 
     public HotelFirstDescPage clickFoodChoiceDD(){
-        driver.findElement(foodChoiceDD).click();
+        find(foodChoiceDD).click();
         return this;
     }
 
-    private List<WebElement> getFoodChoiceList(){
-        return driver.findElements(foodChoiceList);
+    private List<WebElementFacade> getFoodChoiceList(){
+        return findAll(foodChoiceList);
     }
 
     public HotelFirstDescPage selectAnyFoodVariation(int number){
-        List<WebElement> webElements = getFoodChoiceList();
+        List<WebElementFacade> webElements = getFoodChoiceList();
         if(number <= webElements.size()) webElements.get(number - 1).click();
-        return new HotelFirstDescPage(driver);
+        return new HotelFirstDescPage();
     }
 
     ///////////////////////////////////////////////////////////
 
     public HotelFirstDescPage clickBestPriceDD(){
-        driver.findElement(bestPriceDD).click();
+        find(bestPriceDD).click();
         return this;
     }
 
-    private List<WebElement> getBestPriceList(){
-        return driver.findElements(bestPriceList);
+    private List<WebElementFacade> getBestPriceList(){
+        return findAll(bestPriceList);
     }
 
     public HotelFirstDescPage selectAnyPriceVariation(int number){
-        List<WebElement> webElements = getBestPriceList();
+        List<WebElementFacade> webElements = getBestPriceList();
         if(number <= webElements.size()) webElements.get(number - 1).click();
         return this;
     }
 
     /////////////////////////////////////////////////////////////
 
-    private List<WebElement> getResultOffersList(){
-        return driver.findElements(resultOffersList);
+    private List<WebElementFacade> getResultOffersList(){
+        return findAll(resultOffersList);
     }
 
     public HotelSecondDescPage selectAnyResultOfferList(int number){
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(moreInfoAboutOffersList));
-        List<WebElement> webElements = getResultOffersList();
+        List<WebElementFacade> webElements = getResultOffersList();
         if(number <= webElements.size()) webElements.get(number - 1).click();
-        return new HotelSecondDescPage(driver);
+        return new HotelSecondDescPage();
     }
 
     ///////////////////////////////////////////////////////////////
 
-    private List<WebElement> getMoreInfoAboutOffersList(){
-        return driver.findElements(moreInfoAboutOffersList);
+    private List<WebElementFacade> getMoreInfoAboutOffersList(){
+        return findAll(moreInfoAboutOffersList);
     }
 
     public HotelFirstDescPage selectMoreInfoAboutOffersVariation(int number){
-        List<WebElement> webElements = getMoreInfoAboutOffersList();
+        List<WebElementFacade> webElements = getMoreInfoAboutOffersList();
         if(number <= webElements.size()) webElements.get(number - 1).click();
         return this;
     }
@@ -131,7 +121,7 @@ public class HotelFirstDescPage extends AbstractBasePage {
     ///////////////////////////////////////////////////////////////
 
     public HotelFirstDescPage clickCrossByMoreInfoMenu(){
-        driver.findElement(crossByMoreInfoMenu).click();
+        find(crossByMoreInfoMenu).click();
         return this;
     }
 

@@ -26,7 +26,7 @@ public class HotelFirstDescPageTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://level.travel/hotels/57212-Kleopatra_Alis_Hotel?request_id=MjEzfDIyNXwwfDk4M3x8MjAyMC0wMS0zMCwyMDIwLTAxLTMwfDB8Nyw3fDF8MHx8fDA%3D&offer_price=9540&offer_nights=7&offer_date=2020-01-30");
-        hotelFirstDescPage = new HotelFirstDescPage(driver);
+        hotelFirstDescPage = new HotelFirstDescPage();
     }
 
     @Test

@@ -1,11 +1,11 @@
 package levelTravel.Pack.Pages.HelperClass;
 
+import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.*;
-import net.serenitybdd.core.pages.PageObject;
 import org.jetbrains.annotations.NotNull;
 
-public class CountryFactory extends PageObject {
+public class CountryFactory extends AbstractBasePage {
 
     public CountryPage createCountry(@NotNull String countryName) {
 

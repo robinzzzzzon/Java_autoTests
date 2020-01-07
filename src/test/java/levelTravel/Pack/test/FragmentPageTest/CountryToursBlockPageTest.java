@@ -26,7 +26,7 @@ public class CountryToursBlockPageTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://level.travel/search/Moscow-RU-to-Any-TR-departure-23.01.2020-for-5..9-nights-2-adults-0-kids-1..5-stars");
-        countryToursBlockPage = new CountryToursBlockPage(driver);
+        countryToursBlockPage = new CountryToursBlockPage();
     }
 
     @Test

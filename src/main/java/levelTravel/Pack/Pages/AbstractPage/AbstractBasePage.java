@@ -1,12 +1,7 @@
 package levelTravel.Pack.Pages.AbstractPage;
 
-import org.openqa.selenium.WebDriver;
+import net.serenitybdd.core.pages.PageObject;
 
-public abstract class AbstractBasePage {
+public abstract class AbstractBasePage extends PageObject {
 
-    public WebDriver driver;
-
-    public AbstractBasePage(WebDriver driver) {
-        this.driver = driver;
-    }
 }

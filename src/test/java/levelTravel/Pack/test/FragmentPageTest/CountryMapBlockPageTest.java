@@ -27,7 +27,7 @@ public class CountryMapBlockPageTest {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //driver.manage().window().maximize();
         driver.get("https://level.travel/search/Moscow-RU-to-Any-TR-departure-02.02.2020-for-7-nights-1-adults-0-kids-1..5-stars");
-        countryMapBlockPage = new CountryMapBlockPage(driver);
+        countryMapBlockPage = new CountryMapBlockPage();
     }
 
     @Test

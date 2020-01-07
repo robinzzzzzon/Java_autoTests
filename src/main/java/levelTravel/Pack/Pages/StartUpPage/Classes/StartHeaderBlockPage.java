@@ -1,8 +1,8 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
+import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Headerable;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.*;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.jetbrains.annotations.NotNull;
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 @DefaultUrl("https://level.travel/")
-public class StartHeaderBlockPage extends PageObject implements Headerable {
+public class StartHeaderBlockPage extends AbstractBasePage implements Headerable {
 
     /////////////////////////////////
     //Методы по работе с полем номера телефона:
@@ -39,7 +39,7 @@ public class StartHeaderBlockPage extends PageObject implements Headerable {
 
     public WhatsUpPage clickMessageIcon() {
         find(linkWhatsUp).click();
-        return new WhatsUpPage(getDriver());
+        return new WhatsUpPage();
     }
 
     public String readRecallMeHeading() {
@@ -61,7 +61,7 @@ public class StartHeaderBlockPage extends PageObject implements Headerable {
 
     public PromoPage clickSelectingServices(@NotNull WebElement webElement){
         webElement.click();
-        return new PromoPage(getDriver());
+        return new PromoPage();
     }
 
     /////////////////////////////////////
@@ -96,7 +96,7 @@ public class StartHeaderBlockPage extends PageObject implements Headerable {
 
     public PressPage clickSelectingHelper(@NotNull WebElement webElement){
         webElement.click();
-        return new PressPage(getDriver());
+        return new PressPage();
     }
 
     //////////////////////////////
@@ -151,12 +151,12 @@ public class StartHeaderBlockPage extends PageObject implements Headerable {
 
     public FaceBookPage clickFaceBookLink(){
         find(fbButton).click();
-        return new FaceBookPage(getDriver());
+        return new FaceBookPage();
     }
 
     public VKPage clickVKLink(){
         find(vkButton).click();
-        return new VKPage(getDriver());
+        return new VKPage();
     }
 
 

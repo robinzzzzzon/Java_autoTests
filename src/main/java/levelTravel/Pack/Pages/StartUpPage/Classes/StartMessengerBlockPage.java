@@ -1,14 +1,14 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
+import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Messengerable;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.AppStorePage;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.GooglePlayPage;
-import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.WebElement;
 
 @DefaultUrl("https://level.travel/")
-public class StartMessengerBlockPage extends PageObject implements Messengerable {
+public class StartMessengerBlockPage extends AbstractBasePage implements Messengerable {
 
     public StartMessengerBlockPage getBigHeadingText(){
         find(bigHeading).getText();
@@ -17,12 +17,12 @@ public class StartMessengerBlockPage extends PageObject implements Messengerable
 
     public GooglePlayPage moveToGooglePlayPage(){
         find(googlePlayLink).click();
-        return new GooglePlayPage(getDriver());
+        return new GooglePlayPage();
     }
 
     public AppStorePage moveToAppStorePage(){
         find(appStoreLink).click();
-        return new AppStorePage(getDriver());
+        return new AppStorePage();
     }
 
     public StartMessengerBlockPage getHowItWorksBanner(){

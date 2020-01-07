@@ -1,7 +1,7 @@
 package levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage;
 
+import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Interfaces.Filterable;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class CountryFiltersBlockPage extends PageObject implements Filterable {
+public class CountryFiltersBlockPage extends AbstractBasePage implements Filterable {
 
     private JavascriptExecutor JSE = (JavascriptExecutor) getDriver();
 

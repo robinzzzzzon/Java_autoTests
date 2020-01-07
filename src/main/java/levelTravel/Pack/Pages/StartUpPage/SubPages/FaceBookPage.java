@@ -4,13 +4,8 @@ import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class FaceBookPage extends AbstractBasePage {
-
-    public FaceBookPage(WebDriver driver) {
-        super(driver);
-    }
 
     private By emailInput = By.xpath("//input[@name='email']");
     private By passInput = By.xpath("//input[@name='pass']");
@@ -20,21 +15,21 @@ public class FaceBookPage extends AbstractBasePage {
 
     @Contract("_ -> this")
     private FaceBookPage writeEmailInput(String EmailExample){
-        driver.findElement(emailInput).sendKeys(EmailExample);
+        find(emailInput).sendKeys(EmailExample);
         return this;
     }
 
     @Contract("_ -> this")
     private FaceBookPage writePassInput(String PassExample){
-        driver.findElement(passInput).sendKeys(PassExample);
+        find(passInput).sendKeys(PassExample);
         return this;
     }
 
     @NotNull
     @Contract(" -> new")
     private FaceBookPage clickSignInButton(){
-        driver.findElement(buttonLogIn).click();
-        return new FaceBookPage(driver);
+        find(buttonLogIn).click();
+        return new FaceBookPage();
     }
 
     public FaceBookPage tryIncorrectLogIn(String EmailExample, String PassExample){

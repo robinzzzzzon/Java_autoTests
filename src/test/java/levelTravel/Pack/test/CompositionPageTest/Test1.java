@@ -22,7 +22,7 @@ public class Test1 {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://level.travel/");
-        startPage = new StartPage(driver);
+        startPage = new StartPage();
     }
 
     @Test

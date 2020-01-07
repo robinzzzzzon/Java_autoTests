@@ -28,7 +28,7 @@ public class GetResultContentTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://level.travel/");
-        searchBlockPage = new StartSearchBlockPage(driver);
+        searchBlockPage = new StartSearchBlockPage();
         filtersBlockPage = new CountryFiltersBlockPage();
     }
 

@@ -1,5 +1,6 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
+import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
 import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.TurkeyPage;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.BestPricable;
@@ -10,7 +11,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import java.util.List;
 
 @DefaultUrl("https://level.travel/")
-public class StartBestPriceBlockPage extends PageObject implements BestPricable {
+public class StartBestPriceBlockPage extends AbstractBasePage implements BestPricable {
 
     public StartBestPriceBlockPage clickCityStartDD(){
         find(cityStartDD).click();

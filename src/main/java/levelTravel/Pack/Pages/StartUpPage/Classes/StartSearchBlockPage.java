@@ -1,15 +1,14 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import levelTravel.Pack.Pages.HelperClass.TableForStartSearchBlockPage;
 import levelTravel.Pack.Pages.HelperClass.CountryFactory;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Searchable;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -21,26 +20,22 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 public class StartSearchBlockPage extends AbstractBasePage implements Searchable {
 
-    public StartSearchBlockPage(WebDriver driver) {
-        super(driver);
-    }
-
     ////////////////////////////
     //Работа со списками стран и с самим полем выбора страны:
 
     public StartSearchBlockPage writeAnyCountryName(String anyPlace) {
-        driver.findElement(searchCountryInput).sendKeys(anyPlace);
-        driver.findElement(searchCountryInput).sendKeys(Keys.chord(Keys.ENTER));
+        find(searchCountryInput).sendKeys(anyPlace);
+        find(searchCountryInput).sendKeys(Keys.chord(Keys.ENTER));
         return this;
     }
 
     public StartSearchBlockPage clickCountryInput(){
-        driver.findElement(searchCountryInput).click();
+        find(searchCountryInput).click();
         return this;
     }
 
     public WebElement getPopularCountry(int elementNumber){
-        List<WebElement> webElements = driver.findElements(popularCountriesList);
+        List<WebElementFacade> webElements = findAll(popularCountriesList);
         return webElements.get(elementNumber - 1);
     }
 
@@ -50,7 +45,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
     public WebElement getWholeCountry(int elementNumber){
-        List<WebElement> webElements = driver.findElements(wholeCountriesList);
+        List<WebElementFacade> webElements = findAll(wholeCountriesList);
         return webElements.get(elementNumber - 1);
     }
 
@@ -63,8 +58,8 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //Работаем со списком ошибок на странице:
 
     //Получаем лист объектов класса Error:
-    public List<WebElement> getErrors () {
-        return driver.findElements(errorListByClass);
+    public List<WebElementFacade> getErrors () {
+        return findAll(errorListByClass);
     }
 
     //Получает текст ошибки по номеру объекта ошибки из колекции:
@@ -76,22 +71,22 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //Массив содержит ошибку с нашим message и соотв-нно > 0
     //первая ошибка в массиве отображается.
     public boolean isErrorVisible(String message) {
-        return driver.findElements(By.xpath(String.format(errorListByText, message))).size() > 0
-                && driver.findElements(By.xpath(String.format(errorListByText, message))).get(0).isDisplayed();
+        return findAll(By.xpath(String.format(errorListByText, message))).size() > 0
+                && findAll(By.xpath(String.format(errorListByText, message))).get(0).isDisplayed();
     }
 
     /////////////////////////////
     //Работа с календарем и выбором даты:
 
     public StartSearchBlockPage clickCalendarInput(){
-        driver.findElement(calendarInput).click();
+        find(calendarInput).click();
         return this;
     }
 
     //Метод для  пролистывания месяцев календаря:
     private void clickSwitchToNextMonth(int countMonth){
         for (int i = 0; i < countMonth; i++) {
-            driver.findElement(switchToNextMonth).click();
+            find(switchToNextMonth).click();
         }
     }
 
@@ -100,8 +95,8 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //В итоге возвращаем объект ввиде ячейки календаря.
     private WebElement getCalendarDate(int row, int column, int setMonthNumber){
 
-        WebElement element = driver.findElement(By.xpath(String.format(calendarTBody, setMonthNumber)));
-        TableForStartSearchBlockPage tableForStartSearchBlockPage = new TableForStartSearchBlockPage(element, driver);
+        WebElement element = find(By.xpath(String.format(calendarTBody, setMonthNumber)));
+        TableForStartSearchBlockPage tableForStartSearchBlockPage = new TableForStartSearchBlockPage(element);
         return tableForStartSearchBlockPage.getValueFromCell(row, column);
     }
 
@@ -150,7 +145,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
 
 
     public StartSearchBlockPage clickAdd2Days(){
-        driver.findElement(add2days).click();
+        find(add2days).click();
         return this;
     }
 
@@ -163,22 +158,22 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //Работа с полем выбора периода кол-ва ночей:
 
     public StartSearchBlockPage clickCountOfNights(){
-        driver.findElement(dayIntervalDD).click();
+        find(dayIntervalDD).click();
         return this;
     }
 
     public StartSearchBlockPage minusNight(){
-        driver.findElement(minusDay).click();
+        find(minusDay).click();
         return this;
     }
 
     public StartSearchBlockPage plusNight(){
-        driver.findElement(plusDay).click();
+        find(plusDay).click();
         return this;
     }
 
     public StartSearchBlockPage add2Nights(boolean b){
-        WebElement element = driver.findElement(plusOrMinus2Days);
+        WebElement element = find(plusOrMinus2Days);
         if (!element.isSelected() == b){
             element.click();
         }
@@ -189,17 +184,17 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //Выбираем кол-во пассажиров:
 
     public StartSearchBlockPage clickCountOfPassengers(){
-        driver.findElement(countOfPassengersDD).click();
+        find(countOfPassengersDD).click();
         return this;
     }
 
     public void addChildren(){
-        driver.findElement(addChildrenDD).click();
+        find(addChildrenDD).click();
     }
 
     public WebElement getVariableAddChildren(int variationChild){
         addChildren();
-        List<WebElement> webElements = driver.findElements(childVaryingList);
+        List<WebElementFacade> webElements = findAll(childVaryingList);
         return webElements.get(variationChild);
     }
 
@@ -209,12 +204,12 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
     public StartSearchBlockPage minusPassenger(){
-        driver.findElement(minusPassenger).click();
+        find(minusPassenger).click();
         return this;
     }
 
     public StartSearchBlockPage plusPassenger(){
-        driver.findElement(plusPassenger).click();
+        find(plusPassenger).click();
         return this;
     }
 
@@ -222,26 +217,26 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //Выбираем стартовую точку вылета:
 
     public StartSearchBlockPage clickStartPlaceInput(){
-        driver.findElement(startPlaceInput).click();
+        find(startPlaceInput).click();
         return this;
     }
 
     //Метод для очищения дефолтного значения "Москва":
     public StartSearchBlockPage clearStartPlaceInput(){
-        driver.findElement(startPlaceInput).sendKeys(Keys.chord(Keys.CONTROL) + "a");
-        driver.findElement(startPlaceInput).sendKeys(Keys.BACK_SPACE);
+        find(startPlaceInput).sendKeys(Keys.chord(Keys.CONTROL) + "a");
+        find(startPlaceInput).sendKeys(Keys.BACK_SPACE);
         return this;
     }
 
 
     public StartSearchBlockPage writeStartPlaceInput(String anyString){
-        driver.findElement(startPlaceInput).sendKeys(anyString);
+        find(startPlaceInput).sendKeys(anyString);
         return this;
     }
 
     //Метод для выбора любого значения из списка дропдауна городов для вылета, с заданием ожидания до отображения элемента на странице:
     public StartSearchBlockPage clickSelectingStartPlace(String startPlace){
-        new WebDriverWait(driver, 5).until(visibilityOfElementLocated(By.xpath(String.format(startPlaceList, startPlace)))).click();
+        new WebDriverWait(getDriver(), 5).until(visibilityOfElementLocated(By.xpath(String.format(startPlaceList, startPlace)))).click();
         return this;
     }
 
@@ -251,12 +246,12 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     // который нам создает уже нужный объект страницы нашей страны:
 
     public CountryPage clickSearchButton(String countryName){
-        driver.findElement(searchButton).click();
+        find(searchButton).click();
         return new CountryFactory().createCountry(countryName);
     }
 
     public void clickConfirmButtonWithAnyEmptyFields(){
-        driver.findElement(searchButton).click();
+        find(searchButton).click();
     }
 
 }

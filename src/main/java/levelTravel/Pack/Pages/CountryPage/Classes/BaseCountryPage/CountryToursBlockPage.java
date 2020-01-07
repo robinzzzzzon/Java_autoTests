@@ -3,7 +3,7 @@ package levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage;
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Interfaces.Toursable;
 import levelTravel.Pack.Pages.HotelDescPage.HotelFirstDescPage;
-import org.openqa.selenium.WebDriver;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -12,29 +12,25 @@ public class CountryToursBlockPage extends AbstractBasePage implements Toursable
 
 //    Actions action = new Actions(driver);
 
-    public CountryToursBlockPage(WebDriver driver) {
-        super(driver);
-    }
-
     public CountryToursBlockPage clickRecommendFilter(){
-        driver.findElement(recommendationFilter).click();
-        return new CountryToursBlockPage(driver);
+        find(recommendationFilter).click();
+        return new CountryToursBlockPage();
     }
 
     public CountryToursBlockPage clickPriceFilter(){
-        driver.findElement(priceFilter).click();
-        return new CountryToursBlockPage(driver);
+        find(priceFilter).click();
+        return new CountryToursBlockPage();
     }
 
     public CountryToursBlockPage clickRateFilter(){
-        driver.findElement(rateFilter).click();
-        return new CountryToursBlockPage(driver);
+        find(rateFilter).click();
+        return new CountryToursBlockPage();
     }
 
     /////////////////////////////////////////////////////////////
 
-    private List<WebElement> getWishListHeartButtons(){
-        return driver.findElements(wishListHeartButtons);
+    private List<WebElementFacade> getWishListHeartButtons(){
+        return findAll(wishListHeartButtons);
     }
 
     public CountryToursBlockPage clickFirstWishListButton(boolean b){
@@ -46,15 +42,15 @@ public class CountryToursBlockPage extends AbstractBasePage implements Toursable
     }
 
     public CountryToursBlockPage clickAnyWishListButton(int number){
-        List<WebElement> webElements = getWishListHeartButtons();
+        List<WebElementFacade> webElements = getWishListHeartButtons();
         webElements.get(number - 1).click();
         return this;
     }
 
     /////////////////////////////////////////////////////////////
 
-    private List<WebElement> getExploreHotelButtons(){
-        return driver.findElements(exploreHotelButtons);
+    private List<WebElementFacade> getExploreHotelButtons(){
+        return findAll(exploreHotelButtons);
     }
 
     public HotelFirstDescPage clickFirstExploreHotel(boolean b){
@@ -62,19 +58,19 @@ public class CountryToursBlockPage extends AbstractBasePage implements Toursable
         if (!element.isSelected() == b){
             element.click();
         }
-        return new HotelFirstDescPage(driver);
+        return new HotelFirstDescPage();
     }
 
     public HotelFirstDescPage clickAnyExploreHotel(int number){
-        List<WebElement> webElements = getExploreHotelButtons();
+        List<WebElementFacade> webElements = getExploreHotelButtons();
         webElements.get(number - 1).click();
-        return new HotelFirstDescPage(driver);
+        return new HotelFirstDescPage();
     }
 
     /////////////////////////////////////////////////////////////
 
-    private List<WebElement> getHotelPriceLinks(){
-        return driver.findElements(hotelPriceLinks);
+    private List<WebElementFacade> getHotelPriceLinks(){
+        return findAll(hotelPriceLinks);
     }
 
     public HotelFirstDescPage clickFirstHotelPriceLink(boolean b){
@@ -82,23 +78,23 @@ public class CountryToursBlockPage extends AbstractBasePage implements Toursable
         if (!element.isSelected() == b){
             element.click();
         }
-        return new HotelFirstDescPage(driver);
+        return new HotelFirstDescPage();
     }
 
     public HotelFirstDescPage clickAnyHotelPriceLink(int number){
-        List<WebElement> webElements = getHotelPriceLinks();
+        List<WebElementFacade> webElements = getHotelPriceLinks();
         webElements.get(number - 1).click();
-        return new HotelFirstDescPage(driver);
+        return new HotelFirstDescPage();
     }
 
     ////////////////////////////////////////////////////////////
 
-    private List<WebElement> getNameHotelLinks(){
-        return driver.findElements(nameHotelLinks);
+    private List<WebElementFacade> getNameHotelLinks(){
+        return findAll(nameHotelLinks);
     }
 
     public String getAnyNameHotelText(int number){
-        List<WebElement> webElements = getNameHotelLinks();
+        List<WebElementFacade> webElements = getNameHotelLinks();
         return webElements.get(number).getText();
     }
 
@@ -107,12 +103,12 @@ public class CountryToursBlockPage extends AbstractBasePage implements Toursable
         if (!element.isSelected() == b){
             element.click();
         }
-        return new HotelFirstDescPage(driver);
+        return new HotelFirstDescPage();
     }
 
     public HotelFirstDescPage clickAnyNameHotelLink(int number){
-        List<WebElement> webElements = getNameHotelLinks();
+        List<WebElementFacade> webElements = getNameHotelLinks();
         webElements.get(number - 1).click();
-        return new HotelFirstDescPage(driver);
+        return new HotelFirstDescPage();
     }
 }

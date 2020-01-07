@@ -28,7 +28,7 @@ public class StartSearchBlockPageTest {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
             driver.get("https://level.travel/");
-            startSearchBlockPage = new StartSearchBlockPage(driver);
+            startSearchBlockPage = new StartSearchBlockPage();
             waiter = new WaitMethodClass(driver);
         }
 
