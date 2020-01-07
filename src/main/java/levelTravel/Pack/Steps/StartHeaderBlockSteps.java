@@ -1,6 +1,7 @@
 package levelTravel.Pack.Steps;
 
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartHeaderBlockPage;
+import levelTravel.Pack.Pages.StartUpPage.SubPages.FaceBookPage;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.PressPage;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.PromoPage;
 import net.thucydides.core.annotations.Step;
@@ -13,6 +14,7 @@ public class StartHeaderBlockSteps {
     StartHeaderBlockPage page;
     PromoPage promoPage;
     PressPage pressPage;
+    FaceBookPage faceBookPage;
 
     @Step
     public void openPage(){
@@ -196,6 +198,27 @@ public class StartHeaderBlockSteps {
     public void checkSuccessWelcomeHeading(String anyString){
         String s = page.getDriver().findElement(By.xpath("//div[@class='auth_success']")).getText();
         Assertions.assertThat("С возвращением, Патрик!").isEqualTo(anyString);
+    }
+
+    @Step
+    public void checkEnabledFbLink(){
+        Assertions.assertThat(faceBookPage.find(By.xpath("//a[text()='Forgotten account?']")).isEnabled()).isTrue();
+    }
+
+    @Step
+    public void compareVkAndCurrentHandles(String anyHandle){
+        Assertions.assertThat(anyHandle).isEqualTo(page.getDriver().getWindowHandle());
+    }
+
+    @Step
+    public void checkIsDisplayedRecallButton(){
+        Assertions.assertThat(page.find(By.xpath("//button[text()='Перезвоните мне']")).isDisabled());
+    }
+
+    @Step
+    public void compareRecallHeading(String anyString){
+        String s = page.readRecallMeHeading();
+        Assertions.assertThat(s).isEqualTo(anyString);
     }
 
 

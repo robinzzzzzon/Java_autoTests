@@ -1,6 +1,5 @@
 package levelTravel.Pack.Steps;
 
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
 import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.TurkeyPage;
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartBestPriceBlockPage;
 import net.thucydides.core.annotations.Step;

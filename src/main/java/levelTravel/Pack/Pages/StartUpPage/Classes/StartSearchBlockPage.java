@@ -6,6 +6,7 @@ import levelTravel.Pack.Pages.HelperClass.TableForStartSearchBlockPage;
 import levelTravel.Pack.Pages.HelperClass.CountryFactory;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Searchable;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
+@DefaultUrl("https://level.travel/")
 public class StartSearchBlockPage extends AbstractBasePage implements Searchable {
 
     ////////////////////////////
@@ -64,7 +66,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
 
     //Получает текст ошибки по номеру объекта ошибки из колекции:
     public String getErrorByText (int number) {
-        return getErrors().get(number).getText();
+        return getErrors().get(number - 1).getText();
     }
 
     //Возвращает true, если:

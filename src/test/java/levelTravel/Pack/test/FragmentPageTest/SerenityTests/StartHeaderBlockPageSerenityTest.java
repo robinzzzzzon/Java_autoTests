@@ -68,6 +68,7 @@ public class StartHeaderBlockPageSerenityTest {
         steps.clickHeaderExit();
         steps.clickFaceBookLink();
         steps.switchToNextWindow();
+        steps.checkEnabledFbLink();
     }
 
     @Test
@@ -78,12 +79,14 @@ public class StartHeaderBlockPageSerenityTest {
         steps.clickVKLink();
         steps.switchToNextWindow();
         steps.switchBack(mainHandle);
+        steps.compareVkAndCurrentHandles(mainHandle);
     }
 
     @Test
     public void checkEnableRecallMeButton(){
         steps.openPage();
         steps.clickNumberField();
+        steps.checkIsDisplayedRecallButton();
     }
 
     @Test
@@ -92,6 +95,7 @@ public class StartHeaderBlockPageSerenityTest {
         steps.clickNumberField();
         steps.clickRecallMeButton();
         steps.clickRecallMeRightNow();
+        steps.compareRecallHeading("Или напишите нам в мессенджеры:");
     }
     @Test
     public void checkEnableRecallMeToMessenger(){
@@ -101,6 +105,7 @@ public class StartHeaderBlockPageSerenityTest {
         steps.clickRecallMeButton();
         steps.clickMessageIcon();
         steps.switchBack(mainHandleWindow);
+        steps.compareRecallHeading("Или напишите нам в мессенджеры:");
     }
 
 
