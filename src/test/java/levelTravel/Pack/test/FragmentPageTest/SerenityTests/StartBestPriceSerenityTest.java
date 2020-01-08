@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 public class StartBestPriceSerenityTest {
 
     @Steps
-    StartBestPriceBlockSteps steps;
+    private StartBestPriceBlockSteps steps;
 
     @Managed
     WebDriver driver;

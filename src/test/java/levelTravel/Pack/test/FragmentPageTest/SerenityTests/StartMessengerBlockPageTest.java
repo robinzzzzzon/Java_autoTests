@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 public class StartMessengerBlockPageTest {
 
     @Steps
-    StartMessengerBlockSteps steps;
+    private StartMessengerBlockSteps steps;
 
     @Managed
     WebDriver driver;

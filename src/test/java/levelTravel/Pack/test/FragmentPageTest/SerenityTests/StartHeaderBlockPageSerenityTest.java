@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 public class StartHeaderBlockPageSerenityTest {
 
     @Steps
-    StartHeaderBlockSteps steps;
+    private StartHeaderBlockSteps steps;
 
     @Managed
     WebDriver driver;
