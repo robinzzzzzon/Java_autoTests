@@ -4,13 +4,13 @@ import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Interfaces.Toursable;
 import levelTravel.Pack.Pages.HotelDescPage.HotelFirstDescPage;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+@DefaultUrl("https://level.travel/search/Moscow-RU-to-Any-TR-departure-20.01.2020-for-5..9-nights-2-adults-0-kids-1..5-stars")
 public class CountryToursBlockPage extends AbstractBasePage implements Toursable {
-
-//    Actions action = new Actions(driver);
 
     public CountryToursBlockPage clickRecommendFilter(){
         find(recommendationFilter).click();

@@ -3,11 +3,13 @@ package levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage;
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Interfaces.Mapable;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+@DefaultUrl("https://level.travel/search/Moscow-RU-to-Any-TR-departure-20.01.2020-for-5..9-nights-2-adults-0-kids-1..5-stars")
 public class CountryMapBlockPage extends AbstractBasePage implements Mapable {
 
     public CountryMapBlockPage clickMaximizeButton(){
