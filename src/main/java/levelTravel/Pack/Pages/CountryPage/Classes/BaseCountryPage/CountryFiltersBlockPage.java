@@ -3,15 +3,14 @@ package levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage;
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Interfaces.Filterable;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.jetbrains.annotations.NotNull;
+import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+@DefaultUrl("https://level.travel/search/Moscow-RU-to-Any-TR-departure-20.01.2020-for-5..9-nights-2-adults-0-kids-1..5-stars")
 public class CountryFiltersBlockPage extends AbstractBasePage implements Filterable {
-
-    private JavascriptExecutor JSE = (JavascriptExecutor) getDriver();
 
     //свитчер моментального подтверждения:
     public CountryFiltersBlockPage switchMomentConfirmTumbler(boolean b) {
@@ -29,12 +28,13 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(priceTowers);
     }
 
-    public WebElement getAnyPriceTower(int towerNumber) {
+    private WebElement getAnyPriceTower(int towerNumber) {
         List<WebElementFacade> webElements = getListOfPriceTowers();
        return webElements.get(towerNumber - 1);
     }
 
-    public CountryFiltersBlockPage selectAnyPriceTower(@NotNull WebElement element) {
+    public CountryFiltersBlockPage selectAnyPriceTower(int number) {
+        WebElement element = getAnyPriceTower(number);
         element.click();
         return new CountryFiltersBlockPage();
     }
@@ -66,21 +66,24 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(spanStarsOfHotels);
     }
 
-    public WebElement getInputOfStarsHotel(int number) {
+    private WebElement getInputOfStarsHotel(int number) {
         List<WebElementFacade> webElements = getHotelStarsListInputs();
         return webElements.get(number - 1);
     }
 
-    public WebElement getSpanOfStarsHotel(int number) {
+    private WebElement getSpanOfStarsHotel(int number) {
         List<WebElementFacade> webElements = getHotelStarsListSpans();
         return webElements.get(number - 1);
     }
 
-    public void clickAnyStars(@NotNull WebElement element){
+    public void clickAnyStars(int number){
+        WebElement element = getInputOfStarsHotel(number);
         element.click();
     }
 
-    public CountryFiltersBlockPage selectAnyStarsHotel(@NotNull WebElement span, WebElement input){
+    public CountryFiltersBlockPage selectAnyStarsHotel(int numberOfSpan, int numberOfInput){
+        WebElement span = getSpanOfStarsHotel(numberOfSpan);
+        WebElement input = getInputOfStarsHotel(numberOfInput);
         if (!span.isSelected()){
             input.click();
         }
@@ -91,24 +94,24 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //Ищем отель по наименованию:
 
     public CountryFiltersBlockPage writeHotelName(String hotelName) {
-        find(inputHotelName).sendKeys(hotelName);
+        find(inputHotelName).waitUntilEnabled().sendKeys(hotelName);
         return new CountryFiltersBlockPage();
     }
 
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация отелей по рейтингу:
 
-
     private List<WebElementFacade> getRatingHotelsList() {
         return findAll(hotelsRating);
     }
 
-    public WebElement getAnyRating(int number){
+    private WebElement getAnyRating(int number){
         List<WebElementFacade> webElements = getRatingHotelsList();
         return webElements.get(number - 1);
     }
 
-    public CountryFiltersBlockPage selectRatingHotel(@NotNull WebElement webElement) {
+    public CountryFiltersBlockPage selectRatingHotel(int number) {
+        WebElement webElement = getAnyRating(number);
         webElement.click();
         return this;
     }
@@ -120,28 +123,31 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(distanceToSea);
     }
 
-    public WebElement getDistanceToSea(int number){
+    private WebElement getDistanceToSea(int number){
         List<WebElementFacade> webElements = getDistanceToSeaList();
         return webElements.get(number - 1);
     }
 
-    public CountryFiltersBlockPage selectDistanceToSea(@NotNull WebElement webElement) {
-        webElement.click();
+    public CountryFiltersBlockPage selectDistanceToSea(int number) {
+        WebElement element = getDistanceToSea(number);
+        element.click();
         return this;
     }
 
     ///////////////////////////////////////////////////////////////////////////////
     //Фильтрация частных пляжей:
 
-    public WebElement getPrivateBeachInput (){
+    private WebElement getPrivateBeachInput (){
         return find(inputPrivateBeach);
     }
 
-    public WebElement getPrivateBeachSpan (){
+    private WebElement getPrivateBeachSpan (){
         return find(spanPrivateBeach);
     }
 
-    public CountryFiltersBlockPage selectPrivateBeachInput(@NotNull WebElement span, WebElement input, boolean b){
+    public CountryFiltersBlockPage selectPrivateBeachInput(boolean b){
+        WebElement span = getPrivateBeachSpan();
+        WebElement input = getPrivateBeachInput();
         if (!span.isSelected() == b){
             input.click();
         }
@@ -151,24 +157,25 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по типам поверхности пляжа:
 
-    public List<WebElementFacade> getTypesOfBeachList(){
+    private List<WebElementFacade> getTypesOfBeachList(){
         return findAll(typesOfBeach);
     }
 
-    public WebElement getTypeOfBeach (int number){
-        List<WebElementFacade> webElements = getTypesOfBeachList();
-        return webElements.get(number - 1);
-    }
-
-    public CountryFiltersBlockPage selectTypeOfBeach(@NotNull WebElement webElement, boolean b){
-        if (!webElement.isSelected() == b) webElement.click();
+    public CountryFiltersBlockPage selectTypeOfBeach(int typeNumber, boolean b){
+        WebElement element = getTypesOfBeachList().get(typeNumber);
+        if (!element.isSelected() == b) element.click();
         return this;
     }
 
-    public CountryFiltersBlockPage selectAllTypeOfBeach(@NotNull List<WebElement> webElements){
-        for (WebElement element: webElements) {
-            element.click();
+    public CountryFiltersBlockPage selectAllTypeOfBeach(){
+        scrolling(300);
+        for (int i = 0; i < getTypesOfBeachList().size(); i++) {
+            getTypesOfBeachList().get(i).click();
         }
+//        List<WebElementFacade> list = getTypesOfBeachList();
+//        for (WebElement element: list) {
+//            element.click();
+//        }
         return this;
     }
 
@@ -180,16 +187,18 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     }
 
     private void showAllTypesFood(){
+        waitMethod(1000);
         find(showAllFoodTypes).click();
     }
 
     public CountryFiltersBlockPage selectTypeFood(int number){
-        List<WebElementFacade> webElements = getFoodTypeList();
-        if (!webElements.get(number - 1).isDisplayed()){
+        scrolling(400);
+        WebElement element = getFoodTypeList().get(number - 1);
+        if (!element.isEnabled()){
             showAllTypesFood();
-            webElements.get(number - 1).click();
+            element.click();
         }
-            webElements.get(number - 1).click();
+            element.click();
         return this;
     }
 
@@ -200,47 +209,43 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(regionTypes);
     }
 
-    public WebElement getRegionType(int number){
+    private WebElement getRegionType(int number){
         List<WebElementFacade> webElements = getRegionTypesList();
         return webElements.get(number - 1);
     }
 
-    public CountryFiltersBlockPage selectRegionType(@NotNull WebElement element){
-        element.submit();
+    public CountryFiltersBlockPage selectRegionType(int regionNumber){
+        WebElement element = getRegionType(regionNumber);
+        element.click();
         return this;
     }
 
     /////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем список регионов:
 
-    private List<WebElementFacade>getRegionList() {
+    private List<WebElementFacade> getRegionList() {
         return findAll(regionList);
     }
 
     private void showAllRegions(){
-        JSE.executeScript("window.scrollBy(0, 300)", "");
-        WebElement element = find(showAllRegions);
-        waitMethod(1000);
-        if (element.isDisplayed()) element.click();
+        find(showAllRegions).waitUntilClickable().click();
     }
 
 
     public CountryFiltersBlockPage selectAnyRegion(int number){
-        JSE.executeScript("window.scrollBy(0, 300)", "");
-        waitMethod(1000);
-        List<WebElementFacade> webElements = getRegionList();
-        if (!webElements.get(number - 1).isDisplayed()){
+        scrolling(500);
+        WebElement element = getRegionList().get(number - 1);
+        if (!element.isEnabled()){
             showAllRegions();
-            webElements.get(number - 1).click();
+            element.click();
         }
-        webElements.get(number - 1).click();
-        return this;
+        element.click();
+        return new CountryFiltersBlockPage();
     }
 
 
     public CountryFiltersBlockPage selectAllRegions(){
-        JSE.executeScript("window.scrollBy(0, 300)", "");
-        waitMethod(1000);
+        scrolling(500);
         List<WebElementFacade> webElements = getRegionList();
         showAllRegions();
         for (WebElement element: webElements) {
@@ -256,24 +261,22 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(hotelTypes);
     }
 
-    public WebElement getHotelType(int number){
-        JSE.executeScript("window.scrollBy(0, 400)", "");
-        waitMethod(1000);
+    private WebElement getHotelType(int number){
         List<WebElementFacade> webElements = getHotelTypesList();
         return webElements.get(number - 1);
     }
 
-    public CountryFiltersBlockPage selectHotelType(@NotNull WebElement element){
-        JSE.executeScript("window.scrollBy(0, 400)", "");
-        waitMethod(1000);
+    public CountryFiltersBlockPage selectHotelType(int number){
+        scrolling(600);
+        WebElement element = getHotelType(number);
         element.click();
-        return new CountryFiltersBlockPage();
+        return this;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по наличию wi-fi:
 
-    public List<WebElementFacade> getWiFiRb() {
+    private List<WebElementFacade> getWiFiRb() {
         return findAll(wiFiRb);
     }
 
@@ -281,13 +284,13 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(wiFiTypeLabel);
     }
 
-    public CountryFiltersBlockPage selectWiFiInput(@NotNull List<WebElement> Rb, int elementNumber){
-        JSE.executeScript("window.scrollBy(0, 500)", "");
-        waitMethod(1000);
-        if (!Rb.get(elementNumber - 1).isSelected()){
+    public CountryFiltersBlockPage selectWiFiInput(int elementNumber, boolean b){
+        scrolling(500);
+        List<WebElementFacade> RbList = getWiFiRb();
+        if (!RbList.get(elementNumber - 1).isSelected() == b){
             getWiFiLabel().get(elementNumber - 1).click();
         }
-        return new CountryFiltersBlockPage();
+        return this;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -297,16 +300,16 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(waterGames);
     }
 
-    public WebElement getWaterGame(int number){
+    private WebElement getWaterGame(int number){
         List<WebElementFacade> webElements = getWaterGamesList();
         return webElements.get(number - 1);
     }
 
-    public CountryFiltersBlockPage selectWaterGame(@NotNull WebElement element){
-        JSE.executeScript("window.scrollBy(0, 550)", "");
-        waitMethod(1000);
+    public CountryFiltersBlockPage selectWaterGame(int number){
+        scrolling(600);
+        WebElement element = getWaterGame(number);
         element.click();
-        return new CountryFiltersBlockPage();
+        return this;
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
@@ -316,14 +319,14 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(hotelFacilities);
     }
 
-    public WebElement getHotelFacility(int number){
+    private WebElement getHotelFacility(int number){
         List<WebElementFacade> webElements = getHotelFacilitiesList();
         return webElements.get(number - 1);
     }
 
-    public CountryFiltersBlockPage selectHotelFacility(@NotNull WebElement element){
-        JSE.executeScript("window.scrollBy(0, 700)", "");
-        waitMethod(1000);
+    public CountryFiltersBlockPage selectHotelFacility(int number){
+        scrolling(700);
+        WebElement element = getHotelFacility(number);
         element.click();
         return new CountryFiltersBlockPage();
     }
@@ -335,16 +338,16 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(forFamilyWithChildren);
     }
 
-    public WebElement getFamilyWithChildren(int number){
+    private WebElement getFamilyWithChildren(int number){
         List<WebElementFacade> webElements = getFamilyWithChildrenList();
         return webElements.get(number - 1);
     }
 
-    public CountryFiltersBlockPage selectFamilyWithChildren(@NotNull WebElement element){
-        JSE.executeScript("window.scrollBy(0, 1000)", "");
-        waitMethod(1000);
+    public CountryFiltersBlockPage selectFamilyWithChildren(int number){
+        scrolling(1000);
+        WebElement element = getFamilyWithChildren(number);
         element.click();
-        return new CountryFiltersBlockPage();
+        return this;
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
@@ -354,30 +357,30 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(tourOperators);
     }
 
-    public CountryFiltersBlockPage showAllTourOperators(){
-        JSE.executeScript("window.scrollBy(0, 1200)", "");
-        waitMethod(1000);
+    private CountryFiltersBlockPage showAllTourOperators(){
         find(showAllTourOperators).click();
-        return new CountryFiltersBlockPage();
+        return this;
     }
 
     public CountryFiltersBlockPage selectAnyTourOperator(int number){
+        scrolling(1100);
         List<WebElementFacade> webElements = getTourOperatorsList();
         if (!webElements.get(number - 1).isDisplayed()){
             showAllTourOperators();
             webElements.get(number - 1).click();
         }
             webElements.get(number - 1).click();
-        return new CountryFiltersBlockPage();
+        return this;
     }
 
     public CountryFiltersBlockPage selectAllTourOperators(){
+        scrolling(1100);
         List<WebElementFacade> webElements = getTourOperatorsList();
         showAllTourOperators();
         for (WebElement element: webElements) {
             element.click();
         }
-        return new CountryFiltersBlockPage();
+        return this;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -385,7 +388,6 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
 
     public CountryFiltersBlockPage clickLocalClearFilter(){
         WebElement element = find(clearOneTypeFilter);
-        waitMethod(1000);
         element.click();
         return new CountryFiltersBlockPage();
     }
@@ -402,15 +404,21 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
 
     //Сбросить все фильтры:
     public CountryFiltersBlockPage clickAllClearFilter(){
-        waitMethod(1200);
-        JSE.executeScript("window.scrollBy(0, 1200)", "");
-        waitMethod(1200);
+        scrolling(1200);
         find(clearAllFiltersButton).click();
         return new CountryFiltersBlockPage();
     }
 
 
     /////////////////////////////////////////////////////////////////////////////////
+
+
+    private void scrolling(int number){
+        JavascriptExecutor JSE = (JavascriptExecutor) getDriver();
+        String s = "window.scrollBy(0, %s)";
+        JSE.executeScript(String.format(s, number), "");
+        waitMethod(1000);
+    }
 
     private void waitMethod(int countOfMs){
         try {

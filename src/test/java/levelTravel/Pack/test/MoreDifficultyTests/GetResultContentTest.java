@@ -43,7 +43,7 @@ public class GetResultContentTest {
                 .clickCountOfPassengers()
                 .minusPassenger();
                 //filtersBlockPage = (TurkeyPage) searchBlockPage.clickSearchButton("Turk");
-                filtersBlockPage.selectAnyPriceTower(filtersBlockPage.getAnyPriceTower(2));
+                filtersBlockPage.selectAnyPriceTower(2);
        List <WebElement> webElements = driver.findElements(By.xpath("//div[@class='ReactVirtualized__Grid__innerScrollContainer']//div"));
        Assert.assertTrue(webElements.get(0).isDisplayed() && webElements.size() > 200);
        Assert.assertNotNull(webElements);

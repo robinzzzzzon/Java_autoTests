@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartHeaderBlockPageSerenityTest" skipped="0" tests="1" time="0.0" timestamp="2020-01-07 06:42:06"><testcase classname="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartHeaderBlockPageSerenityTest" name="Initialisation"><failure message="The page object class levelTravel.Pack.Pages.StartUpPage.Classes.StartHeaderBlockPage looks dodgy:&#10;Failed to instantiate page (java.lang.StackOverflowError)" type="net.thucydides.core.pages.WrongPageError">The page object class levelTravel.Pack.Pages.StartUpPage.Classes.StartHeaderBlockPage looks dodgy:
-Failed to instantiate page (java.lang.StackOverflowError)</failure><system-err>The page object class levelTravel.Pack.Pages.StartUpPage.Classes.StartHeaderBlockPage looks dodgy:
-Failed to instantiate page (java.lang.StackOverflowError)&#13;
-</system-err></testcase></testsuite>

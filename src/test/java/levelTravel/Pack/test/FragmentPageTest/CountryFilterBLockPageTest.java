@@ -46,10 +46,8 @@ public class CountryFilterBLockPageTest {
     @Test
     public void selectStarsOfHotel() {
         //countryFiltersPage.clickAnyStars(abstractCountryFiltersPage.getInputOfStarsHotel(3));
-        WebElement input = countryFiltersBlockPage.getInputOfStarsHotel(3);
-        WebElement span = countryFiltersBlockPage.getSpanOfStarsHotel(3);
-        countryFiltersBlockPage.selectAnyStarsHotel(span, input);
-        countryFiltersBlockPage.selectAnyStarsHotel(span, input);
+        countryFiltersBlockPage.selectAnyStarsHotel(3, 3);
+        countryFiltersBlockPage.selectAnyStarsHotel(3, 3);
         Assert.assertFalse(driver.findElements(By.xpath("//ul[@class='checkbox-group__list filter-stars__list']/li")).get(3).isSelected());
     }
 
@@ -67,17 +65,15 @@ public class CountryFilterBLockPageTest {
 
     @Test
     public void getAnyRatingTest(){
-        countryFiltersBlockPage.selectRatingHotel(countryFiltersBlockPage.getAnyRating(1))
-                .selectDistanceToSea(countryFiltersBlockPage.getDistanceToSea(1));
+        countryFiltersBlockPage.selectRatingHotel(1)
+                .selectDistanceToSea(1);
         Assert.assertFalse(driver.findElements(By.xpath("//ul[@class='switcher__list filter-rating__switcher-list']/li")).get(3).isSelected()
                                                             && driver.findElements(By.xpath("//ul[@class='switcher__list distance__switcher-list']/li")).get(2).isSelected());
     }
 
     @Test
     public void privateBeachTest(){
-        WebElement span = countryFiltersBlockPage.getPrivateBeachSpan();
-        WebElement input = countryFiltersBlockPage.getPrivateBeachInput();
-        countryFiltersBlockPage.selectPrivateBeachInput(span, input, false);
+        countryFiltersBlockPage.selectPrivateBeachInput(false);
         Assert.assertFalse(driver.findElement(By.xpath("//div[@class='checkbox-group__item-container filter-beach__item-container']/input")).isSelected());
     }
 
@@ -106,7 +102,7 @@ public class CountryFilterBLockPageTest {
 
     @Test
     public void TypeHotelTests(){
-        countryFiltersBlockPage.selectHotelType(countryFiltersBlockPage.getHotelType(3));
+        countryFiltersBlockPage.selectHotelType(3);
         Assert.assertEquals("Активный", driver.findElements(By.xpath("//ul[@class='checkbox-group__list filter-category__list']//label")).get(2).getText());
     }
 
@@ -114,7 +110,7 @@ public class CountryFilterBLockPageTest {
     public void WiFiTests(){
         //countryFiltersPage.getWiFiRb();
         //countryFiltersPage.getWiFiLabel();
-        List<WebElementFacade> elements = countryFiltersBlockPage.getWiFiRb();
+        //List<WebElementFacade> elements = countryFiltersBlockPage.getWiFiRb();
         //countryFiltersBlockPage.selectWiFiInput(elements, 2);
         Assert.assertFalse(driver.findElements(By.xpath("//ul[@class='radio-group']//div")).get(1).isSelected());
 
@@ -122,19 +118,19 @@ public class CountryFilterBLockPageTest {
 
     @Test
     public void WaterGameTest(){
-        countryFiltersBlockPage.selectWaterGame(countryFiltersBlockPage.getWaterGame(2));
+        countryFiltersBlockPage.selectWaterGame(2);
         Assert.assertTrue(driver.findElements(By.xpath("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div")).size() > 0);
     }
 
     @Test
     public void HoTelFacilitiesTest(){
-        countryFiltersBlockPage.selectHotelFacility(countryFiltersBlockPage.getHotelFacility(3));
+        countryFiltersBlockPage.selectHotelFacility(3);
         Assert.assertTrue(driver.findElements(By.xpath("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div")).size() > 0);
     }
 
     @Test
     public void FamilyWithChild(){
-        countryFiltersBlockPage.selectFamilyWithChildren(countryFiltersBlockPage.getFamilyWithChildren(2));
+        countryFiltersBlockPage.selectFamilyWithChildren(2);
         Assert.assertTrue(driver.findElements(By.xpath("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div")).size() > 0);
     }
 
@@ -150,8 +146,8 @@ public class CountryFilterBLockPageTest {
         //countryFiltersPage.clickAllClearFilter();
 //        countryFiltersPage.selectTypeFood(6);
 //        countryFiltersPage.clickLocalClearFilter();
-        countryFiltersBlockPage.selectRatingHotel(countryFiltersBlockPage.getAnyRating(3))
-                .selectDistanceToSea(countryFiltersBlockPage.getDistanceToSea(2));
+        countryFiltersBlockPage.selectRatingHotel(3)
+                .selectDistanceToSea(2);
         countryFiltersBlockPage.clickFewLocalClearFilter();
         Assert.assertFalse(driver.findElements(By.xpath("//div[@class='filter-rating']//li")).get(2).isSelected());
     }

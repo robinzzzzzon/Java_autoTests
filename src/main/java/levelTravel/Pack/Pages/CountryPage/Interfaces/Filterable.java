@@ -42,9 +42,7 @@ public interface Filterable {
     ///////////////////////////////////////////////////////////////////////
     //Работа с ценовыми столбцами и интервалом цен в инпутах:
 
-    public WebElement getAnyPriceTower(int towerNumber);
-
-    public CountryFiltersBlockPage selectAnyPriceTower(WebElement element);
+    public CountryFiltersBlockPage selectAnyPriceTower(int number);
 
     public CountryFiltersBlockPage writeMinIntervalPrice(String anyPrice);
 
@@ -53,13 +51,9 @@ public interface Filterable {
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем отели по кол-ву звезд:
 
-    public WebElement getInputOfStarsHotel(int number);
+    public void clickAnyStars(int number);
 
-    public WebElement getSpanOfStarsHotel(int number);
-
-    public void clickAnyStars(WebElement element);
-
-    public CountryFiltersBlockPage selectAnyStarsHotel(WebElement span, WebElement input);
+    public CountryFiltersBlockPage selectAnyStarsHotel(int numberOfSpan, int numberOfInput);
 
     /////////////////////////////////////////////////////////////////////////////////
     //Ищем отель по наименованию:
@@ -69,36 +63,24 @@ public interface Filterable {
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация отелей по рейтингу:
 
-    public WebElement getAnyRating(int number);
-
-    public CountryFiltersBlockPage selectRatingHotel(WebElement webElement);
+    public CountryFiltersBlockPage selectRatingHotel(int number);
 
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по удаленности от моря:
 
-    public WebElement getDistanceToSea(int number);
-
-    public CountryFiltersBlockPage selectDistanceToSea(WebElement webElement);
+    public CountryFiltersBlockPage selectDistanceToSea(int number);
 
     ///////////////////////////////////////////////////////////////////////////////
     //Фильтрация частных пляжей:
 
-    public WebElement getPrivateBeachInput();
-
-    public WebElement getPrivateBeachSpan();
-
-    public CountryFiltersBlockPage selectPrivateBeachInput(WebElement span, WebElement input, boolean b);
+    public CountryFiltersBlockPage selectPrivateBeachInput(boolean b);
 
     //////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по типам поверхности пляжа:
 
-    public List<WebElementFacade> getTypesOfBeachList();
+    public CountryFiltersBlockPage selectTypeOfBeach(int typeNumber, boolean b);
 
-    public WebElement getTypeOfBeach(int number);
-
-    public CountryFiltersBlockPage selectTypeOfBeach(WebElement webElement, boolean b);
-
-    public CountryFiltersBlockPage selectAllTypeOfBeach(List<WebElement> webElements);
+    public CountryFiltersBlockPage selectAllTypeOfBeach();
 
     ///////////////////////////////////////////////////////////////////////////////////
     //Фильтруем по видам питания:
@@ -108,9 +90,7 @@ public interface Filterable {
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем по виду местности:
 
-    public WebElement getRegionType(int number);
-
-    public CountryFiltersBlockPage selectRegionType(WebElement element);
+    public CountryFiltersBlockPage selectRegionType(int regionNumber);
 
     /////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем список регионов:
@@ -121,41 +101,30 @@ public interface Filterable {
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем тип отеля:
-
-    public WebElement getHotelType(int number);
-
-    public CountryFiltersBlockPage selectHotelType(WebElement element);
+    public CountryFiltersBlockPage selectHotelType(int number);
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по наличию wi-fi:
 
-    public List<WebElementFacade> getWiFiRb();
-
-    public CountryFiltersBlockPage selectWiFiInput(List<WebElement> Rb, int elementNumber);
+    public CountryFiltersBlockPage selectWiFiInput(int elementNumber, boolean b);
 
     //////////////////////////////////////////////////////////////////////////////////////////
     //Наличие вида игр на воде:
 
-    public CountryFiltersBlockPage selectWaterGame(WebElement element);
+    public CountryFiltersBlockPage selectWaterGame(int number);
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Удобства в номере отеля:
 
-    public WebElement getHotelFacility(int number);
-
-    public CountryFiltersBlockPage selectHotelFacility(WebElement element);
+    public CountryFiltersBlockPage selectHotelFacility(int number);
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Работа со списком услуг для семей с детьми:
 
-    public WebElement getFamilyWithChildren(int number);
-
-    public CountryFiltersBlockPage selectFamilyWithChildren(WebElement element);
+    public CountryFiltersBlockPage selectFamilyWithChildren(int number);
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по списку операторов:
-
-    CountryFiltersBlockPage showAllTourOperators();
 
     public CountryFiltersBlockPage selectAnyTourOperator(int number);
 
