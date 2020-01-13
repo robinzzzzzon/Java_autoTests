@@ -46,47 +46,34 @@ public interface Searchable {
 
     public StartSearchBlockPage clickCountryInput();
 
-    public WebElement getPopularCountry(int elementNumber);
+    public StartSearchBlockPage clickGettingPopularCountry(int number);
 
-    public StartSearchBlockPage clickGettingPopularCountry(WebElement webElement);
-
-    public WebElement getWholeCountry(int elementNumber);
-
-    public StartSearchBlockPage clickGettingWholeCountry(WebElement webElement);
+    public StartSearchBlockPage clickGettingWholeCountry(int number);
 
     /////////////////////////////
-    public List<WebElementFacade> getErrors();
-
-    public String getErrorByText (int number);
 
     public boolean isErrorVisible(String message);
 
     /////////////////////////////
     public StartSearchBlockPage clickCalendarInput();
 
-    public WebElement getCalendarDateForWholeYear(int row, int column, int countSwitch);
+    public void clickAdd2Days();
 
-    public StartSearchBlockPage clickAdd2Days();
-
-    public StartSearchBlockPage selectCalendarDate(WebElement webElement);
+    public void selectCalendarDate(int row, int column, int countSwitch);
 
     ////////////////////////////////////////////////////////////////////////////////
-    public StartSearchBlockPage clickCountOfNights();
+    public void clickCountOfNights();
 
-    public StartSearchBlockPage minusNight();
+    public void minusNight();
 
-    public StartSearchBlockPage plusNight();
+    public void plusNight();
 
     public StartSearchBlockPage add2Nights(boolean b);
 
     /////////////////////////////
-    public StartSearchBlockPage clickCountOfPassengers();
+    public void clickCountOfPassengers();
 
-    void addChildren();
-
-    public WebElement getVariableAddChildren(int variationChild);
-
-    public StartSearchBlockPage selectVariationAddChild(WebElement webElement);
+    public StartSearchBlockPage selectVariationAddChild(int childNumber);
 
     public StartSearchBlockPage minusPassenger();
 

@@ -19,12 +19,12 @@ public class StartSearchBlockPageSerenityTest {
 
 
     @Test
-    public void correctFindTurkeyToursForFamilyWithoutChildren(){
+    public void correctFindTurkeyTours(){
         steps.openPage();
         steps.clickCountryInput();
-        steps.clickGettingPopularCountry(steps.getPopularCountry(1));
+        steps.clickGettingPopularCountry(1);
         steps.clickCalendarInput();
-        steps.selectCalendarDate(steps.getCalendarDateForWholeYear(4, 3, 2));
+        steps.selectCalendarDate(4, 3, 2);
         steps.clickSearchButton("Turk");
         steps.checkContainsPartOfHeading("ц");
 
@@ -34,11 +34,11 @@ public class StartSearchBlockPageSerenityTest {
     public void correctFindEgyptToursForFamilyWithChildren(){
         steps.openPage();
         steps.clickCountryInput();
-        steps.clickGettingWholeCountry(steps.getWholeCountry(14));
+        steps.clickGettingWholeCountry(14);
         steps.clickCalendarInput();
-        steps.selectCalendarDate(steps.getCalendarDateForWholeYear(2, 4, 3));
+        steps.selectCalendarDate(2, 4, 3);
         steps.clickCountOfPassengers();
-        steps.selectVariationAddChild(steps.getVariableAddChildren(4));
+        steps.selectVariationAddChild(4);
         steps.clickSearchButton("Egy");
         steps.isDisplayedTransportVariation();
     }
@@ -47,14 +47,12 @@ public class StartSearchBlockPageSerenityTest {
     public void correctFindTurkeyToursNotDefCountPassengers(){
         steps.openPage();
         steps.clickCountryInput();
-        steps.clickGettingPopularCountry(steps.getPopularCountry(2));
+        steps.clickGettingPopularCountry(2);
         steps.clickCalendarInput();
-        steps.selectCalendarDate(steps.getCalendarDateForWholeYear(2, 4, 1));
+        steps.selectCalendarDate(2, 4, 1);
         steps.clickCountOfPassengers();
-        steps.plusPassenger();
         steps.minusPassenger();
-        steps.minusPassenger();
-        steps.selectVariationAddChild(steps.getVariableAddChildren(4));
+        steps.selectVariationAddChild(4);
         steps.clickSearchButton("Thai");
         steps.isSelectMomentConfirmSwitcher();
     }
@@ -63,9 +61,9 @@ public class StartSearchBlockPageSerenityTest {
     public void correctFindTurkeyToursOnNotDefaultNights(){
         steps.openPage();
         steps.clickCountryInput();
-        steps.clickGettingPopularCountry(steps.getPopularCountry(4));
+        steps.clickGettingPopularCountry(4);
         steps.clickCalendarInput();
-        steps.selectCalendarDate(steps.getCalendarDateForWholeYear(3, 2, 3));
+        steps.selectCalendarDate(3, 2, 3);
         steps.clickCountOfNights();
         steps.minusNight();
         steps.add2Nights(true);
@@ -77,9 +75,9 @@ public class StartSearchBlockPageSerenityTest {
     public void correctFindTurkeyToursOnNotDefaultStartPlace(){
         steps.openPage();
         steps.clickCountryInput();
-        steps.clickGettingPopularCountry(steps.getPopularCountry(5));
+        steps.clickGettingPopularCountry(5);
         steps.clickCalendarInput();
-        steps.selectCalendarDate(steps.getCalendarDateForWholeYear(4, 2, 2));
+        steps.selectCalendarDate(4, 2, 2);
         steps.clickStartPlaceInput();
         steps.clearStartPlaceInput();
         steps.clickSelectingStartPlace("Самара");
@@ -91,16 +89,16 @@ public class StartSearchBlockPageSerenityTest {
     public void correctFindRussiaToursComplete(){
         steps.openPage();
         steps.clickCountryInput();
-        steps.clickGettingPopularCountry(steps.getPopularCountry(5));
+        steps.clickGettingPopularCountry(5);
         steps.clickCalendarInput();
         steps.clickAdd2Days();
-        steps.selectCalendarDate(steps.getCalendarDateForWholeYear(4, 2, 1));
+        steps.selectCalendarDate(4, 2, 1);
         steps.clickCountOfNights();
         steps.plusNight();
         steps.minusNight();
         steps.add2Nights(true);
         steps.clickCountOfPassengers();
-        steps.selectVariationAddChild(steps.getVariableAddChildren(9));
+        steps.selectVariationAddChild(9);
         steps.clickStartPlaceInput();
         steps.clearStartPlaceInput();
         steps.clickSelectingStartPlace("Самара");
@@ -109,15 +107,15 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void correctFindToursWithWriteCountry() {
+    public void correctFindToursWithWritePlace() {
         steps.openPage();
         steps.writeAnyCountryName("Рим");
         steps.clickCalendarInput();
-        steps.selectCalendarDate(steps.getCalendarDateForWholeYear(3, 2, 2));
+        steps.selectCalendarDate(3, 2, 2);
         steps.clickCountOfNights();
         steps.add2Nights(true);
         steps.clickCountOfPassengers();
-        steps.selectVariationAddChild(steps.getVariableAddChildren(3));
+        steps.selectVariationAddChild(3);
         steps.clickSearchButton("Ita");
         steps.checkEqualHeadingText("Загружаем туры в Рим, Италия");
     }
@@ -136,4 +134,6 @@ public class StartSearchBlockPageSerenityTest {
         steps.clickConfirmButtonWithAnyEmptyFields();
         steps.checkVisibleErrorByAnyEmptyRequiredField();
     }
+
+    //Завтра дописать сюда тесты с мин. кол-вом дней и ветвлением на country странице!
 }

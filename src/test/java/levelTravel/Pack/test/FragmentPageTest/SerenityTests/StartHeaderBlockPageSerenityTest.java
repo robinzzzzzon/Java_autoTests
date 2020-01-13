@@ -18,7 +18,7 @@ public class StartHeaderBlockPageSerenityTest {
     WebDriver driver;
 
     @Test
-    public void selectHelpers(){
+    public void navigateToPressPage(){
         steps.openPage();
         steps.clickHeaderHelper();
         steps.clickSelectingHelper(steps.readHeaderHelper(4));
@@ -26,7 +26,7 @@ public class StartHeaderBlockPageSerenityTest {
     }
 
     @Test
-    public void selectServices(){
+    public void navigateToPromoPage(){
         steps.openPage();
         steps.clickHeaderServices();
         steps.clickSelectingServices(steps.selectHeaderServicesDD(4));
@@ -52,7 +52,7 @@ public class StartHeaderBlockPageSerenityTest {
     }
 
     @Test
-    public void doCorrectSignUp(){
+    public void doSignUp(){
         steps.openPage();
         steps.clickHeaderExit();
         steps.writeMailInputExit("patrick.kelskyh@gmail.com");

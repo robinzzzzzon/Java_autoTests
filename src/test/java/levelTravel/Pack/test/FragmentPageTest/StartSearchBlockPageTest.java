@@ -36,9 +36,9 @@ public class StartSearchBlockPageTest {
         @Test
         public void correctFindTurkeyToursForFamilyWithoutChildren(){
             startSearchBlockPage.clickCountryInput()
-                    .clickGettingPopularCountry(startSearchBlockPage.getPopularCountry(1))
+                    .clickGettingPopularCountry(1)
                     .clickCalendarInput()
-                    .selectCalendarDate(startSearchBlockPage.getCalendarDateForWholeYear(4, 3, 2));
+                    .selectCalendarDate(4, 3, 2);
                     //TurkeyPage turkeyPage = (TurkeyPage) startSearchBlockPage.clickSearchButton("Turk");
                     //waiter.waitWhileElementWillBeClickable(By.xpath("//div[@class='filter-budget__cols']//button"), 10);
                     Assert.assertTrue(driver.findElement(By.xpath("//h1[@class='search-page-title']")).getText().contains("ц"));
@@ -48,11 +48,10 @@ public class StartSearchBlockPageTest {
         @Test
         public void correctFindEgyptToursForFamilyWithChildren(){
             startSearchBlockPage.clickCountryInput()
-                    .clickGettingWholeCountry(startSearchBlockPage.getWholeCountry(14))
+                    .clickGettingWholeCountry(14)
                     .clickCalendarInput()
-                    .selectCalendarDate(startSearchBlockPage.getCalendarDateForWholeYear(2, 4, 3))
-                    .clickCountOfPassengers()
-                    .selectVariationAddChild(startSearchBlockPage.getVariableAddChildren(4));
+                    .selectCalendarDate(2, 4, 3);
+            startSearchBlockPage.selectVariationAddChild(4);
                     EgyptPage egypt = (EgyptPage) startSearchBlockPage.clickSearchButton("Egy");
                     Assert.assertTrue(driver.findElement(By.xpath("//span[@class='included-icons']")).isDisplayed());
         }
@@ -60,14 +59,14 @@ public class StartSearchBlockPageTest {
         @Test
         public void correctFindTurkeyToursNotDefCountPassengers(){
         startSearchBlockPage.clickCountryInput()
-                .clickGettingPopularCountry(startSearchBlockPage.getPopularCountry(2))
+                .clickGettingPopularCountry(2)
                 .clickCalendarInput()
-                .selectCalendarDate(startSearchBlockPage.getCalendarDateForWholeYear(2, 4, 1))
-                .clickCountOfPassengers()
-                .plusPassenger()
+                .selectCalendarDate(2, 4, 1);
+        startSearchBlockPage.clickCountOfPassengers();
+        startSearchBlockPage.plusPassenger()
                 .minusPassenger()
                 .minusPassenger()
-                .selectVariationAddChild(startSearchBlockPage.getVariableAddChildren(4));
+                .selectVariationAddChild(4);
         ThaiPage thaiPage = (ThaiPage) startSearchBlockPage.clickSearchButton("Thai");
         Assert.assertTrue(driver.findElement(By.xpath("//span[@class='toggle-switch__button']")).isDisplayed());
     }
@@ -75,12 +74,12 @@ public class StartSearchBlockPageTest {
         @Test
         public void correctFindTurkeyToursOnNotDefaultNights(){
             startSearchBlockPage.clickCountryInput()
-                    .clickGettingPopularCountry(startSearchBlockPage.getPopularCountry(4))
+                    .clickGettingPopularCountry(4)
                     .clickCalendarInput()
-                    .selectCalendarDate(startSearchBlockPage.getCalendarDateForWholeYear(3, 2, 3))
-                    .clickCountOfNights()
-                    .minusNight()
-                    .add2Nights(true);
+                    .selectCalendarDate(3, 2, 3);
+            startSearchBlockPage.clickCountOfNights();
+            startSearchBlockPage.minusNight();
+            startSearchBlockPage.add2Nights(true);
             VietnamPage vietnamPage = (VietnamPage) startSearchBlockPage.clickSearchButton("Viet");
             Assert.assertFalse(driver.findElements(By.xpath("//ul[@class='checkbox-group__list filter-stars__list']/li")).isEmpty()
                                         && !driver.findElement(By.xpath("//div[text()='Звёздность отеля']")).isDisplayed());
@@ -89,10 +88,10 @@ public class StartSearchBlockPageTest {
         @Test
         public void correctFindTurkeyToursOnNotDefaultStartPlace(){
             startSearchBlockPage.clickCountryInput()
-                    .clickGettingPopularCountry(startSearchBlockPage.getPopularCountry(5))
-                    .clickCalendarInput()
-                    .selectCalendarDate(startSearchBlockPage.getCalendarDateForWholeYear(4, 2, 2))
-                    .clickStartPlaceInput()
+                    .clickGettingPopularCountry(5);
+            startSearchBlockPage.clickCalendarInput()
+                    .selectCalendarDate(4, 2, 2);
+            startSearchBlockPage.clickStartPlaceInput()
                     .clearStartPlaceInput()
                     .clickSelectingStartPlace("Самара");
             RussiaPage russiaPage = (RussiaPage) startSearchBlockPage.clickSearchButton("Rus");
@@ -102,16 +101,16 @@ public class StartSearchBlockPageTest {
         @Test
         public void correctFindRussiaToursComplete(){
         startSearchBlockPage.clickCountryInput()
-                .clickGettingPopularCountry(startSearchBlockPage.getPopularCountry(5))
+                .clickGettingPopularCountry(5)
                 .clickCalendarInput()
-                .clickAdd2Days()
-                .selectCalendarDate(startSearchBlockPage.getCalendarDateForWholeYear(4, 2, 1))
-                .clickCountOfNights()
-                .plusNight()
-                .minusNight()
-                .add2Nights(true)
-                .clickCountOfPassengers()
-                .selectVariationAddChild(startSearchBlockPage.getVariableAddChildren(9))
+                .clickAdd2Days();
+        startSearchBlockPage.selectCalendarDate(4, 2, 1);
+        startSearchBlockPage.clickCountOfNights();
+        startSearchBlockPage.plusNight();
+        startSearchBlockPage.minusNight();
+        startSearchBlockPage.add2Nights(true)
+                .clickCountOfPassengers();
+        startSearchBlockPage.selectVariationAddChild(9)
                 .clickStartPlaceInput()
                 .clearStartPlaceInput()
                 .clickSelectingStartPlace("Самара");
@@ -135,11 +134,11 @@ public class StartSearchBlockPageTest {
                 e.printStackTrace();
             }
             startSearchBlockPage.clickCalendarInput()
-                    .selectCalendarDate(startSearchBlockPage.getCalendarDateForWholeYear(3, 2, 2))
-                    .clickCountOfNights()
-                    .add2Nights(true)
-                    .clickCountOfPassengers()
-                    .selectVariationAddChild(startSearchBlockPage.getVariableAddChildren(3));
+                    .selectCalendarDate(3, 2, 2);
+            startSearchBlockPage.clickCountOfNights();
+            startSearchBlockPage.add2Nights(true)
+                    .clickCountOfPassengers();
+            startSearchBlockPage.selectVariationAddChild(3);
                     ItalyPage italyPage = (ItalyPage) startSearchBlockPage.clickSearchButton("Ita");
                     Assert.assertEquals("Загружаем туры в Рим, Италия", italyPage.getTextLoadingHeading());
         }
@@ -147,8 +146,8 @@ public class StartSearchBlockPageTest {
         @Test
         public void tryFindToursWithEmptyCountryField() {
             startSearchBlockPage.clickConfirmButtonWithAnyEmptyFields();
-            Assert.assertNotNull(startSearchBlockPage.getErrors());
-            Assert.assertFalse(startSearchBlockPage.getErrors().isEmpty());
+//            Assert.assertNotNull(startSearchBlockPage.getErrors());
+//            Assert.assertFalse(startSearchBlockPage.getErrors().isEmpty());
             Assert.assertTrue(startSearchBlockPage.isErrorVisible("Куда бы вы хотели полететь?"));
         }
 
@@ -156,8 +155,8 @@ public class StartSearchBlockPageTest {
         public void tryFindToursWithNoCreateCountry() {
             startSearchBlockPage.writeAnyCountryName("SomePlace")
                                 .clickConfirmButtonWithAnyEmptyFields();
-            Assert.assertNotNull(startSearchBlockPage.getErrors());
-            Assert.assertFalse(startSearchBlockPage.getErrors().isEmpty());
+//            Assert.assertNotNull(startSearchBlockPage.getErrors());
+//            Assert.assertFalse(startSearchBlockPage.getErrors().isEmpty());
             Assert.assertTrue(startSearchBlockPage.isErrorVisible("Куда бы вы хотели полететь?"));
         }
 

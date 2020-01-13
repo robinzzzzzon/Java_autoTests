@@ -34,7 +34,7 @@ public class CountryMapBlockPageSerenityTest {
     }
 
     @Test
-    public void clickTheaterAndShops(){
+    public void checkResultOfTheaterAndShops(){
         steps.openPage();
         steps.clickMaximizeButton();
         steps.clickShoppingButton();

@@ -152,7 +152,7 @@ public class StartHeaderBlockSteps {
     }
 
     ///////////////////////////////////////////////////////////
-
+    //Стэпы-хэлперы:
     @Step
     public String getWindowHandle(){
        return page.getDriver().getWindowHandle();
@@ -174,6 +174,8 @@ public class StartHeaderBlockSteps {
         }
     }
 
+    //////////////////////////////////////////////////////////////
+    //Проверочные стэпы:
     @Step
     public void checkEqualStringsByPressPage(String anyString){
         Assertions.assertThat(pressPage.getHeading()).isEqualTo(anyString);

@@ -4,13 +4,9 @@ import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFilters
 
 import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.ItalyPage;
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartSearchBlockPage;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class StartSearchBlockSteps {
 
@@ -34,28 +30,13 @@ public class StartSearchBlockSteps {
     }
 
     @Step
-    public WebElement getPopularCountry(int elementNumber){
-        return page.getPopularCountry(elementNumber);
+    public void clickGettingPopularCountry(int number){
+        page.clickGettingPopularCountry(number);
     }
 
     @Step
-    public void clickGettingPopularCountry(WebElement webElement){
-        page.clickGettingPopularCountry(webElement);
-    }
-
-    @Step
-    public WebElement getWholeCountry(int elementNumber){
-        return page.getWholeCountry(elementNumber);
-    }
-
-    @Step
-    public void clickGettingWholeCountry(WebElement webElement){
-        page.clickGettingWholeCountry(webElement);
-    }
-
-    @Step
-    public List<WebElementFacade> getErrorList(){
-        return page.getErrors();
+    public void clickGettingWholeCountry(int number){
+        page.clickGettingWholeCountry(number);
     }
 
     @Step
@@ -74,18 +55,13 @@ public class StartSearchBlockSteps {
     }
 
     @Step
-    public WebElement getCalendarDateForWholeYear(int row, int column, int countSwitch){
-        return page.getCalendarDateForWholeYear(row, column, countSwitch);
-    }
-
-    @Step
     public void clickAdd2Days(){
         page.clickAdd2Days();
     }
 
     @Step
-    public void selectCalendarDate(WebElement webElement){
-        page.selectCalendarDate(webElement);
+    public void selectCalendarDate(int row, int column, int countSwitch){
+        page.selectCalendarDate(row, column, countSwitch);
     }
 
     @Step
@@ -114,18 +90,8 @@ public class StartSearchBlockSteps {
     }
 
     @Step
-    public void addChildren(){
-        page.addChildren();
-    }
-
-    @Step
-    public WebElement getVariableAddChildren(int variationChild){
-        return page.getVariableAddChildren(variationChild);
-    }
-
-    @Step
-    public void selectVariationAddChild(WebElement webElement){
-        page.selectVariationAddChild(webElement);
+    public void selectVariationAddChild(int childNumber){
+        page.selectVariationAddChild(childNumber);
     }
 
     @Step

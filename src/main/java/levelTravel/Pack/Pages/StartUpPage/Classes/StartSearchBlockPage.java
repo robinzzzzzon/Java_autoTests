@@ -7,7 +7,6 @@ import levelTravel.Pack.Pages.HelperClass.CountryFactory;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Searchable;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -36,23 +35,25 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
         return this;
     }
 
-    public WebElement getPopularCountry(int elementNumber){
+    private WebElement getPopularCountry(int elementNumber){
         List<WebElementFacade> webElements = findAll(popularCountriesList);
         return webElements.get(elementNumber - 1);
     }
 
-    public StartSearchBlockPage clickGettingPopularCountry(@NotNull WebElement webElement){
-        webElement.click();
+    public StartSearchBlockPage clickGettingPopularCountry(int number){
+        WebElement element = getPopularCountry(number);
+        element.click();
         return this;
     }
 
-    public WebElement getWholeCountry(int elementNumber){
+    private WebElement getWholeCountry(int elementNumber){
         List<WebElementFacade> webElements = findAll(wholeCountriesList);
         return webElements.get(elementNumber - 1);
     }
 
-    public StartSearchBlockPage clickGettingWholeCountry(@NotNull WebElement webElement){
-        webElement.click();
+    public StartSearchBlockPage clickGettingWholeCountry(int number){
+        WebElement element = getWholeCountry(number);
+        element.click();
         return this;
     }
 
@@ -60,7 +61,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //Работаем со списком ошибок на странице:
 
     //Получаем лист объектов класса Error:
-    public List<WebElementFacade> getErrors () {
+    private List<WebElementFacade> getErrors() {
         return findAll(errorListByClass);
     }
 
@@ -110,7 +111,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
     //Параметризованный метод со входом countSwitch =< 3 для каждого месяца.
-    public WebElement getCalendarDateForWholeYear(int row, int column, int countSwitch){
+    private WebElement getCalendarDateForWholeYear(int row, int column, int countSwitch){
 
         int month = getCurrentParseMonth();
         clickSwitchToNextMonth(countSwitch);
@@ -146,32 +147,28 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
 
-    public StartSearchBlockPage clickAdd2Days(){
+    public void clickAdd2Days(){
         find(add2days).click();
-        return this;
     }
 
-    public StartSearchBlockPage selectCalendarDate(@NotNull WebElement webElement){
-        webElement.click();
-        return this;
+    public void selectCalendarDate(int row, int column, int countSwitch){
+        WebElement calendarElement = getCalendarDateForWholeYear(row, column, countSwitch);
+        calendarElement.click();
     }
 
     ////////////////////////////////////////////////////////////////////////////////
     //Работа с полем выбора периода кол-ва ночей:
 
-    public StartSearchBlockPage clickCountOfNights(){
+    public void clickCountOfNights(){
         find(dayIntervalDD).click();
-        return this;
     }
 
-    public StartSearchBlockPage minusNight(){
+    public void minusNight(){
         find(minusDay).click();
-        return this;
     }
 
-    public StartSearchBlockPage plusNight(){
+    public void plusNight(){
         find(plusDay).click();
-        return this;
     }
 
     public StartSearchBlockPage add2Nights(boolean b){
@@ -185,23 +182,23 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     /////////////////////////////
     //Выбираем кол-во пассажиров:
 
-    public StartSearchBlockPage clickCountOfPassengers(){
+    public void clickCountOfPassengers(){
         find(countOfPassengersDD).click();
-        return this;
     }
 
-    public void addChildren(){
+    private void addChildren(){
         find(addChildrenDD).click();
     }
 
-    public WebElement getVariableAddChildren(int variationChild){
+    private WebElement getVariableAddChildren(int variationChild){
         addChildren();
         List<WebElementFacade> webElements = findAll(childVaryingList);
         return webElements.get(variationChild);
     }
 
-    public StartSearchBlockPage selectVariationAddChild(@NotNull WebElement webElement){
-        webElement.click();
+    public StartSearchBlockPage selectVariationAddChild(int childNumber){
+        WebElement element = getVariableAddChildren(childNumber);
+        element.click();
         return this;
     }
 
