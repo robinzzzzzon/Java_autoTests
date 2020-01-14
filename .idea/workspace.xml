@@ -3,25 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8ce6c161-a611-476c-8784-6816a50f1c07" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Interfaces/Searchable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Interfaces/Searchable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartHeaderBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartHeaderBlockSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartSearchBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartSearchBlockSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryMapBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryMapBlockPageSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/StartSearchBlockPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/StartSearchBlockPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/MoreDifficultyTests/GetResultContentTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Interfaces/Searchable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Interfaces/Searchable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartHeaderBlockSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartHeaderBlockSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartSearchBlockSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartSearchBlockSteps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/serenity/browser-firefox.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/browser-firefox.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryMapBlockPageSerenityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryMapBlockPageSerenityTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/StartSearchBlockPageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/StartSearchBlockPageTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/MoreDifficultyTests/GetResultContentTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,55 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StartSearchBlockPageSerenityTest.correctFindTurkeyToursNotDefCountPassengers">
-    <configuration name="CountryFiltersBlockPageSerenityTest.selectMomentConfirmationTours" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mavenTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
-      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.CountryFiltersBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="selectMomentConfirmationTours" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CountryFiltersBlockPageSerenityTest.tourOperatorsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mavenTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
-      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.CountryFiltersBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="tourOperatorsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CountryFiltersBlockPageSerenityTest.waterGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mavenTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
-      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.CountryFiltersBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="waterGameTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.StartSearchBlockPageSerenityTest.searchToursWithMaxCountPassAddMaxCountChild">
     <configuration name="StartSearchBlockPageSerenityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
@@ -147,13 +83,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StartSearchBlockPageSerenityTest.searchToursWithDateInterval" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mavenTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
+      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartSearchBlockPageSerenityTest" />
+      <option name="METHOD_NAME" value="searchToursWithDateInterval" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartSearchBlockPageSerenityTest.searchToursWithMaxCountPassAddMaxCountChild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mavenTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
+      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartSearchBlockPageSerenityTest" />
+      <option name="METHOD_NAME" value="searchToursWithMaxCountPassAddMaxCountChild" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartSearchBlockPageSerenityTest.searchToursWithNoDefaultDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mavenTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
+      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartSearchBlockPageSerenityTest" />
+      <option name="METHOD_NAME" value="searchToursWithNoDefaultDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.correctFindTurkeyToursNotDefCountPassengers" />
+        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.searchToursWithMaxCountPassAddMaxCountChild" />
+        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.searchToursWithDateInterval" />
+        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.searchToursWithNoDefaultDate" />
         <item itemvalue="JUnit.StartSearchBlockPageSerenityTest" />
-        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectMomentConfirmationTours" />
-        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.waterGameTest" />
-        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.tourOperatorsTest" />
+        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.correctFindTurkeyToursNotDefCountPassengers" />
       </list>
     </recent_temporary>
   </component>
