@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8ce6c161-a611-476c-8784-6816a50f1c07" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Interfaces/Searchable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Interfaces/Searchable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartSearchBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartSearchBlockSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Interfaces/Searchable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Interfaces/Searchable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartSearchBlockSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartSearchBlockSteps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/serenity/browser-firefox.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/browser-firefox.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.class" afterDir="false" />
     </list>
@@ -51,8 +57,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StartSearchBlockPageSerenityTest.searchToursWithMaxCountPassAddMaxCountChild">
-    <configuration name="StartSearchBlockPageSerenityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StartSearchBlockPageSerenityTest.searchToursWithMinCountNights">
+    <configuration name="StartSearchBlockPageSerenityTest.correctFindRussiaToursComplete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
         <pattern>
@@ -62,22 +68,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
       <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartSearchBlockPageSerenityTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StartSearchBlockPageSerenityTest.correctFindTurkeyToursNotDefCountPassengers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mavenTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
-      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartSearchBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="correctFindTurkeyToursNotDefCountPassengers" />
+      <option name="METHOD_NAME" value="correctFindRussiaToursComplete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,6 +90,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StartSearchBlockPageSerenityTest.searchToursWithMaxCountNights" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mavenTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
+      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartSearchBlockPageSerenityTest" />
+      <option name="METHOD_NAME" value="searchToursWithMaxCountNights" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StartSearchBlockPageSerenityTest.searchToursWithMaxCountPassAddMaxCountChild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
@@ -115,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StartSearchBlockPageSerenityTest.searchToursWithNoDefaultDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StartSearchBlockPageSerenityTest.searchToursWithMinCountNights" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
         <pattern>
@@ -125,7 +132,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
       <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartSearchBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="searchToursWithNoDefaultDate" />
+      <option name="METHOD_NAME" value="searchToursWithMinCountNights" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.searchToursWithMinCountNights" />
+        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.searchToursWithMaxCountNights" />
+        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.correctFindRussiaToursComplete" />
         <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.searchToursWithMaxCountPassAddMaxCountChild" />
         <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.searchToursWithDateInterval" />
-        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.searchToursWithNoDefaultDate" />
-        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest" />
-        <item itemvalue="JUnit.StartSearchBlockPageSerenityTest.correctFindTurkeyToursNotDefCountPassengers" />
       </list>
     </recent_temporary>
   </component>

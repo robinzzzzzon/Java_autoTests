@@ -150,8 +150,7 @@ public class StartSearchBlockPageSerenityTest {
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(5);
         steps.clickCountOfPassengers();
-        steps.plusPassenger();
-        steps.plusPassenger();
+        steps.addMaxPassenger(true);
         steps.selectVariationAddChild(1);
         steps.selectVariationAddChild(8);
         steps.selectVariationAddChild(17);
@@ -159,17 +158,28 @@ public class StartSearchBlockPageSerenityTest {
         steps.checkGetToursList();
     }
 
-    @Test //Переделать
-    public void correctFindTurkeyToursOnNotDefaultNights(){
+    @Test
+    public void searchToursWithMaxCountNights(){
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(4);
-        steps.clickCalendarInput();
-        steps.selectCalendarDate(3, 2, 3);
         steps.clickCountOfNights();
-        steps.minusNight();
+        steps.addMaxCountNights(true);
         steps.add2Nights(true);
         steps.clickSearchButton("Viet");
+        steps.isVisibleHotelStarsList();
+    }
+
+    @Test
+    public void searchToursWithMinCountNights(){
+        steps.openPage();
+        steps.clickCountryInput();
+        steps.clickGettingPopularCountry(4);
+        steps.clickCountOfNights();
+        steps.addMinCountNights(true);
+        steps.add2Nights(true);
+        steps.clickSearchButton("Viet");
+        //steps.checkVisibleHeadingOfEmptyToursList("Именно таких туров не нашлось");
         steps.isVisibleHotelStarsList();
     }
 
@@ -217,6 +227,4 @@ public class StartSearchBlockPageSerenityTest {
         steps.clickSearchButton("Rus");
         steps.isEnabledSearchInput();
     }
-
-    //Завтра дописать сюда тесты с мин. кол-вом дней и ветвлением на country странице!
 }

@@ -30,28 +30,28 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
         return this;
     }
 
-    public StartSearchBlockPage clickCountryInput(){
+    public StartSearchBlockPage clickCountryInput() {
         find(searchCountryInput).click();
         return this;
     }
 
-    private WebElement getPopularCountry(int elementNumber){
+    private WebElement getPopularCountry(int elementNumber) {
         List<WebElementFacade> webElements = findAll(popularCountriesList);
         return webElements.get(elementNumber - 1);
     }
 
-    public StartSearchBlockPage clickGettingPopularCountry(int number){
+    public StartSearchBlockPage clickGettingPopularCountry(int number) {
         WebElement element = getPopularCountry(number);
         element.click();
         return this;
     }
 
-    private WebElement getWholeCountry(int elementNumber){
+    private WebElement getWholeCountry(int elementNumber) {
         List<WebElementFacade> webElements = findAll(wholeCountriesList);
         return webElements.get(elementNumber - 1);
     }
 
-    public StartSearchBlockPage clickGettingWholeCountry(int number){
+    public StartSearchBlockPage clickGettingWholeCountry(int number) {
         WebElement element = getWholeCountry(number);
         element.click();
         return this;
@@ -66,7 +66,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
     //Получает текст ошибки по номеру объекта ошибки из колекции:
-    public String getErrorByText (int number) {
+    public String getErrorByText(int number) {
         return getErrors().get(number - 1).getText();
     }
 
@@ -81,13 +81,13 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     /////////////////////////////
     //Работа с календарем и выбором даты:
 
-    public StartSearchBlockPage clickCalendarInput(){
+    public StartSearchBlockPage clickCalendarInput() {
         find(calendarInput).click();
         return this;
     }
 
     //Метод для  пролистывания месяцев календаря:
-    private void clickSwitchToNextMonth(int countMonth){
+    private void clickSwitchToNextMonth(int countMonth) {
         for (int i = 0; i < countMonth; i++) {
             find(switchToNextMonth).click();
         }
@@ -96,7 +96,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //Метод, в котором на входе задаем номер строки/столбца и номер месяца
     //Далее мы помещаем в вэбэлемент найденный элемент таблицы и подаем его на вход в конструктор класса TableForStartSearchBlockPage.
     //В итоге возвращаем объект ввиде ячейки календаря.
-    private WebElement getCalendarDate(int row, int column, int setMonthNumber){
+    private WebElement getCalendarDate(int row, int column, int setMonthNumber) {
 
         WebElement element = find(By.xpath(String.format(calendarTBody, setMonthNumber)));
         TableForStartSearchBlockPage tableForStartSearchBlockPage = new TableForStartSearchBlockPage(element);
@@ -104,19 +104,19 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
     //Метод получает текущее значение месяца, парсит его и возвращает инт.
-    private int getCurrentParseMonth(){
+    private int getCurrentParseMonth() {
         Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new  SimpleDateFormat("MM");
-         return Integer.parseInt(simpleDateFormat.format(date));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM");
+        return Integer.parseInt(simpleDateFormat.format(date));
     }
 
     //Параметризованный метод со входом countSwitch =< 3 для каждого месяца.
-    private WebElement getCalendarDateForWholeYear(int row, int column, int countSwitch){
+    private WebElement getCalendarDateForWholeYear(int row, int column, int countSwitch) {
 
         int month = getCurrentParseMonth();
         clickSwitchToNextMonth(countSwitch);
 
-        if(month == 12){
+        if (month == 12) {
             return getCalendarDate(row, column, countSwitch);
         } else if (month == 11) {
             if (countSwitch == 1) return getCalendarDate(row, column, countSwitch + 11);
@@ -127,53 +127,73 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
             else if (countSwitch == 2) return getCalendarDate(row, column, countSwitch + 10);
             else if (countSwitch == 3) return getCalendarDate(row, column, countSwitch - 2);
         } else if (month == 9) {
-            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3) return getCalendarDate(row, column, countSwitch + 9);
+            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3)
+                return getCalendarDate(row, column, countSwitch + 9);
         } else if (month == 8) {
-            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3) return getCalendarDate(row, column, countSwitch + 8);
+            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3)
+                return getCalendarDate(row, column, countSwitch + 8);
         } else if (month == 7) {
-            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3) return getCalendarDate(row, column, countSwitch + 7);
+            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3)
+                return getCalendarDate(row, column, countSwitch + 7);
         } else if (month == 6) {
-            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3) return getCalendarDate(row, column, countSwitch + 6);
+            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3)
+                return getCalendarDate(row, column, countSwitch + 6);
         } else if (month == 5) {
-            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3) return getCalendarDate(row, column, countSwitch + 5);
+            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3)
+                return getCalendarDate(row, column, countSwitch + 5);
         } else if (month == 4) {
-            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3) return getCalendarDate(row, column, countSwitch + 4);
+            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3)
+                return getCalendarDate(row, column, countSwitch + 4);
         } else if (month == 3) {
-            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3) return getCalendarDate(row, column, countSwitch + 3);
+            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3)
+                return getCalendarDate(row, column, countSwitch + 3);
         } else if (month == 2) {
-            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3) return getCalendarDate(row, column, countSwitch + 2);
+            if (countSwitch == 1 || countSwitch == 2 || countSwitch == 3)
+                return getCalendarDate(row, column, countSwitch + 2);
         }
-            return getCalendarDate(row, column, countSwitch + 1);
+        return getCalendarDate(row, column, countSwitch + 1);
     }
 
-
-    public void clickAdd2Days(){
-        find(add2days).click();
-    }
-
-    public void selectCalendarDate(int row, int column, int countSwitch){
+    public void selectCalendarDate(int row, int column, int countSwitch) {
         WebElement calendarElement = getCalendarDateForWholeYear(row, column, countSwitch);
         calendarElement.click();
     }
 
+    public void clickAdd2Days() {
+        find(add2days).click();
+    }
     ////////////////////////////////////////////////////////////////////////////////
     //Работа с полем выбора периода кол-ва ночей:
 
-    public void clickCountOfNights(){
+    public void clickCountOfNights() {
         find(dayIntervalDD).click();
     }
 
-    public void minusNight(){
+    public void minusNight() {
         find(minusDay).click();
     }
 
-    public void plusNight(){
+    public void plusNight() {
         find(plusDay).click();
     }
 
-    public StartSearchBlockPage add2Nights(boolean b){
+    public void addMaxCountNights(boolean b) {
+        WebElement element = find(plusDay);
+        do{
+            element.click();
+        } while (!element.getAttribute("class").equals("add disabled") == b);
+    }
+
+    public void addMinCountNights(boolean b) {
+        WebElement element = find(minusDay);
+        do{
+            element.click();
+        } while (!element.getAttribute("class").equals("subtract disabled") == b);
+    }
+
+    public StartSearchBlockPage add2Nights(boolean b) {
         WebElement element = find(plusOrMinus2Days);
-        if (!element.isSelected() == b){
+        if (!element.isSelected() == b) {
             element.click();
         }
         return this;
@@ -182,59 +202,66 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     /////////////////////////////
     //Выбираем кол-во пассажиров:
 
-    public void clickCountOfPassengers(){
+    public void clickCountOfPassengers() {
         find(countOfPassengersDD).click();
     }
 
-    private void addChildren(){
+    private void addChildren() {
         find(addChildrenDD).click();
     }
 
-    private WebElement getVariableAddChildren(int variationChild){
+    private WebElement getVariableAddChildren(int variationChild) {
         addChildren();
         List<WebElementFacade> webElements = findAll(childVaryingList);
         return webElements.get(variationChild);
     }
 
-    public StartSearchBlockPage selectVariationAddChild(int childNumber){
+    public StartSearchBlockPage selectVariationAddChild(int childNumber) {
         WebElement element = getVariableAddChildren(childNumber);
         element.click();
         return this;
     }
 
-    public StartSearchBlockPage minusPassenger(){
+    public StartSearchBlockPage minusPassenger() {
         find(minusPassenger).click();
         return this;
     }
 
-    public StartSearchBlockPage plusPassenger(){
+    public StartSearchBlockPage plusPassenger() {
         find(plusPassenger).click();
         return this;
+    }
+
+    public void addMaxPassenger(boolean b) {
+        WebElement element = find(plusPassenger);
+        do{
+            element.click();
+        } while (!element.getAttribute("class").equals("add disabled") == b);
     }
 
     /////////////////////////////////
     //Выбираем стартовую точку вылета:
 
-    public StartSearchBlockPage clickStartPlaceInput(){
+    public StartSearchBlockPage clickStartPlaceInput() {
         find(startPlaceInput).click();
         return this;
     }
 
     //Метод для очищения дефолтного значения "Москва":
-    public StartSearchBlockPage clearStartPlaceInput(){
+    public StartSearchBlockPage clearStartPlaceInput() {
         find(startPlaceInput).sendKeys(Keys.chord(Keys.CONTROL) + "a");
         find(startPlaceInput).sendKeys(Keys.BACK_SPACE);
         return this;
     }
 
 
-    public StartSearchBlockPage writeStartPlaceInput(String anyString){
+    public StartSearchBlockPage writeStartPlaceInput(String anyString) {
         find(startPlaceInput).sendKeys(anyString);
         return this;
     }
 
     //Метод для выбора любого значения из списка дропдауна городов для вылета, с заданием ожидания до отображения элемента на странице:
-    public StartSearchBlockPage clickSelectingStartPlace(String startPlace){
+    public StartSearchBlockPage clickSelectingStartPlace(String startPlace) {
         new WebDriverWait(getDriver(), 5).until(visibilityOfElementLocated(By.xpath(String.format(startPlaceList, startPlace)))).click();
         return this;
     }
@@ -244,12 +271,12 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //В возвращаемое значение передаем новый экземпляр класса-хелпера с паттерном Factory,
     // который нам создает уже нужный объект страницы нашей страны:
 
-    public CountryPage clickSearchButton(String countryName){
+    public CountryPage clickSearchButton(String countryName) {
         find(searchButton).click();
         return new CountryFactory().createCountry(countryName);
     }
 
-    public void clickConfirmButtonWithAnyEmptyFields(){
+    public void clickConfirmButtonWithAnyEmptyFields() {
         find(searchButton).click();
     }
 

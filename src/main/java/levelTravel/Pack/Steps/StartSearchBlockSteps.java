@@ -80,6 +80,16 @@ public class StartSearchBlockSteps {
     }
 
     @Step
+    public void addMaxCountNights(boolean b){
+        page.addMaxCountNights(b);
+    }
+
+    @Step
+    public void addMinCountNights(boolean b){
+        page.addMinCountNights(b);
+    }
+
+    @Step
     public void add2Nights(boolean b){
         page.add2Nights(b);
     }
@@ -102,6 +112,11 @@ public class StartSearchBlockSteps {
     @Step
     public void plusPassenger(){
         page.plusPassenger();
+    }
+
+    @Step
+    public void addMaxPassenger(boolean b){
+        page.addMaxPassenger(b);
     }
 
     @Step
@@ -175,6 +190,11 @@ public class StartSearchBlockSteps {
     @Step
     public void checkVisibleErrorByAnyEmptyRequiredField(){
         Assertions.assertThat(page.isErrorVisible("Куда бы вы хотели полететь?")).isTrue();
+    }
+
+    @Step
+    public void checkVisibleHeadingOfEmptyToursList(String s){
+        Assertions.assertThat(page.find("//div[@class='empty-search-title']").getText()).isEqualTo(s);
     }
 
 }

@@ -1,13 +1,8 @@
 package levelTravel.Pack.Pages.StartUpPage.Interfaces;
 
-import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartSearchBlockPage;
-import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import java.util.List;
 
 
 public interface Searchable {
@@ -22,8 +17,8 @@ public interface Searchable {
     By add2days = By.xpath("//span[@data-reactid='.0.0.0.0.1.2.0.2.1.0.1']");
     ///////////////////////
     By dayIntervalDD = By.xpath("//span[text()='7 ночей']");
-    By minusDay = By.xpath("//div[@data-reactid='.0.0.0.0.2.2']//i");
-    By plusDay = By.xpath("//div[@data-reactid='.0.0.0.0.2.2.0.2']/i");
+    By minusDay = By.xpath("//div[@data-reactid='.0.0.0.0.2.2.0.0']");
+    By plusDay = By.xpath("//div[@data-reactid='.0.0.0.0.2.2.0.2']");
     By plusOrMinus2Days = By.xpath("//span[@data-reactid='.0.0.0.0.2.2.2.0.1']");
     ////////////////////////
     By countOfPassengersDD = By.xpath("//div[text()='2 взрослых']");
@@ -42,53 +37,59 @@ public interface Searchable {
 
 
     /////////////////////////////
-    public StartSearchBlockPage writeAnyCountryName(String anyPlace);
+    StartSearchBlockPage writeAnyCountryName(String anyPlace);
 
-    public StartSearchBlockPage clickCountryInput();
+    StartSearchBlockPage clickCountryInput();
 
-    public StartSearchBlockPage clickGettingPopularCountry(int number);
+    StartSearchBlockPage clickGettingPopularCountry(int number);
 
-    public StartSearchBlockPage clickGettingWholeCountry(int number);
-
-    /////////////////////////////
-
-    public boolean isErrorVisible(String message);
+    StartSearchBlockPage clickGettingWholeCountry(int number);
 
     /////////////////////////////
-    public StartSearchBlockPage clickCalendarInput();
 
-    public void clickAdd2Days();
-
-    public void selectCalendarDate(int row, int column, int countSwitch);
-
-    ////////////////////////////////////////////////////////////////////////////////
-    public void clickCountOfNights();
-
-    public void minusNight();
-
-    public void plusNight();
-
-    public StartSearchBlockPage add2Nights(boolean b);
+    boolean isErrorVisible(String message);
 
     /////////////////////////////
-    public void clickCountOfPassengers();
+    StartSearchBlockPage clickCalendarInput();
 
-    public StartSearchBlockPage selectVariationAddChild(int childNumber);
+    void clickAdd2Days();
 
-    public StartSearchBlockPage minusPassenger();
+    void selectCalendarDate(int row, int column, int countSwitch);
 
-    public StartSearchBlockPage plusPassenger();
+    /////////////////////////////////////////////////////////////////////////
+    void clickCountOfNights();
 
-    public StartSearchBlockPage clickStartPlaceInput();
+    void minusNight();
 
-    public StartSearchBlockPage clearStartPlaceInput();
+    void plusNight();
 
-    public StartSearchBlockPage writeStartPlaceInput(String anyString);
+    void addMaxCountNights(boolean b);
 
-    public StartSearchBlockPage clickSelectingStartPlace(String startPlace);
+    void addMinCountNights(boolean b);
+
+    StartSearchBlockPage add2Nights(boolean b);
+
+    //////////////////////
+    void clickCountOfPassengers();
+
+    StartSearchBlockPage selectVariationAddChild(int childNumber);
+
+    StartSearchBlockPage minusPassenger();
+
+    StartSearchBlockPage plusPassenger();
+
+    void addMaxPassenger(boolean b);
+
+    StartSearchBlockPage clickStartPlaceInput();
+
+    StartSearchBlockPage clearStartPlaceInput();
+
+    StartSearchBlockPage writeStartPlaceInput(String anyString);
+
+    StartSearchBlockPage clickSelectingStartPlace(String startPlace);
 
     //////////////////////////////////////
-    public CountryPage clickSearchButton(String countryName);
+    CountryPage clickSearchButton(String countryName);
 
-    public void clickConfirmButtonWithAnyEmptyFields();
+    void clickConfirmButtonWithAnyEmptyFields();
 }
