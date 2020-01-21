@@ -19,7 +19,7 @@ public class StartBestPriceSerenityTest {
 
 
     @Test
-    public void selectAnyStartCity(){
+    public void selectAnyStartCity() {
         steps.openPage();
         steps.clickCityStartDD();
         steps.selectAnyStartCity(3);
@@ -27,21 +27,43 @@ public class StartBestPriceSerenityTest {
     }
 
     @Test
-    public void selectAnyCountOfNights(){
+    public void selectLastStartCity() {
+        steps.openPage();
+        steps.clickCityStartDD();
+        steps.selectLastCity();
+        steps.checkGraphIsNotEmpty();
+    }
+
+    @Test
+    public void selectMinCountOfNights() {
+        steps.openPage();
+        steps.selectAnyCountOfNights(1);
+        steps.checkGraphIsNotEmpty();
+    }
+
+    @Test
+    public void selectMaxCountOfNights() {
         steps.openPage();
         steps.selectAnyCountOfNights(4);
-        steps.checkGraphIsEmpty();
+        steps.checkGraphIsNotEmpty();
     }
 
     @Test
-    public void selectAnyCountry(){
+    public void selectAnyCountryFromStartList() {
         steps.openPage();
-        steps.selectAnyCountry(2);
-        steps.checkGraphSize(10);
+        steps.selectAnyCountry(3);
+        steps.checkGraphSize(0);
     }
 
     @Test
-    public void selectAnyPriceOfGraph(){
+    public void selectAnyCountryFromInvisibleList() {
+        steps.openPage();
+        steps.selectAnyCountry(20);
+        steps.checkGraphSize(0);
+    }
+
+    @Test
+    public void selectAnyPriceOfGraph() {
         steps.openPage();
         steps.getThisWindowHandle();
         steps.selectAnyPriceOfGraph(7, "Turk");

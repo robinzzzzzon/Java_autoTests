@@ -47,7 +47,7 @@ public class StartMessengerBlockSteps {
 
     @Step
     public void switchBack(){
-        page.switchBack();
+            page.getDriver().navigate().back();
     }
 
     @Step

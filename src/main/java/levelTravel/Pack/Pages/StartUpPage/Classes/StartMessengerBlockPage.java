@@ -10,37 +10,33 @@ import org.openqa.selenium.WebElement;
 @DefaultUrl("https://level.travel/")
 public class StartMessengerBlockPage extends AbstractBasePage implements Messengerable {
 
-    public StartMessengerBlockPage getBigHeadingText(){
+    public WebElement getHeading() {
+        return find(bigHeading);
+    }
+
+    public StartMessengerBlockPage getBigHeadingText() {
         find(bigHeading).getText();
         return this;
     }
 
-    public GooglePlayPage moveToGooglePlayPage(){
+    public GooglePlayPage moveToGooglePlayPage() {
         find(googlePlayLink).click();
         return new GooglePlayPage();
     }
 
-    public AppStorePage moveToAppStorePage(){
+    public AppStorePage moveToAppStorePage() {
         find(appStoreLink).click();
         return new AppStorePage();
     }
 
-    public StartMessengerBlockPage getHowItWorksBanner(){
+    public StartMessengerBlockPage getHowItWorksBanner() {
         find(howItWorksLink).click();
         return this;
     }
 
-    public StartMessengerBlockPage closeHowItWorksBanner(){
+    public StartMessengerBlockPage closeHowItWorksBanner() {
         find(closeHowItWorksLink).click();
         return this;
-    }
-
-    public void switchBack(){
-        getDriver().navigate().back();
-    }
-
-    public WebElement getHeading(){
-        return find(bigHeading);
     }
 
 }

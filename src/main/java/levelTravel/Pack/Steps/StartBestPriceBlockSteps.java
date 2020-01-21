@@ -27,6 +27,11 @@ public class StartBestPriceBlockSteps {
     }
 
     @Step
+    public void selectLastCity(){
+        page.selectLastStartCity();
+    }
+
+    @Step
     public void selectAnyCountOfNights(int number){
         page.selectAnyCountOfNights(number);
     }
@@ -41,13 +46,15 @@ public class StartBestPriceBlockSteps {
         page.selectAnyPriceOfGraph(number, countryName);
     }
 
+    ////////////////////////////////////////////////////////
+
     @Step
     public void checkVisibleElementOfStartCity(int number){
         Assertions.assertThat(page.findAll(By.xpath("//div[@class='ps-departures_input']//option")).get(number - 1).isVisible());
     }
 
     @Step
-    public void checkGraphIsEmpty(){
+    public void checkGraphIsNotEmpty(){
         Assertions.assertThat(!page.findAll(By.xpath("//div[@class='price-stat-columns-wrap']//a")).isEmpty());
     }
 

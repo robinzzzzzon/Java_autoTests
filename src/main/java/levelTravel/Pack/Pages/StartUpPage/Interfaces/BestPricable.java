@@ -6,7 +6,7 @@ import levelTravel.Pack.Pages.StartUpPage.Classes.StartBestPriceBlockPage;
 import org.openqa.selenium.By;
 
 
-public interface BestPricable{
+public interface BestPricable {
 
     By cityStartDD = By.xpath("//div[@class='ps-departures_input']");
     By cityStartList = By.xpath("//div[@class='ps-departures_input']//option");
@@ -25,6 +25,8 @@ public interface BestPricable{
 
     //////////////////////////////////////////////////////////////
     public StartBestPriceBlockPage selectAnyCountry(int number);
+
+    public StartBestPriceBlockPage selectLastStartCity();
 
     //////////////////////////////////////////////////////////////
     public CountryFiltersBlockPage selectAnyPriceOfGraph(int number, String countryName);

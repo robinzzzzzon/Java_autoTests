@@ -108,5 +108,4 @@ public class StartHeaderBlockPageSerenityTest {
         steps.compareRecallHeading("Или напишите нам в мессенджеры:");
     }
 
-
 }
