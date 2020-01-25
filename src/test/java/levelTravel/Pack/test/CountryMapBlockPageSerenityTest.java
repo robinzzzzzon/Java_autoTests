@@ -1,6 +1,6 @@
-package levelTravel.Pack.test.FragmentPageTest.SerenityTests;
+package levelTravel.Pack.test;
 
-import levelTravel.Pack.Steps.CountryMapBlockSteps;
+import levelTravel.Pack.Steps.CountrySteps.CountryMapBlockSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -18,14 +18,14 @@ public class CountryMapBlockPageSerenityTest {
     WebDriver driver;
 
     @Test
-    public void clickMaxButton(){
+    public void clickMaxButton() {
         steps.openPage();
         steps.clickMaximizeButton();
         steps.isCardEnable();
     }
 
     @Test
-    public void clickZoomInAndOut(){
+    public void clickZoomInAndOut() {
         steps.openPage();
         steps.clickMaximizeButton();
         steps.clickZoomIn();
@@ -34,7 +34,7 @@ public class CountryMapBlockPageSerenityTest {
     }
 
     @Test
-    public void checkResultOfTheaterAndShops(){
+    public void checkResultOfTheaterAndShops() {
         steps.openPage();
         steps.clickMaximizeButton();
         steps.clickShoppingButton();
@@ -43,7 +43,7 @@ public class CountryMapBlockPageSerenityTest {
     }
 
     @Test
-    public void selectDynamicGraphs(){
+    public void selectDynamicGraphs() {
         steps.openPage();
         steps.clickMaximizeButton();
         steps.selectAnyDynamicGraph(steps.getAnyDynamicGraph(3));

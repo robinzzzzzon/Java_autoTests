@@ -1,4 +1,4 @@
-package levelTravel.Pack.Steps;
+package levelTravel.Pack.Steps.CountrySteps;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryToursBlockPage;
 import levelTravel.Pack.Pages.HotelDescPage.HotelFirstDescPage;
@@ -11,97 +11,97 @@ public class CountryToursBlockSteps {
     HotelFirstDescPage firstDescPage;
 
     @Step
-    public void openPage(){
+    public void openPage() {
         page.open();
     }
 
     @Step
-    public void clickRecommendFilter(){
+    public void clickRecommendFilter() {
         page.clickRecommendFilter();
     }
 
     @Step
-    public void clickPriceFilter(){
+    public void clickPriceFilter() {
         page.clickPriceFilter();
     }
 
     @Step
-    public void clickRateFilter(){
+    public void clickRateFilter() {
         page.clickRateFilter();
     }
 
     @Step
-    public void clickFirstWishListButton(boolean b){
+    public void clickFirstWishListButton(boolean b) {
         page.clickFirstWishListButton(b);
     }
 
     @Step
-    public void clickAnyWishListButton(int number){
+    public void clickAnyWishListButton(int number) {
         page.clickAnyWishListButton(number);
     }
 
     @Step
-    public HotelFirstDescPage clickFirstExploreHotel(boolean b){
+    public HotelFirstDescPage clickFirstExploreHotel(boolean b) {
         return page.clickFirstExploreHotel(b);
     }
 
     @Step
-    public HotelFirstDescPage clickAnyExploreHotel(int number){
-       return page.clickAnyExploreHotel(number);
+    public HotelFirstDescPage clickAnyExploreHotel(int number) {
+        return page.clickAnyExploreHotel(number);
     }
 
     @Step
-    public HotelFirstDescPage clickFirstHotelPriceLink(boolean b){
+    public HotelFirstDescPage clickFirstHotelPriceLink(boolean b) {
         return page.clickFirstHotelPriceLink(b);
     }
 
     @Step
-    public HotelFirstDescPage clickAnyHotelPriceLink(int number){
+    public HotelFirstDescPage clickAnyHotelPriceLink(int number) {
         return page.clickAnyHotelPriceLink(number);
     }
 
     @Step
-    public String getAnyNameHotelText(int number){
+    public String getAnyNameHotelText(int number) {
         return page.getAnyNameHotelText(number);
     }
 
     @Step
-    public HotelFirstDescPage clickFirstNameHotelLink(boolean b){
+    public HotelFirstDescPage clickFirstNameHotelLink(boolean b) {
         return page.clickFirstNameHotelLink(b);
     }
 
     @Step
-    public HotelFirstDescPage clickAnyNameHotelLink(int number){
+    public HotelFirstDescPage clickAnyNameHotelLink(int number) {
         return page.clickAnyNameHotelLink(number);
     }
 
     //////////////////////////////////////////////////////////////////
 
     @Step
-    public void isEqualAttributeButtonBeforeAndAfterClick(){
+    public void isEqualAttributeButtonBeforeAndAfterClick() {
         String s = "sorting__link sorting__link--active";
         Assertions.assertThat(page.find("//button[text()='по рекомендации']").getAttribute("class")).isEqualTo(s);
     }
 
     @Step
-    public void checkSizeWishList(int number){
+    public void checkSizeWishList(int number) {
         Assertions.assertThat(page.findAll("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div[3]//a").size()).isEqualTo(number);
     }
 
     @Step
-    public void switchToNextHandle(){
+    public void switchToNextHandle() {
         for (String windowHandle : page.getDriver().getWindowHandles()) {
             page.getDriver().switchTo().window(windowHandle);
         }
     }
 
     @Step
-    public void isVisiblePriceButtonOnTheFirstDescPage(){
+    public void isVisiblePriceButtonOnTheFirstDescPage() {
         Assertions.assertThat(firstDescPage.find("//button[text()='Посмотреть цены']").isVisible());
     }
 
     @Step
-    public void checkGetStringByAnyHotelName(int number){
+    public void checkGetStringByAnyHotelName(int number) {
         Assertions.assertThat(page.findAll("//a[@class='hotel-explore-link']").get(number).getText()).isNotNull();
     }
 

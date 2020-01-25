@@ -12,41 +12,42 @@ import java.util.List;
 @DefaultUrl("https://level.travel/search/Moscow-RU-to-Any-TR-departure-20.01.2020-for-5..9-nights-2-adults-0-kids-1..5-stars")
 public class CountryMapBlockPage extends AbstractBasePage implements Mapable {
 
-    public CountryMapBlockPage clickMaximizeButton(){
+    public CountryMapBlockPage clickMaximizeButton() {
         find(mapMaximizeButton).click();
         return this;
     }
 
-    public CountryMapBlockPage clickZoomIn(){
+    public CountryMapBlockPage clickZoomIn() {
         find(zoomInButton).click();
         return this;
     }
-    public CountryMapBlockPage clickZoomOut(){
+
+    public CountryMapBlockPage clickZoomOut() {
         find(zoomOutButton).click();
         return this;
     }
 
-    public CountryMapBlockPage clickBarAndCafe(){
+    public CountryMapBlockPage clickBarAndCafe() {
         find(barAndCafeButton).click();
         return this;
     }
 
-    public CountryMapBlockPage clickTheaterButton(){
+    public CountryMapBlockPage clickTheaterButton() {
         find(theaterButton).click();
         return this;
     }
 
-    public CountryMapBlockPage clickShoppingButton(){
+    public CountryMapBlockPage clickShoppingButton() {
         find(shoppingButton).click();
         return this;
     }
 
-    public WebElement getAnyDynamicGraph(int number){
+    public WebElement getAnyDynamicGraph(int number) {
         List<WebElementFacade> webElements = findAll(priceDynamicGraphs);
         return webElements.get(number - 1);
     }
 
-    public CountryMapBlockPage selectAnyDynamicGraph(@NotNull WebElement element){
+    public CountryMapBlockPage selectAnyDynamicGraph(@NotNull WebElement element) {
         element.click();
         return new CountryMapBlockPage();
     }

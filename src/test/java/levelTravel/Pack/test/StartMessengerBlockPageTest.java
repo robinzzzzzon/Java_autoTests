@@ -1,6 +1,6 @@
-package levelTravel.Pack.test.FragmentPageTest.SerenityTests;
+package levelTravel.Pack.test;
 
-import levelTravel.Pack.Steps.StartMessengerBlockSteps;
+import levelTravel.Pack.Steps.StartPageSteps.StartMessengerBlockSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -18,14 +18,14 @@ public class StartMessengerBlockPageTest {
     WebDriver driver;
 
     @Test
-    public void getBigHeadingText(){
+    public void getBigHeadingText() {
         steps.openPage();
         steps.getBigHeadingText();
         steps.containsText();
     }
 
     @Test
-    public void moveToGooglePlayPage(){
+    public void moveToGooglePlayPage() {
         steps.openPage();
         steps.moveToGooglePlayPage();
         steps.switchBack();
@@ -33,7 +33,7 @@ public class StartMessengerBlockPageTest {
     }
 
     @Test
-    public void moveToAppStorePage(){
+    public void moveToAppStorePage() {
         steps.openPage();
         steps.moveToAppStorePage();
         steps.switchBack();
@@ -41,7 +41,7 @@ public class StartMessengerBlockPageTest {
     }
 
     @Test
-    public void checkHowItWorksBanner(){
+    public void checkHowItWorksBanner() {
         steps.openPage();
         steps.getHowItWorksBanner();
         steps.closeHowItWorksBanner();

@@ -179,14 +179,14 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
 
     public void addMaxCountNights(boolean b) {
         WebElement element = find(plusDay);
-        do{
+        do {
             element.click();
         } while (!element.getAttribute("class").equals("add disabled") == b);
     }
 
     public void addMinCountNights(boolean b) {
         WebElement element = find(minusDay);
-        do{
+        do {
             element.click();
         } while (!element.getAttribute("class").equals("subtract disabled") == b);
     }
@@ -234,7 +234,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
 
     public void addMaxPassenger(boolean b) {
         WebElement element = find(plusPassenger);
-        do{
+        do {
             element.click();
         } while (!element.getAttribute("class").equals("add disabled") == b);
     }

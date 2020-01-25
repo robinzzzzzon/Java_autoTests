@@ -1,4 +1,4 @@
-package levelTravel.Pack.Steps;
+package levelTravel.Pack.Steps.StartPageSteps;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
 
@@ -15,185 +15,185 @@ public class StartSearchBlockSteps {
     ItalyPage italyPage;
 
     @Step
-    public void openPage(){
+    public void openPage() {
         page.open();
     }
 
     @Step
-    public void writeAnyCountryName(String anyCountryName){
+    public void writeAnyCountryName(String anyCountryName) {
         page.writeAnyCountryName(anyCountryName);
     }
 
     @Step
-    public void clickCountryInput(){
+    public void clickCountryInput() {
         page.clickCountryInput();
     }
 
     @Step
-    public void clickGettingPopularCountry(int number){
+    public void clickGettingPopularCountry(int number) {
         page.clickGettingPopularCountry(number);
     }
 
     @Step
-    public void clickGettingWholeCountry(int number){
+    public void clickGettingWholeCountry(int number) {
         page.clickGettingWholeCountry(number);
     }
 
     @Step
-    public String getErrorByText(int errorNumber){
+    public String getErrorByText(int errorNumber) {
         return page.getErrorByText(errorNumber);
     }
 
     @Step
-    public boolean checkIsErrorVisible(String message){
+    public boolean checkIsErrorVisible(String message) {
         return page.isErrorVisible(message);
     }
 
     @Step
-    public void clickCalendarInput(){
+    public void clickCalendarInput() {
         page.clickCalendarInput();
     }
 
     @Step
-    public void clickAdd2Days(){
+    public void clickAdd2Days() {
         page.clickAdd2Days();
     }
 
     @Step
-    public void selectCalendarDate(int row, int column, int countSwitch){
+    public void selectCalendarDate(int row, int column, int countSwitch) {
         page.selectCalendarDate(row, column, countSwitch);
     }
 
     @Step
-    public void clickCountOfNights(){
+    public void clickCountOfNights() {
         page.clickCountOfNights();
     }
 
     @Step
-    public void minusNight(){
+    public void minusNight() {
         page.minusNight();
     }
 
     @Step
-    public void plusNight(){
+    public void plusNight() {
         page.plusNight();
     }
 
     @Step
-    public void addMaxCountNights(boolean b){
+    public void addMaxCountNights(boolean b) {
         page.addMaxCountNights(b);
     }
 
     @Step
-    public void addMinCountNights(boolean b){
+    public void addMinCountNights(boolean b) {
         page.addMinCountNights(b);
     }
 
     @Step
-    public void add2Nights(boolean b){
+    public void add2Nights(boolean b) {
         page.add2Nights(b);
     }
 
     @Step
-    public void clickCountOfPassengers(){
+    public void clickCountOfPassengers() {
         page.clickCountOfPassengers();
     }
 
     @Step
-    public void selectVariationAddChild(int childNumber){
+    public void selectVariationAddChild(int childNumber) {
         page.selectVariationAddChild(childNumber);
     }
 
     @Step
-    public void minusPassenger(){
+    public void minusPassenger() {
         page.minusPassenger();
     }
 
     @Step
-    public void plusPassenger(){
+    public void plusPassenger() {
         page.plusPassenger();
     }
 
     @Step
-    public void addMaxPassenger(boolean b){
+    public void addMaxPassenger(boolean b) {
         page.addMaxPassenger(b);
     }
 
     @Step
-    public void clickStartPlaceInput(){
+    public void clickStartPlaceInput() {
         page.clickStartPlaceInput();
     }
 
     @Step
-    public void clearStartPlaceInput(){
+    public void clearStartPlaceInput() {
         page.clearStartPlaceInput();
     }
 
     @Step
-    public void writeStartPlaceInput(String anyPlace){
+    public void writeStartPlaceInput(String anyPlace) {
         page.writeStartPlaceInput(anyPlace);
     }
 
     @Step
-    public void clickSelectingStartPlace(String startPlace){
+    public void clickSelectingStartPlace(String startPlace) {
         page.clickSelectingStartPlace(startPlace);
     }
 
     @Step
-    public void clickSearchButton(String countryName){
+    public void clickSearchButton(String countryName) {
         page.clickSearchButton(countryName);
     }
 
     @Step
-    public void clickConfirmButtonWithAnyEmptyFields(){
+    public void clickConfirmButtonWithAnyEmptyFields() {
         page.clickConfirmButtonWithAnyEmptyFields();
     }
 
     ///////////////////////////////////////////////////////
 
     @Step
-    public void checkContainsPartOfHeading(String s){
+    public void checkContainsPartOfHeading(String s) {
         Assertions.assertThat(countryFiltersBlockPage.find((By.xpath("//h1[@class='search-page-title']"))).getText()).contains(s);
     }
 
     @Step
-    public void isDisplayedTransportVariation(){
+    public void isDisplayedTransportVariation() {
         Assertions.assertThat(countryFiltersBlockPage.find(By.xpath("//span[@class='included-icons']")).isDisplayed());
     }
 
     @Step
-    public void isSelectMomentConfirmSwitcher(){
+    public void isSelectMomentConfirmSwitcher() {
         Assertions.assertThat(countryFiltersBlockPage.find(By.xpath("//span[@class='toggle-switch__button']")).isSelected()).isFalse();
     }
 
     @Step
-    public void isVisibleHotelStarsList(){
+    public void isVisibleHotelStarsList() {
         Assertions.assertThat(countryFiltersBlockPage.findAll(By.xpath("//ul[@class='checkbox-group__list filter-stars__list']/li")).isEmpty()
                 && !countryFiltersBlockPage.find(By.xpath("//div[text()='Звёздность отеля']")).isDisplayed()).isFalse();
     }
 
     @Step
-    public void checkGetToursList(){
+    public void checkGetToursList() {
         Assertions.assertThat(countryFiltersBlockPage.findAll(By.xpath("//div[@class='ReactVirtualized__Grid ReactVirtualized__List']//div")).size() > 0);
     }
 
     @Step
-    public void isEnabledSearchInput(){
+    public void isEnabledSearchInput() {
         Assertions.assertThat(countryFiltersBlockPage.find(By.xpath("//div[@class='search_container']")).isEnabled()).isTrue();
     }
 
     @Step
-    public void checkEqualHeadingText(String s){
+    public void checkEqualHeadingText(String s) {
         Assertions.assertThat(italyPage.getTextLoadingHeading()).isEqualTo(s);
     }
 
     @Step
-    public void checkVisibleErrorByAnyEmptyRequiredField(){
+    public void checkVisibleErrorByAnyEmptyRequiredField() {
         Assertions.assertThat(page.isErrorVisible("Куда бы вы хотели полететь?")).isTrue();
     }
 
     @Step
-    public void checkVisibleHeadingOfEmptyToursList(String s){
+    public void checkVisibleHeadingOfEmptyToursList(String s) {
         Assertions.assertThat(page.find("//div[@class='empty-search-title']").getText()).isEqualTo(s);
     }
 

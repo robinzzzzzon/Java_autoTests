@@ -1,6 +1,6 @@
-package levelTravel.Pack.test.FragmentPageTest.SerenityTests;
+package levelTravel.Pack.test;
 
-import levelTravel.Pack.Steps.CountryToursBlockSteps;
+import levelTravel.Pack.Steps.CountrySteps.CountryToursBlockSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -18,21 +18,21 @@ public class CountryToursBlockPageSerenityTest {
     WebDriver driver;
 
     @Test
-    public void clickAnyFilters(){
+    public void clickAnyFilters() {
         steps.openPage();
         steps.clickRecommendFilter();
         steps.isEqualAttributeButtonBeforeAndAfterClick();
     }
 
     @Test
-    public void clickWishListVariation(){
+    public void clickWishListVariation() {
         steps.openPage();
         steps.clickAnyWishListButton(3);
         steps.checkSizeWishList(4);
     }
 
     @Test
-    public void selectAnyExploreHotel(){
+    public void selectAnyExploreHotel() {
         steps.openPage();
         steps.clickAnyExploreHotel(3);
         steps.switchToNextHandle();
@@ -40,7 +40,7 @@ public class CountryToursBlockPageSerenityTest {
     }
 
     @Test
-    public void selectAnyPriceLinkHotel(){
+    public void selectAnyPriceLinkHotel() {
         steps.openPage();
         steps.clickAnyHotelPriceLink(2);
         steps.switchToNextHandle();
@@ -48,7 +48,7 @@ public class CountryToursBlockPageSerenityTest {
     }
 
     @Test
-    public void selectAnyNameLinkHotel(){
+    public void selectAnyNameLinkHotel() {
         steps.openPage();
         steps.clickAnyNameHotelLink(2);
         steps.switchToNextHandle();
@@ -56,7 +56,7 @@ public class CountryToursBlockPageSerenityTest {
     }
 
     @Test
-    public void getAnyNameLinkHotel(){
+    public void getAnyNameLinkHotel() {
         steps.openPage();
         steps.getAnyNameHotelText(3);
         steps.checkGetStringByAnyHotelName(1);

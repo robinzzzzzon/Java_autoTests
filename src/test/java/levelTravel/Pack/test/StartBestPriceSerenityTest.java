@@ -1,6 +1,6 @@
-package levelTravel.Pack.test.FragmentPageTest.SerenityTests;
+package levelTravel.Pack.test;
 
-import levelTravel.Pack.Steps.StartBestPriceBlockSteps;
+import levelTravel.Pack.Steps.StartPageSteps.StartBestPriceBlockSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;

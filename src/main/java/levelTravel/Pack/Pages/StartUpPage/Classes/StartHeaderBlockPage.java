@@ -8,6 +8,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import java.util.List;
 
 @DefaultUrl("https://level.travel/")
@@ -27,7 +28,7 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
         return this;
     }
 
-    public StartHeaderBlockPage clickRecallMeButton(){
+    public StartHeaderBlockPage clickRecallMeButton() {
         find(recallMeButton).click();
         return this;
     }
@@ -49,69 +50,65 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     //////////////////////////////////
     //Работаем с дропдауном "Сервисы":
 
-    public StartHeaderBlockPage clickHeaderServices(){
+    public StartHeaderBlockPage clickHeaderServices() {
         find(headerServices).click();
         return this;
     }
 
-    public WebElement selectHeaderServicesDD(int serviceNumber){
-        List<WebElementFacade> webElements = findAll(headerServicesDD);
-        return webElements.get(serviceNumber - 1);
+    private List<WebElementFacade> getServicesList() {
+        return findAll(headerServicesDD);
     }
 
-    public PromoPage clickSelectingServices(@NotNull WebElement webElement){
-        webElement.click();
+    public PromoPage selectAnyService(int serviceNumber) {
+        WebElement element = getServicesList().get(serviceNumber - 1);
+        element.click();
         return new PromoPage();
     }
 
     /////////////////////////////////////
     //Работаем с дропдауном "Мой список":
 
-    public StartHeaderBlockPage clickHeaderMyWishList(){
+    public StartHeaderBlockPage clickHeaderMyWishList() {
         find(headerMyWishList).click();
         return this;
     }
 
-    public WebElement selectingPartOfHeaderMyWishList(int wishListNumber){
+    public String getTextPartOfWishList(int wishListNumber) {
         List<WebElementFacade> webElements = findAll(headerMyWishListDescription);
-        return webElements.get(wishListNumber -1);
-    }
-
-    public String readSelectingWishList(@NotNull WebElement webElement){
-        return webElement.getText();
+        return webElements.get(wishListNumber - 1).getText();
     }
 
     /////////////////////////////////
     //Работаем с дропдауном "Помощь":
 
-    public StartHeaderBlockPage clickHeaderHelper(){
+    public StartHeaderBlockPage clickHeaderHelper() {
         find(headerHelper).click();
         return this;
     }
 
-    public WebElement readHeaderHelper(int helperNumber){
-        List<WebElementFacade> webElements = findAll(headerHelperDD);
-        return webElements.get(helperNumber -1);
+    private List<WebElementFacade> getHelperList() {
+        return findAll(headerHelperDD);
     }
 
-    public PressPage clickSelectingHelper(@NotNull WebElement webElement){
-        webElement.click();
+    public PressPage selectAnyHelper(int helperNumber) {
+        WebElement element = getHelperList().get(helperNumber - 1);
+        element.click();
         return new PressPage();
     }
 
     //////////////////////////////
     //Раздел "Вход":
 
-    public StartHeaderBlockPage clickHeaderExit(){
+    public StartHeaderBlockPage clickHeaderExit() {
         find(headerExit).click();
         return this;
     }
 
-    public String getMailHeadingExitText(){
+    public String getMailHeadingExitText() {
         return find(mailHeadingExit).getText();
     }
 
-    public StartHeaderBlockPage writeMailInputExit(String string){
+    public StartHeaderBlockPage writeMailInputExit(String string) {
         find(mailInputExit).sendKeys(string);
         return this;
     }
@@ -119,42 +116,42 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     /////////////////////////////
     //Работа с элементами при регистрации/входе уже зарегистрированного пользователя:
 
-    public StartHeaderBlockPage clickGoOnButton(){
+    public StartHeaderBlockPage clickGoOnButton() {
         WebElement element = find(goOnButton);
-        if(element.isEnabled()){
+        if (element.isEnabled()) {
             element.click();
         }
         return this;
     }
 
-    public StartHeaderBlockPage clickRegisterButton(){
+    public StartHeaderBlockPage clickRegisterButton() {
         find(registryButton).click();
         return this;
     }
 
-    public StartHeaderBlockPage clickToCross(){
+    public StartHeaderBlockPage clickToCross() {
         find(cross).click();
         return this;
     }
 
-    public String getTextEmptyFieldError(){
-        return find(By.xpath("//div[@class='simple_tooltip_body']")).getText();
+    public String getTextEmptyFieldError() {
+        return find(emptyFieldError).getText();
     }
 
-    public StartHeaderBlockPage verifySignUpButtonVisibility(){
-        WebElement element = find(signUpButton);
-        if (element.isEnabled()){
-            clickToCross();
-        }
-        return this;
-    }
+//    public StartHeaderBlockPage verifySignUpButtonVisibility(){
+//        WebElement element = find(signUpButton);
+//        if (element.isEnabled()){
+//            clickToCross();
+//        }
+//        return this;
+//    }
 
-    public FaceBookPage clickFaceBookLink(){
+    public FaceBookPage clickFaceBookLink() {
         find(fbButton).click();
         return new FaceBookPage();
     }
 
-    public VKPage clickVKLink(){
+    public VKPage clickVKLink() {
         find(vkButton).click();
         return new VKPage();
     }
@@ -165,7 +162,7 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
         return this;
     }
 
-    public void clickSignUpButton(){
+    public void clickSignUpButton() {
         find(signUpButton).click();
     }
 

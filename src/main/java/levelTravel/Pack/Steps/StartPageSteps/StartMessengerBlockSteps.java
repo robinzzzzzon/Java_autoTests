@@ -1,4 +1,4 @@
-package levelTravel.Pack.Steps;
+package levelTravel.Pack.Steps.StartPageSteps;
 
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartMessengerBlockPage;
 import net.thucydides.core.annotations.Step;
@@ -9,49 +9,49 @@ public class StartMessengerBlockSteps {
     StartMessengerBlockPage page;
 
     @Step
-    public void openPage(){
+    public void openPage() {
         page.open();
     }
 
     @Step
-    public void getBigHeadingText(){
+    public void getBigHeadingText() {
         page.getBigHeadingText();
     }
 
     @Step
-    public void moveToGooglePlayPage(){
+    public void moveToGooglePlayPage() {
         page.moveToGooglePlayPage();
     }
 
     @Step
-    public void moveToAppStorePage(){
+    public void moveToAppStorePage() {
         page.moveToAppStorePage();
     }
 
     @Step
-    public void getHowItWorksBanner(){
+    public void getHowItWorksBanner() {
         page.getHowItWorksBanner();
     }
 
     @Step
-    public void closeHowItWorksBanner(){
+    public void closeHowItWorksBanner() {
         page.closeHowItWorksBanner();
     }
 
     ///////////////////////////////////////////////
 
     @Step
-    public void containsText(){
+    public void containsText() {
         Assertions.assertThat(page.getBigHeadingText().containsText("Разумный способ путешествовать")).isTrue();
     }
 
     @Step
-    public void switchBack(){
-            page.getDriver().navigate().back();
+    public void switchBack() {
+        page.getDriver().navigate().back();
     }
 
     @Step
-    public void checkOfHeadingVisible(){
+    public void checkOfHeadingVisible() {
         Assertions.assertThat(page.getHeading().isDisplayed()).isTrue();
     }
 }

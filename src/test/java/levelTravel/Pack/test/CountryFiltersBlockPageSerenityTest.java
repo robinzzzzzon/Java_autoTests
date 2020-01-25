@@ -1,6 +1,6 @@
-package levelTravel.Pack.test.FragmentPageTest.SerenityTests;
+package levelTravel.Pack.test;
 
-import levelTravel.Pack.Steps.CountryFiltersBlockPageSteps;
+import levelTravel.Pack.Steps.CountrySteps.CountryFiltersBlockPageSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -18,7 +18,7 @@ public class CountryFiltersBlockPageSerenityTest {
     WebDriver driver;
 
     @Test
-    public void selectMomentConfirmationTours(){
+    public void selectMomentConfirmationTours() {
         steps.openPage();
         steps.writeMinIntervalPrice("30000");
         steps.writeMaxIntervalPrice("60000");
@@ -41,7 +41,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void getAnyRatingTest(){
+    public void getAnyRatingTest() {
         steps.openPage();
         steps.selectRatingHotel(1);
         steps.selectDistanceToSea(1);
@@ -50,77 +50,77 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void privateBeachTest(){
+    public void privateBeachTest() {
         steps.openPage();
         steps.selectPrivateBeachInput(false);
         steps.checkSelectedPBCheckBox(false);
     }
 
     @Test
-    public void typeBeachTest(){
+    public void typeBeachTest() {
         steps.openPage();
         steps.selectAllTypeOfBeach();
         steps.checkSizeOfToursList();
     }
 
     @Test
-    public void typeOfFoodTest(){
+    public void typeOfFoodTest() {
         steps.openPage();
         steps.selectTypeFood(2);
         steps.isDisplayedAnyCbOfFoodList(2);
     }
 
     @Test
-    public void selectAnyRegion(){
+    public void selectAnyRegion() {
         steps.openPage();
         steps.selectAnyRegion(2);
         steps.isEnabledAnyElementOfRegionList(2);
     }
 
     @Test
-    public void selectAllRegion(){
+    public void selectAllRegion() {
         steps.openPage();
         steps.selectAllRegions();
         steps.isEnabledAnyElementOfRegionList(5);
     }
 
     @Test
-    public void typeHotelTests(){
+    public void typeHotelTests() {
         steps.openPage();
         steps.selectHotelType(3);
         steps.checkEqualString("Активный");
     }
 
     @Test
-    public void WiFiTests(){
+    public void WiFiTests() {
         steps.openPage();
         steps.selectWiFiInput(2, true);
         steps.isSelectedRbWifi(2);
     }
 
     @Test
-    public void waterGameTest(){
+    public void waterGameTest() {
         steps.openPage();
         steps.selectWaterGame(2);
 
     }
 
     @Test
-    public void hoTelFacilitiesTest(){
+    public void hoTelFacilitiesTest() {
         steps.openPage();
         steps.selectHotelFacility(3);
         steps.checkToursResultGreaterNull(0);
     }
 
     @Test
-    public void familyWithChild(){
+    public void familyWithChild() {
         steps.openPage();
         steps.selectFamilyWithChildren(2);
         steps.checkToursResultGreaterNull(0);
     }
 
     @Test
-    public void tourOperatorsTest(){
+    public void tourOperatorsTest() {
         steps.openPage();
         steps.selectAllTourOperators();
         //countryFiltersPage.selectAnyTourOperator(6);
@@ -128,7 +128,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void clearFilterTest(){
+    public void clearFilterTest() {
         //countryFiltersPage.clickAllClearFilter();
 //        countryFiltersPage.selectTypeFood(6);
 //        countryFiltersPage.clickLocalClearFilter();

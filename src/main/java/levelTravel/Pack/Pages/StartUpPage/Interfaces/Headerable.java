@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 
 public interface Headerable {
 
-
     By levelTravelLink = By.xpath("//a[text()='Level Travel'][2]");
     By numberField = By.xpath("//div[@class='dropdown_switcher phone_dropdown-switcher']");
     By recallMeButton = By.xpath("//button[text()='Перезвоните мне']");
@@ -33,6 +32,7 @@ public interface Headerable {
     By goOnButton = By.xpath("//button[text()='Продолжить']");
     By registryButton = By.xpath("//button[text()='Зарегистрироваться']");
     By signUpButton = By.xpath("//button[text()='Войти']");
+    By emptyFieldError = By.xpath("//div[@class='simple_tooltip_body']");
 
     StartHeaderBlockPage refreshStartPage();
 
@@ -48,21 +48,15 @@ public interface Headerable {
 
     StartHeaderBlockPage clickHeaderServices();
 
-    WebElement selectHeaderServicesDD(int serviceNumber);
-
-    PromoPage clickSelectingServices(WebElement webElement);
+    PromoPage selectAnyService(int serviceNumber);
 
     StartHeaderBlockPage clickHeaderMyWishList();
 
-    WebElement selectingPartOfHeaderMyWishList(int wishListNumber);
-
-    String readSelectingWishList(WebElement webElement);
+    String getTextPartOfWishList(int wishListNumber);
 
     StartHeaderBlockPage clickHeaderHelper();
 
-    WebElement readHeaderHelper(int helperNumber);
-
-    PressPage clickSelectingHelper(WebElement webElement);
+    PressPage selectAnyHelper(int helperNumber);
 
     StartHeaderBlockPage clickHeaderExit();
 
@@ -79,6 +73,8 @@ public interface Headerable {
     String getTextEmptyFieldError();
 
     FaceBookPage clickFaceBookLink();
+
+    void clickSignUpButton();
 
     StartHeaderBlockPage writePassInput(String pass);
 }

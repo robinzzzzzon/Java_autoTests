@@ -21,28 +21,28 @@ public class HotelFirstDescPage extends AbstractBasePage {
     private By moreInfoAboutOffersList = By.xpath("//div[@class='result-offers']//div[@class='more-info']");
     private By crossByMoreInfoMenu = By.xpath("//i[@class='md-cross']");
 
-    public HotelFirstDescPage clickCircleHeader(){
+    public HotelFirstDescPage clickCircleHeader() {
         find(circleHeader).click();
         return this;
     }
 
-    public HotelFirstDescPage clickFavoriteButton(){
+    public HotelFirstDescPage clickFavoriteButton() {
         find(favoriteButton).click();
         return this;
     }
 
-    public HotelFirstDescPage clickSeePriceButton(){
+    public HotelFirstDescPage clickSeePriceButton() {
         find(seePriceButton).click();
         return this;
     }
 
     //////////////////////////////////////////////////////////////
 
-    private List<WebElementFacade> getPhotoList(){
+    private List<WebElementFacade> getPhotoList() {
         return findAll(photoList);
     }
 
-    public HotelFirstDescPage selectAnyPhoto(int number){
+    public HotelFirstDescPage selectAnyPhoto(int number) {
         List<WebElementFacade> webElements = getPhotoList();
         webElements.get(number - 1).click();
         return this;
@@ -50,11 +50,11 @@ public class HotelFirstDescPage extends AbstractBasePage {
 
     /////////////////////////////////////////////////////////////
 
-    private List <WebElementFacade> getPriceByDateList(){
+    private List<WebElementFacade> getPriceByDateList() {
         return findAll(priceByDateList);
     }
 
-    public HotelFirstDescPage selectAnyPriceByDate(int number){
+    public HotelFirstDescPage selectAnyPriceByDate(int number) {
         List<WebElementFacade> webElements = getPriceByDateList();
         webElements.get(number - 1).click();
         return this;
@@ -62,65 +62,65 @@ public class HotelFirstDescPage extends AbstractBasePage {
 
     /////////////////////////////////////////////////////////////
 
-    public HotelFirstDescPage clickFoodChoiceDD(){
+    public HotelFirstDescPage clickFoodChoiceDD() {
         find(foodChoiceDD).click();
         return this;
     }
 
-    private List<WebElementFacade> getFoodChoiceList(){
+    private List<WebElementFacade> getFoodChoiceList() {
         return findAll(foodChoiceList);
     }
 
-    public HotelFirstDescPage selectAnyFoodVariation(int number){
+    public HotelFirstDescPage selectAnyFoodVariation(int number) {
         List<WebElementFacade> webElements = getFoodChoiceList();
-        if(number <= webElements.size()) webElements.get(number - 1).click();
+        if (number <= webElements.size()) webElements.get(number - 1).click();
         return new HotelFirstDescPage();
     }
 
     ///////////////////////////////////////////////////////////
 
-    public HotelFirstDescPage clickBestPriceDD(){
+    public HotelFirstDescPage clickBestPriceDD() {
         find(bestPriceDD).click();
         return this;
     }
 
-    private List<WebElementFacade> getBestPriceList(){
+    private List<WebElementFacade> getBestPriceList() {
         return findAll(bestPriceList);
     }
 
-    public HotelFirstDescPage selectAnyPriceVariation(int number){
+    public HotelFirstDescPage selectAnyPriceVariation(int number) {
         List<WebElementFacade> webElements = getBestPriceList();
-        if(number <= webElements.size()) webElements.get(number - 1).click();
+        if (number <= webElements.size()) webElements.get(number - 1).click();
         return this;
     }
 
     /////////////////////////////////////////////////////////////
 
-    private List<WebElementFacade> getResultOffersList(){
+    private List<WebElementFacade> getResultOffersList() {
         return findAll(resultOffersList);
     }
 
-    public HotelSecondDescPage selectAnyResultOfferList(int number){
+    public HotelSecondDescPage selectAnyResultOfferList(int number) {
         List<WebElementFacade> webElements = getResultOffersList();
-        if(number <= webElements.size()) webElements.get(number - 1).click();
+        if (number <= webElements.size()) webElements.get(number - 1).click();
         return new HotelSecondDescPage();
     }
 
     ///////////////////////////////////////////////////////////////
 
-    private List<WebElementFacade> getMoreInfoAboutOffersList(){
+    private List<WebElementFacade> getMoreInfoAboutOffersList() {
         return findAll(moreInfoAboutOffersList);
     }
 
-    public HotelFirstDescPage selectMoreInfoAboutOffersVariation(int number){
+    public HotelFirstDescPage selectMoreInfoAboutOffersVariation(int number) {
         List<WebElementFacade> webElements = getMoreInfoAboutOffersList();
-        if(number <= webElements.size()) webElements.get(number - 1).click();
+        if (number <= webElements.size()) webElements.get(number - 1).click();
         return this;
     }
 
     ///////////////////////////////////////////////////////////////
 
-    public HotelFirstDescPage clickCrossByMoreInfoMenu(){
+    public HotelFirstDescPage clickCrossByMoreInfoMenu() {
         find(crossByMoreInfoMenu).click();
         return this;
     }

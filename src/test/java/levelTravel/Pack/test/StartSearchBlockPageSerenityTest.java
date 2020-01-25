@@ -1,6 +1,6 @@
-package levelTravel.Pack.test.FragmentPageTest.SerenityTests;
+package levelTravel.Pack.test;
 
-import levelTravel.Pack.Steps.StartSearchBlockSteps;
+import levelTravel.Pack.Steps.StartPageSteps.StartSearchBlockSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -19,7 +19,7 @@ public class StartSearchBlockPageSerenityTest {
 
 
     @Test
-    public void searchTurkeyTours(){
+    public void searchTurkeyTours() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(1);
@@ -28,7 +28,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchRussiaTours_Write(){
+    public void searchRussiaTours_Write() {
         steps.openPage();
         steps.writeAnyCountryName("Россия");
         steps.clickSearchButton("Rus");
@@ -36,7 +36,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchAbkhaziaTours_Write(){
+    public void searchAbkhaziaTours_Write() {
         steps.openPage();
         steps.writeAnyCountryName("Абхазия");
         steps.clickSearchButton("Abk");
@@ -44,7 +44,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchSouthKoreaTours(){
+    public void searchSouthKoreaTours() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingWholeCountry(49);
@@ -76,7 +76,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithNoDefaultDate(){
+    public void searchToursWithNoDefaultDate() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingWholeCountry(19);
@@ -87,7 +87,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithDateInterval(){
+    public void searchToursWithDateInterval() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(2);
@@ -98,7 +98,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithMinCountOfPassengers(){
+    public void searchToursWithMinCountOfPassengers() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(2);
@@ -109,7 +109,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithMaxCountOfPassengers(){
+    public void searchToursWithMaxCountOfPassengers() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(2);
@@ -121,7 +121,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithMinPassAddChild(){
+    public void searchToursWithMinPassAddChild() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(5);
@@ -133,7 +133,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithDefCountPassAddFewChild(){
+    public void searchToursWithDefCountPassAddFewChild() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(5);
@@ -145,7 +145,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithMaxCountPassAddMaxCountChild(){
+    public void searchToursWithMaxCountPassAddMaxCountChild() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(5);
@@ -159,7 +159,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithMaxCountNights(){
+    public void searchToursWithMaxCountNights() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(4);
@@ -171,7 +171,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithMinCountNights(){
+    public void searchToursWithMinCountNights() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(4);
@@ -184,7 +184,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithNotDefaultStartPlace(){
+    public void searchToursWithNotDefaultStartPlace() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(5);
@@ -196,7 +196,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void searchToursWithLastDDVarStartPlace(){
+    public void searchToursWithLastDDVarStartPlace() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(5);
@@ -208,7 +208,7 @@ public class StartSearchBlockPageSerenityTest {
     }
 
     @Test
-    public void correctFindRussiaToursComplete(){
+    public void correctFindRussiaToursComplete() {
         steps.openPage();
         steps.clickCountryInput();
         steps.clickGettingPopularCountry(5);

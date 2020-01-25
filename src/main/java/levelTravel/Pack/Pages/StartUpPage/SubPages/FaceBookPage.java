@@ -14,25 +14,25 @@ public class FaceBookPage extends AbstractBasePage {
     private By linkForgottenAcc = By.xpath("//a[text()='Forgotten account?']");
 
     @Contract("_ -> this")
-    private FaceBookPage writeEmailInput(String EmailExample){
+    private FaceBookPage writeEmailInput(String EmailExample) {
         find(emailInput).sendKeys(EmailExample);
         return this;
     }
 
     @Contract("_ -> this")
-    private FaceBookPage writePassInput(String PassExample){
+    private FaceBookPage writePassInput(String PassExample) {
         find(passInput).sendKeys(PassExample);
         return this;
     }
 
     @NotNull
     @Contract(" -> new")
-    private FaceBookPage clickSignInButton(){
+    private FaceBookPage clickSignInButton() {
         find(buttonLogIn).click();
         return new FaceBookPage();
     }
 
-    public FaceBookPage tryIncorrectLogIn(String EmailExample, String PassExample){
+    public FaceBookPage tryIncorrectLogIn(String EmailExample, String PassExample) {
         writeEmailInput(EmailExample);
         writePassInput(PassExample);
         clickSignInButton();

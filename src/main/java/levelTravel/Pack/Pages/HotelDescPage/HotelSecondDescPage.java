@@ -7,7 +7,7 @@ public class HotelSecondDescPage extends AbstractBasePage {
 
     private By heading = By.xpath("//div[@class='checkout-header__title']");
 
-    public String getHeadingText(){
+    public String getHeadingText() {
         return find(heading).getText();
     }
 

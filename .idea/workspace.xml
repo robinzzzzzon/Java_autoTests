@@ -2,25 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ce6c161-a611-476c-8784-6816a50f1c07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CalendarPage/CalendarHeaderPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/LifehackPage/Headerable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/LifehackPage/LifeHacksHeaderPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/TVPage/TVHeaderPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartBestPriceBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartBestPriceBlockPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartMessengerBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartMessengerBlockPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Interfaces/BestPricable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Interfaces/BestPricable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartBestPriceBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartBestPriceBlockSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartMessengerBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartMessengerBlockSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartBestPriceSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartBestPriceSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartBestPriceBlockPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartBestPriceBlockPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartMessengerBlockPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartMessengerBlockPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Interfaces/BestPricable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Interfaces/BestPricable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartBestPriceBlockSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartBestPriceBlockSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartMessengerBlockSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartMessengerBlockSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CalendarPage/CalendarHeaderPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryFiltersBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryFiltersBlockPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryMapBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryMapBlockPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryToursBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryToursBlockPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/HelperClass/CountryFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/HelperClass/CountryFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/HotelDescPage/HotelFirstDescPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/HotelDescPage/HotelFirstDescPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/HotelDescPage/HotelSecondDescPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/HotelDescPage/HotelSecondDescPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/LifehackPage/Headerable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/LifehackPage/LifeHacksHeaderPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartHeaderBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartHeaderBlockPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Classes/StartSearchBlockPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Interfaces/Headerable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/Interfaces/Headerable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/SubPages/FaceBookPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/StartUpPage/SubPages/FaceBookPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/TVPage/TVHeaderPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/CountryFiltersBlockPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/CountrySteps/CountryFiltersBlockPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/CountryMapBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/CountrySteps/CountryMapBlockSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/CountryToursBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/CountrySteps/CountryToursBlockSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartBestPriceBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartPageSteps/StartBestPriceBlockSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartHeaderBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartPageSteps/StartHeaderBlockSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartMessengerBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartPageSteps/StartMessengerBlockSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartSearchBlockSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/StartPageSteps/StartSearchBlockSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CompositionPageTest/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/CountryFilterBLockPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/CountryMapBlockPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/CountryToursBlockPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/HotelFirstDescPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryFiltersBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryFiltersBlockPageSerenityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryMapBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryMapBlockPageSerenityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryToursBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryToursBlockPageSerenityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartBestPriceSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartBestPriceSerenityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartHeaderBlockPageSerenityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartMessengerBlockPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartMessengerBlockPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartSearchBlockPageSerenityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/StartBestPriceBlockPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/StartHeaderBlockPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/FragmentPageTest/StartSearchBlockPageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartHeaderBlockPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartHeaderBlockPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Interfaces/Headerable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Interfaces/Headerable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartHeaderBlockSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartHeaderBlockSteps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/serenity/browser-firefox.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/browser-firefox.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartBestPriceSerenityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartBestPriceSerenityTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/StartHeaderBlockPageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/StartHeaderBlockPageTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,39 +91,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StartBestPriceSerenityTest.selectLastStartCity">
-    <configuration name="StartBestPriceSerenityTest.selectAnyCountOfNights" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mavenTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
-      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartBestPriceSerenityTest" />
-      <option name="METHOD_NAME" value="selectAnyCountOfNights" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StartBestPriceSerenityTest.selectAnyCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mavenTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
-      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartBestPriceSerenityTest" />
-      <option name="METHOD_NAME" value="selectAnyCountry" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.StartHeaderBlockPageSerenityTest.navigateToPressPage">
     <configuration name="StartBestPriceSerenityTest.selectAnyStartCity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
@@ -147,13 +140,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StartHeaderBlockPageSerenityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mavenTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
+      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartHeaderBlockPageSerenityTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartHeaderBlockPageSerenityTest.navigateToPressPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mavenTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests" />
+      <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.FragmentPageTest.SerenityTests.StartHeaderBlockPageSerenityTest" />
+      <option name="METHOD_NAME" value="navigateToPressPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StartHeaderBlockPageSerenityTest.navigateToPressPage" />
+        <item itemvalue="JUnit.StartHeaderBlockPageSerenityTest" />
         <item itemvalue="JUnit.StartBestPriceSerenityTest.selectLastStartCity" />
         <item itemvalue="JUnit.StartBestPriceSerenityTest.selectAnyStartCity" />
         <item itemvalue="JUnit.StartBestPriceSerenityTest.selectLastCityFromCityList" />
-        <item itemvalue="JUnit.StartBestPriceSerenityTest.selectAnyCountOfNights" />
-        <item itemvalue="JUnit.StartBestPriceSerenityTest.selectAnyCountry" />
       </list>
     </recent_temporary>
   </component>

@@ -19,7 +19,7 @@ public class StartPage extends AbstractBasePage {
 //        StartBestPriceBlockPage startBestPriceBlockPage = new StartBestPriceBlockPage(driver);
 //    }
 
-    public StartPage doCorrectSignUp(){
+    public StartPage doCorrectSignUp() {
         startHeaderBlockPage.clickHeaderExit()
                 .writeMailInputExit("patrick.kelskyh@gmail.com")
                 .clickGoOnButton()
@@ -28,9 +28,6 @@ public class StartPage extends AbstractBasePage {
         String s = find(By.xpath("//div[@class='auth_success']")).getText();
         return new StartPage();
     }
-
-
-
 
 
     //Здесь буду уже писать общие методы по взаимодействию с программой.
