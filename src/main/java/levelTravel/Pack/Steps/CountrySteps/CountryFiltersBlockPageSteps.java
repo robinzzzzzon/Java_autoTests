@@ -1,10 +1,14 @@
 package levelTravel.Pack.Steps.CountrySteps;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CountryFiltersBlockPageSteps {
 
@@ -36,13 +40,23 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
-    public void clickAnyStars(int number) {
-        page.clickAnyStars(number);
+    public void pasteBufferPrice(boolean b){
+        page.putAnyPriceInPriceInput(b);
     }
 
     @Step
-    public void selectAnyStarsHotel(int spanNumber, int inputNumber) {
-        page.selectAnyStarsHotel(spanNumber, inputNumber);
+    public void selectAnyStarsHotel(boolean b, int spanNumber, int inputNumber) {
+        page.selectAnyStarsHotel(b, spanNumber, inputNumber);
+    }
+
+    @Step
+    public void selectFirstAndLastStars(){
+        page.selectFirstAndLastStars();
+    }
+
+    @Step
+    public void selectAllStars(){
+        page.selectAllStars();
     }
 
     @Step
@@ -50,6 +64,10 @@ public class CountryFiltersBlockPageSteps {
         page.writeHotelName(hotelName);
     }
 
+    @Step
+    public void writeHotelNameFromBuffer(String anyHotelName){
+        page.writeHotelNameFromBuffer(anyHotelName);
+    }
 
     @Step
     public void selectRatingHotel(int number) {
@@ -147,27 +165,87 @@ public class CountryFiltersBlockPageSteps {
     }
 
     ///////////////////////////////////////////////////////////////////////
+    //Стэпы с проверками:
 
     @Step
-    public void checkToursResultGreaterNull(int number) {
+    public void checkToursResultGreaterNull() {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
+        List<WebElementFacade> facade = page.findAll("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div");
+        Assertions.assertThat(facade.size() > 0).isTrue();
+    }
+
+    @Step
+    public void checkToursResultGreaterAnyNumber(int number) {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
         Assertions.assertThat(page.findAll("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div")).size().isGreaterThan(number);
     }
 
     @Step
-    public void checkIsNotSelectedCheckBox(int number) {
-        Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-stars__list']/li").get(number).isSelected()).isFalse();
+    public void checkPriceInputsIsNotNull(){
+        List<WebElementFacade> list = page.findAll("//div[@class='filter-budget__fields']//input");
+        Assertions.assertThat(!(list.get(0).getValue().isEmpty() && list.get(1).getValue().isEmpty())).isTrue();
     }
 
     @Step
-    public void checkToursResultEqually(int number) {
+    public void checkSelectingCheckBox(boolean b, int number) {
+        if(!b){
+            Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-stars__list']/li").get(number).isSelected()).isFalse();
+        }
+        else{
+            Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-stars__list']/li").get(number).isSelected()).isTrue();
+        }
+    }
+
+    @Step
+    public void checkCountSelectingCB(int number){
+        List<WebElementFacade> list = page.findAll("//ul[@class='checkbox-group__list filter-stars__list']//span[@class='checkbox__custom']");
+        List<WebElementFacade> selectedList = new ArrayList<>();
+        for (WebElementFacade element: list) {
+            if(element.isSelected()){
+                selectedList.add(element);
+            }
+        }
+        Assertions.assertThat(selectedList.size() == number).isTrue();
+    }
+
+    @Step
+    public void checkToursResultIsPresent(int number) {
         String s = "//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div[%s]";
         WebElement element = page.find(By.xpath(String.format(s, number))).waitUntilVisible();
         Assertions.assertThat(element.isEnabled()).isTrue();
     }
 
     @Step
-    public void isEnabledAnyElementOfRateList(int number) {
-        Assertions.assertThat(page.findAll("//ul[@class='switcher__list filter-rating__switcher-list']/li").get(number - 1).isEnabled()).isTrue();
+    public void checkVisibleEmptyResults() {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
+        WebElement element = page.find("//div[@class='no-results']");
+        Assertions.assertThat(element.isEnabled()).isTrue();
+    }
+
+    @Step
+    public void checkActivateElementsOfRating(int number) {
+        List<WebElementFacade> list = page.findAll("//ul[@class='switcher__list filter-rating__switcher-list']//li");
+        List<WebElementFacade> activatedList = new ArrayList<>();
+        for (WebElementFacade element: list) {
+            if(element.getAttribute("class").contains("active")){
+                activatedList.add(element);
+            }
+        }
+        Assertions.assertThat(activatedList.size() == number).isTrue();
+    }
+
+    @Step
+    public void compareRatingOfGetResultList(){
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
+        List<WebElementFacade> toursRatingList = page.findAll("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div//span[@class='hotel-rating-value']");
+        List<WebElementFacade> goodRatingList = new ArrayList<>();
+        for (WebElementFacade element: toursRatingList) {
+            double rate = Double.parseDouble(element.getText());
+            if(rate >= 9.0){
+                goodRatingList.add(element);
+            }
+        }
+        Assertions.assertThat(goodRatingList.size() == toursRatingList.size()).isTrue();
     }
 
     @Step

@@ -42,102 +42,108 @@ public interface Filterable {
     ///////////////////////////////////////////////////////////////////////
     //Работа с ценовыми столбцами и интервалом цен в инпутах:
 
-    public CountryFiltersBlockPage selectAnyPriceTower(int number);
+    void selectAnyPriceTower(int number);
 
-    public CountryFiltersBlockPage writeMinIntervalPrice(String anyPrice);
+    CountryFiltersBlockPage writeMinIntervalPrice(String anyPrice);
 
-    public CountryFiltersBlockPage writeMaxIntervalPrice(String anyPrice);
+    CountryFiltersBlockPage writeMaxIntervalPrice(String anyPrice);
+
+    void putAnyPriceInPriceInput(boolean b);
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем отели по кол-ву звезд:
 
-    public void clickAnyStars(int number);
+    void selectAnyStarsHotel(boolean b, int numberOfSpan, int numberOfInput);
 
-    public CountryFiltersBlockPage selectAnyStarsHotel(int numberOfSpan, int numberOfInput);
+    void selectFirstAndLastStars();
+
+    void selectAllStars();
 
     /////////////////////////////////////////////////////////////////////////////////
     //Ищем отель по наименованию:
 
-    public CountryFiltersBlockPage writeHotelName(String hotelName);
+    CountryFiltersBlockPage writeHotelName(String hotelName);
+
+    CountryFiltersBlockPage writeHotelNameFromBuffer(String anyHotelName);
 
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация отелей по рейтингу:
 
-    public CountryFiltersBlockPage selectRatingHotel(int number);
+    CountryFiltersBlockPage selectRatingHotel(int number);
 
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по удаленности от моря:
 
-    public CountryFiltersBlockPage selectDistanceToSea(int number);
+    CountryFiltersBlockPage selectDistanceToSea(int number);
 
     ///////////////////////////////////////////////////////////////////////////////
     //Фильтрация частных пляжей:
 
-    public CountryFiltersBlockPage selectPrivateBeachInput(boolean b);
+    CountryFiltersBlockPage selectPrivateBeachInput(boolean b);
 
     //////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по типам поверхности пляжа:
 
-    public CountryFiltersBlockPage selectTypeOfBeach(int typeNumber, boolean b);
+    CountryFiltersBlockPage selectTypeOfBeach(int typeNumber, boolean b);
 
-    public CountryFiltersBlockPage selectAllTypeOfBeach();
+    CountryFiltersBlockPage selectAllTypeOfBeach();
 
     ///////////////////////////////////////////////////////////////////////////////////
     //Фильтруем по видам питания:
 
-    public CountryFiltersBlockPage selectTypeFood(int number);
+    CountryFiltersBlockPage selectTypeFood(int number);
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем по виду местности:
 
-    public CountryFiltersBlockPage selectRegionType(int regionNumber);
+    CountryFiltersBlockPage selectRegionType(int regionNumber);
 
     /////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем список регионов:
 
-    public CountryFiltersBlockPage selectAnyRegion(int number);
+    CountryFiltersBlockPage selectAnyRegion(int number);
 
-    public CountryFiltersBlockPage selectAllRegions();
+    CountryFiltersBlockPage selectAllRegions();
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем тип отеля:
-    public CountryFiltersBlockPage selectHotelType(int number);
+    CountryFiltersBlockPage selectHotelType(int number);
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по наличию wi-fi:
 
-    public CountryFiltersBlockPage selectWiFiInput(int elementNumber, boolean b);
+    CountryFiltersBlockPage selectWiFiInput(int elementNumber, boolean b);
 
     //////////////////////////////////////////////////////////////////////////////////////////
     //Наличие вида игр на воде:
 
-    public CountryFiltersBlockPage selectWaterGame(int number);
+    CountryFiltersBlockPage selectWaterGame(int number);
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Удобства в номере отеля:
 
-    public CountryFiltersBlockPage selectHotelFacility(int number);
+    CountryFiltersBlockPage selectHotelFacility(int number);
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Работа со списком услуг для семей с детьми:
 
-    public CountryFiltersBlockPage selectFamilyWithChildren(int number);
+    CountryFiltersBlockPage selectFamilyWithChildren(int number);
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по списку операторов:
 
-    public CountryFiltersBlockPage selectAnyTourOperator(int number);
+    CountryFiltersBlockPage selectAnyTourOperator(int number);
 
-    public CountryFiltersBlockPage selectAllTourOperators();
+    CountryFiltersBlockPage selectAllTourOperators();
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     //Сброс одной и более настроек фильтра:
 
-    public CountryFiltersBlockPage clickLocalClearFilter();
+    CountryFiltersBlockPage clickLocalClearFilter();
 
-    public CountryFiltersBlockPage clickFewLocalClearFilter();
+    CountryFiltersBlockPage clickFewLocalClearFilter();
 
     //Сбросить все фильтры:
-    public CountryFiltersBlockPage clickAllClearFilter();
+    CountryFiltersBlockPage clickAllClearFilter();
 
 }
