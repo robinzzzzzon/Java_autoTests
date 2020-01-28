@@ -40,7 +40,7 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
-    public void pasteBufferPrice(boolean b){
+    public void pasteBufferPrice(boolean b) {
         page.putAnyPriceInPriceInput(b);
     }
 
@@ -50,12 +50,12 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
-    public void selectFirstAndLastStars(){
+    public void selectFirstAndLastStars() {
         page.selectFirstAndLastStars();
     }
 
     @Step
-    public void selectAllStars(){
+    public void selectAllStars() {
         page.selectAllStars();
     }
 
@@ -65,7 +65,7 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
-    public void writeHotelNameFromBuffer(String anyHotelName){
+    public void writeHotelNameFromBuffer(String anyHotelName) {
         page.writeHotelNameFromBuffer(anyHotelName);
     }
 
@@ -90,6 +90,11 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
+    public void selectFirstAndLastBeachType() {
+        page.selectFirstAndLastBeachType();
+    }
+
+    @Step
     public void selectAllTypeOfBeach() {
         page.selectAllTypeOfBeach();
     }
@@ -100,6 +105,11 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
+    public void selectAllFoodType() {
+        page.selectAllFoodType();
+    }
+
+    @Step
     public void selectRegionType(int number) {
         page.selectRegionType(number);
     }
@@ -107,6 +117,11 @@ public class CountryFiltersBlockPageSteps {
     @Step
     public void selectAnyRegion(int number) {
         page.selectAnyRegion(number);
+    }
+
+    @Step
+    public void selectFirstAndLastRegion() {
+        page.selectFirstAndLastRegion();
     }
 
     @Step
@@ -181,27 +196,26 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
-    public void checkPriceInputsIsNotNull(){
+    public void checkPriceInputsIsNotNull() {
         List<WebElementFacade> list = page.findAll("//div[@class='filter-budget__fields']//input");
         Assertions.assertThat(!(list.get(0).getValue().isEmpty() && list.get(1).getValue().isEmpty())).isTrue();
     }
 
     @Step
     public void checkSelectingCheckBox(boolean b, int number) {
-        if(!b){
+        if (!b) {
             Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-stars__list']/li").get(number).isSelected()).isFalse();
-        }
-        else{
+        } else {
             Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-stars__list']/li").get(number).isSelected()).isTrue();
         }
     }
 
     @Step
-    public void checkCountSelectingCB(int number){
+    public void checkCountSelectingCB(int number) {
         List<WebElementFacade> list = page.findAll("//ul[@class='checkbox-group__list filter-stars__list']//span[@class='checkbox__custom']");
         List<WebElementFacade> selectedList = new ArrayList<>();
-        for (WebElementFacade element: list) {
-            if(element.isSelected()){
+        for (WebElementFacade element : list) {
+            if (element.isSelected()) {
                 selectedList.add(element);
             }
         }
@@ -226,31 +240,53 @@ public class CountryFiltersBlockPageSteps {
     public void checkActivateElementsOfRating(int number) {
         List<WebElementFacade> list = page.findAll("//ul[@class='switcher__list filter-rating__switcher-list']//li");
         List<WebElementFacade> activatedList = new ArrayList<>();
-        for (WebElementFacade element: list) {
-            if(element.getAttribute("class").contains("active")){
+        for (WebElementFacade element : list) {
+            if (element.getAttribute("class").contains("active")) {
                 activatedList.add(element);
             }
         }
         Assertions.assertThat(activatedList.size() == number).isTrue();
     }
 
+    //В этом методе мы сравниваем, что рейтинг полученного списка туров, для всех сущностей не ниже задонного нами double-значения.
+    //Дожидаемся окончания отображения оверлея загрузки, далее получаем список атрибута "рейтинг" для каждого элемента коллекции.
+    //Создаем еще один пустой список. Далее проходим по нашей коллекции рейтингов, техт которых мы парсим в double и если это значение не ниже введенного нами на вход значения,
+    //То мы кладем его в наш второй пустой список. Далее сравниваем size() обеих коллекций и если он равен, то делаем вывод, что для всего списка туров, рейтинг не ниже нашего входного значения.
     @Step
-    public void compareRatingOfGetResultList(){
+    public void compareRatingOfGetResultList(double v) {
         page.find("//div[@class='overlay_container']").waitUntilNotVisible();
         List<WebElementFacade> toursRatingList = page.findAll("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div//span[@class='hotel-rating-value']");
         List<WebElementFacade> goodRatingList = new ArrayList<>();
-        for (WebElementFacade element: toursRatingList) {
+        for (WebElementFacade element : toursRatingList) {
             double rate = Double.parseDouble(element.getText());
-            if(rate >= 9.0){
+            if (rate >= v) {
                 goodRatingList.add(element);
             }
         }
         Assertions.assertThat(goodRatingList.size() == toursRatingList.size()).isTrue();
     }
 
+    //Здесь похожая ситуация на compareRatingOfGetResultList(). Разница в том, что мы нормализуем подстроковое пространство span-элемента, далее при каждом прогоне нашего списка,
+    //мы получаем substring нашего value и кладем его в новую строку. Далее по старой схеме парсим его и кладем уже в int.
+    //Далее, если наше int равно входному int, то мы кладем его во второй список. В конце концов сравниваем, как и ранее на совпадение size().
     @Step
-    public void isEnabledAnyElementOfDistanceList(int number) {
-        Assertions.assertThat(page.findAll("//ul[@class='switcher__list distance__switcher-list']/li").get(number - 1).isEnabled()).isTrue();
+    public void compareDistanceOfGetResultList(int i) {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
+        String collectionDistanceName = "//div[@class='hotel__fact hotel__fact_line1']/span[normalize-space(%s-я)]";
+        List<WebElementFacade> toursRatingList = page.findAll(String.format(collectionDistanceName, i));
+        List<WebElementFacade> rightDistanceList = new ArrayList<>();
+        //StringBuilder builder;
+        for (WebElementFacade element : toursRatingList) {
+            String s = element.getText();
+            //builder = new StringBuilder(s);
+            //String distanceValue = builder.substring(0, 1);
+            String distanceValue = s.substring(0, 1);
+            int numberDistanceValue = Integer.parseInt(distanceValue);
+            if (numberDistanceValue == i) {
+                rightDistanceList.add(element);
+            }
+        }
+        Assertions.assertThat(rightDistanceList.size() == toursRatingList.size()).isTrue();
     }
 
     @Step
@@ -262,8 +298,37 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
-    public void checkSizeOfToursList() {
-        Assertions.assertThat(page.findAll("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div")).isNotNull();
+    public void checkRightBeachTypeOfTheGetList(int beachType) {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
+        List<WebElementFacade> beachTypesList = page.findAll("//div[@class='hotel__fact hotel__fact_beach-surface']//div[@class='hotel__fact-label']");
+        List<WebElementFacade> rightBeachTypeList = new ArrayList<>();
+        switch (beachType) {
+            case 1:
+                for (WebElementFacade element : beachTypesList) {
+                    if (element.getText().equals("песок")) {
+                        rightBeachTypeList.add(element);
+                    }
+                }
+            case 2:
+                for (WebElementFacade element : beachTypesList) {
+                    if (element.getText().equals("пес./гал.")) {
+                        rightBeachTypeList.add(element);
+                    }
+                }
+            case 3:
+                for (WebElementFacade element : beachTypesList) {
+                    if (element.getText().equals("галька")) {
+                        rightBeachTypeList.add(element);
+                    }
+                }
+            case 4:
+                for (WebElementFacade element : beachTypesList) {
+                    if (element.getText().equals("платф.")) {
+                        rightBeachTypeList.add(element);
+                    }
+                }
+                Assertions.assertThat(rightBeachTypeList.size() == beachTypesList.size()).isTrue();
+        }
     }
 
     @Step

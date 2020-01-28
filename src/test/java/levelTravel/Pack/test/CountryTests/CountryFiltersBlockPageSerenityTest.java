@@ -197,44 +197,135 @@ public class CountryFiltersBlockPageSerenityTest {
     public void compareOnlyGoodRating(){
         steps.openPage();
         steps.selectRatingHotel(5);
-        steps.compareRatingOfGetResultList();
+        steps.compareRatingOfGetResultList(9.0);
     }
 
     ///////////////////////////////////////////////////////////
 
     @Test
-    public void privateBeachTest() {
+    public void getAllToursForAnythingDistanceToSea(){
+        steps.openPage();
+        steps.selectDistanceToSea(3);
+        steps.checkToursResultGreaterNull();
+    }
+
+    @Test
+    public void getOnlyFirstDistanceToSea(){
+        steps.openPage();
+        steps.selectDistanceToSea(1);
+        steps.compareDistanceOfGetResultList(1);
+    }
+
+    @Test
+    public void selectDistanceTwiceAfterClearFilter(){
+        steps.openPage();
+        steps.selectDistanceToSea(1);
+        steps.clickLocalClearFilter();
+        steps.selectDistanceToSea(1);
+        steps.checkToursResultGreaterNull();
+    }
+
+    /////////////////////////////////////////////////////////////
+
+    @Test
+    public void getPrivateBeachList() {
         steps.openPage();
         steps.selectPrivateBeachInput(false);
         steps.checkSelectedPBCheckBox(false);
     }
 
     @Test
-    public void typeBeachTest() {
+    public void getPrivateBeachListTwice() {
+        steps.openPage();
+        steps.selectPrivateBeachInput(true);
+        steps.clickLocalClearFilter();
+        steps.selectPrivateBeachInput(true);
+        steps.checkSelectedPBCheckBox(false);
+    }
+
+    ///////////////////////////////////////////////////////
+
+    @Test
+    public void selectAllBeachTypes() {
         steps.openPage();
         steps.selectAllTypeOfBeach();
-        steps.checkSizeOfToursList();
+        steps.checkToursResultGreaterNull();
     }
 
     @Test
-    public void typeOfFoodTest() {
+    public void selectAnyBeachType() {
+        steps.openPage();
+        steps.selectTypeOfBeach(2, true);
+        steps.checkRightBeachTypeOfTheGetList(2);
+    }
+
+    @Test
+    public void selectFirstAndLastBeachTypes(){
+        steps.openPage();
+        steps.selectFirstAndLastBeachType();
+        steps.checkToursResultGreaterNull();
+    }
+
+    @Test
+    public void selectBeachTypeTwice(){
+        steps.openPage();
+        steps.selectTypeOfBeach(2, true);
+        steps.clickLocalClearFilter();
+        steps.selectTypeOfBeach(2, true);
+        steps.checkToursResultGreaterNull();
+    }
+
+    ///////////////////////////////////////////////////////////
+    //Поработать с ожиданиями. Возможно нужно будет переделать все через инстансы Action
+    @Test
+    public void selectAnyFoodType() {
         steps.openPage();
         steps.selectTypeFood(2);
-        steps.isDisplayedAnyCbOfFoodList(2);
+        steps.checkToursResultGreaterNull();
+    }
+
+    @Test
+    public void selectLastFoodTypeWithInvisiblePart() {
+        steps.openPage();
+        steps.selectTypeFood(7);
+        steps.checkToursResultGreaterNull();
+    }
+
+    @Test
+    public void selectAllFoodType() {
+        steps.openPage();
+        steps.selectAllFoodType();
+        steps.checkToursResultGreaterNull();
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    @Test
+    public void selectAnyRegionType() {
+        steps.openPage();
+        steps.selectRegionType(2);
+        steps.checkToursResultGreaterNull();
     }
 
     @Test
     public void selectAnyRegion() {
         steps.openPage();
-        steps.selectAnyRegion(2);
-        steps.isEnabledAnyElementOfRegionList(2);
+        steps.selectAnyRegion(3);
+        steps.checkToursResultGreaterNull();
+    }
+
+    @Test
+    public void selectFirstAndLastRegion() {
+        steps.openPage();
+        steps.selectFirstAndLastRegion();
+        steps.checkToursResultGreaterNull();
     }
 
     @Test
     public void selectAllRegion() {
         steps.openPage();
         steps.selectAllRegions();
-        steps.isEnabledAnyElementOfRegionList(5);
+        steps.checkToursResultGreaterNull();
     }
 
     @Test

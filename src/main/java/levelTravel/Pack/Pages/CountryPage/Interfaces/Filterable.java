@@ -86,12 +86,16 @@ public interface Filterable {
 
     CountryFiltersBlockPage selectTypeOfBeach(int typeNumber, boolean b);
 
+    void selectFirstAndLastBeachType();
+
     CountryFiltersBlockPage selectAllTypeOfBeach();
 
     ///////////////////////////////////////////////////////////////////////////////////
     //Фильтруем по видам питания:
 
     CountryFiltersBlockPage selectTypeFood(int number);
+
+    void selectAllFoodType();
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем по виду местности:
@@ -103,7 +107,9 @@ public interface Filterable {
 
     CountryFiltersBlockPage selectAnyRegion(int number);
 
-    CountryFiltersBlockPage selectAllRegions();
+    void selectFirstAndLastRegion();
+
+    void selectAllRegions();
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем тип отеля:

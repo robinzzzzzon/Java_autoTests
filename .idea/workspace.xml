@@ -6,45 +6,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryFiltersBlockPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryFiltersBlockPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Interfaces/Filterable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Pages/CountryPage/Interfaces/Filterable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/CountrySteps/CountryFiltersBlockPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/levelTravel/Pack/Steps/CountrySteps/CountryFiltersBlockPageSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryFiltersBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryTests/CountryFiltersBlockPageSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryMapBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryTests/CountryMapBlockPageSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryToursBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryTests/CountryToursBlockPageSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartBestPriceSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartTests/StartBestPriceSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartHeaderBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartTests/StartHeaderBlockPageSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartMessengerBlockPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartTests/StartMessengerBlockPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartSearchBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/StartTests/StartSearchBlockPageSerenityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/CalendarPage/CalendarHeaderPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryTests/CountryFiltersBlockPageSerenityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/levelTravel/Pack/test/CountryTests/CountryFiltersBlockPageSerenityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryFiltersBlockPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryFiltersBlockPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryMapBlockPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/CountryPage/Classes/BaseCountryPage/CountryMapBlockPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/CountryPage/Interfaces/Filterable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/CountryPage/Interfaces/Filterable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/HelperClass/CountryFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/HelperClass/CountryFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/LifehackPage/Headerable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/LifehackPage/LifeHacksHeaderPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartHeaderBlockPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/StartUpPage/Classes/StartHeaderBlockPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Pages/TVPage/TVHeaderPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/CountryFiltersBlockPageSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/CountryMapBlockSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/CountryToursBlockSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartBestPriceBlockSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartHeaderBlockSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartMessengerBlockSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/StartSearchBlockSteps.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/CountrySteps/CountryFiltersBlockPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levelTravel/Pack/Steps/CountrySteps/CountryFiltersBlockPageSteps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/serenity/browser-firefox.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/serenity/browser-firefox.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/CompositionPageTest/Test1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/CountryFilterBLockPageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/CountryMapBlockPageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/CountryToursBlockPageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/HotelFirstDescPageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryFiltersBlockPageSerenityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryMapBlockPageSerenityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/CountryToursBlockPageSerenityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartBestPriceSerenityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartHeaderBlockPageSerenityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartMessengerBlockPageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/SerenityTests/StartSearchBlockPageSerenityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/StartBestPriceBlockPageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/StartHeaderBlockPageTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/FragmentPageTest/StartSearchBlockPageTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/CountryTests/CountryFiltersBlockPageSerenityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/levelTravel/Pack/test/CountryTests/CountryFiltersBlockPageSerenityTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,8 +57,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CountryFiltersBlockPageSerenityTest.typeBeachTest">
-    <configuration name="CountryFiltersBlockPageSerenityTest.compareOnlyGoodRating" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CountryFiltersBlockPageSerenityTest.selectAnyBeachType">
+    <configuration name="CountryFiltersBlockPageSerenityTest.selectAllBeachTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
         <pattern>
@@ -101,13 +68,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="levelTravel.Pack.test.CountryTests" />
       <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.CountryTests.CountryFiltersBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="compareOnlyGoodRating" />
+      <option name="METHOD_NAME" value="selectAllBeachTypes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountryFiltersBlockPageSerenityTest.selectAnyRating" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CountryFiltersBlockPageSerenityTest.selectAllFoodType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
         <pattern>
@@ -117,13 +84,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="levelTravel.Pack.test.CountryTests" />
       <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.CountryTests.CountryFiltersBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="selectAnyRating" />
+      <option name="METHOD_NAME" value="selectAllFoodType" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountryFiltersBlockPageSerenityTest.selectAnyRatingSecondAfterClearFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CountryFiltersBlockPageSerenityTest.selectAnyBeachType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
         <pattern>
@@ -133,13 +100,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="levelTravel.Pack.test.CountryTests" />
       <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.CountryTests.CountryFiltersBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="selectAnyRatingSecondAfterClearFilter" />
+      <option name="METHOD_NAME" value="selectAnyBeachType" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountryFiltersBlockPageSerenityTest.selectFirstRating" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CountryFiltersBlockPageSerenityTest.selectAnyFoodType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
         <pattern>
@@ -149,13 +116,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="levelTravel.Pack.test.CountryTests" />
       <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.CountryTests.CountryFiltersBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="selectFirstRating" />
+      <option name="METHOD_NAME" value="selectAnyFoodType" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountryFiltersBlockPageSerenityTest.typeBeachTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CountryFiltersBlockPageSerenityTest.selectFirstAndLastRegion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenTest" />
       <extension name="coverage">
         <pattern>
@@ -165,7 +132,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="levelTravel.Pack.test.CountryTests" />
       <option name="MAIN_CLASS_NAME" value="levelTravel.Pack.test.CountryTests.CountryFiltersBlockPageSerenityTest" />
-      <option name="METHOD_NAME" value="typeBeachTest" />
+      <option name="METHOD_NAME" value="selectFirstAndLastRegion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -173,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.typeBeachTest" />
-        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.compareOnlyGoodRating" />
-        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectAnyRatingSecondAfterClearFilter" />
-        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectFirstRating" />
-        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectAnyRating" />
+        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectAnyBeachType" />
+        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectAllBeachTypes" />
+        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectFirstAndLastRegion" />
+        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectAllFoodType" />
+        <item itemvalue="JUnit.CountryFiltersBlockPageSerenityTest.selectAnyFoodType" />
       </list>
     </recent_temporary>
   </component>
