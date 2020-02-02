@@ -4,8 +4,6 @@ import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Interfaces.Filterable;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -14,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import java.util.LinkedList;
 import java.util.List;
 
-@DefaultUrl("https://level.travel/search/Moscow-RU-to-Any-TR-departure-09.02.2020-for-7-nights-2-adults-0-kids-1..5-stars")
+@DefaultUrl("https://level.travel/search/Moscow-RU-to-Any-TR-departure-28.02.2020-for-7-nights-2-adults-0-kids-1..5-stars")
 public class CountryFiltersBlockPage extends AbstractBasePage implements Filterable {
 
     //свитчер моментального подтверждения:
@@ -34,8 +32,7 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     }
 
     public void selectAnyPriceTower(int number) {
-        WebElement element = getListOfPriceTowers().get(number);
-        element.click();
+        selectAnyCB(number, getListOfPriceTowers());
     }
 
     private List<WebElementFacade> getPriceInputs() {
@@ -55,7 +52,6 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     }
 
     public void putAnyPriceInPriceInput(boolean b) {
-
         if (!b) {
             WebElement element = getPriceInputs().get(1);
             bufferInput(element);
@@ -114,8 +110,7 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     }
 
     public CountryFiltersBlockPage selectRatingHotel(int number) {
-        WebElement element = getRatingHotelsList().get(number - 1);
-        element.click();
+        selectAnyCB(number, getRatingHotelsList());
         return this;
     }
 
@@ -127,8 +122,7 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     }
 
     public CountryFiltersBlockPage selectDistanceToSea(int number) {
-        WebElement element = getDistanceToSeaList().get(number - 1);
-        element.click();
+        selectAnyCB(number, getDistanceToSeaList());
         return this;
     }
 
@@ -160,12 +154,14 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     }
 
     public CountryFiltersBlockPage selectTypeOfBeach(int typeNumber, boolean b) {
+        scrolling(300);
         WebElement element = getTypesOfBeachList().get(typeNumber - 1);
         if (!element.isSelected() == b) element.click();
         return this;
     }
 
     public void selectFirstAndLastBeachType() {
+        scrolling(300);
         selectFirstAndLastCB(getTypesOfBeachList());
     }
 
@@ -182,19 +178,9 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(foodTypes);
     }
 
-    private void showAllTypesFood() {
-        find(showAllFoodTypes).click();
-    }
-
-    public CountryFiltersBlockPage selectTypeFood(int number) {
+    public void selectTypeFood(int number) {
         scrolling(400);
-        WebElement element = getFoodTypeList().get(number - 1);
-        if (!element.isDisplayed()) {
-            showAllTypesFood();
-            element.click();
-        }
-        element.click();
-        return this;
+        selectAnyCB(number, getFoodTypeList(), showAllFoodTypes);
     }
 
     public void selectAllFoodType() {
@@ -210,11 +196,9 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(regionTypes);
     }
 
-    public CountryFiltersBlockPage selectRegionType(int regionNumber) {
+    public void selectRegionType(int regionNumber) {
         scrolling(450);
-        WebElement element = getRegionTypesList().get(regionNumber - 1);
-        element.click();
-        return this;
+        selectAnyCB(regionNumber, getRegionTypesList());
     }
 
     /////////////////////////////////////////////////////////////////////////////////////
@@ -224,19 +208,9 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(regionList);
     }
 
-    private void showAllRegions() {
-        find(showAllRegions).waitUntilClickable().click();
-    }
-
-    public CountryFiltersBlockPage selectAnyRegion(int number) {
+    public void selectAnyRegion(int number) {
         scrolling(500);
-        WebElement element = getRegionList().get(number - 1);
-        if (!element.isEnabled()) {
-            showAllRegions();
-            element.click();
-        }
-        element.click();
-        return new CountryFiltersBlockPage();
+        selectAnyCB(number, getRegionList(), showAllRegions);
     }
 
     public void selectFirstAndLastRegion() {
@@ -256,11 +230,19 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(hotelTypes);
     }
 
-    public CountryFiltersBlockPage selectHotelType(int number) {
-        scrolling(600);
-        WebElement element = getHotelTypesList().get(number);
-        element.click();
-        return this;
+    public void selectHotelType(int number) {
+        scrolling(700);
+        selectAnyCB(number, getHotelTypesList());
+    }
+
+    public void selectFirstAndLastHotelTypes() {
+        scrolling(700);
+        selectFirstAndLastCB(getHotelTypesList());
+    }
+
+    public void selectAllHotelTypes() {
+        scrolling(700);
+        selectAllCB(getHotelTypesList());
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
@@ -274,13 +256,12 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(wiFiTypeLabel);
     }
 
-    public CountryFiltersBlockPage selectWiFiInput(int elementNumber, boolean b) {
-        scrolling(500);
+    public void selectWiFiInput(int elementNumber, boolean b) {
+        scrolling(800);
         List<WebElementFacade> RbList = getWiFiRb();
         if (!RbList.get(elementNumber - 1).isSelected() == b) {
             getWiFiLabel().get(elementNumber - 1).click();
         }
-        return this;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
@@ -290,11 +271,19 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(waterGames);
     }
 
-    public CountryFiltersBlockPage selectWaterGame(int number) {
-        scrolling(600);
-        WebElement element = getWaterGamesList().get(number);
-        element.click();
-        return this;
+    public void selectWaterGame(int number) {
+        scrolling(900);
+        selectAnyCB(number, getWaterGamesList());
+    }
+
+    public void selectFirstAndLastWaterGames() {
+        scrolling(900);
+        selectFirstAndLastCB(getWaterGamesList());
+    }
+
+    public void selectAllWaterGames() {
+        scrolling(900);
+        selectAllCB(getWaterGamesList());
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
@@ -304,11 +293,19 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(hotelFacilities);
     }
 
-    public CountryFiltersBlockPage selectHotelFacility(int number) {
-        scrolling(700);
-        WebElement element = getHotelFacilitiesList().get(number);
-        element.click();
-        return new CountryFiltersBlockPage();
+    public void selectHotelFacility(int number) {
+        scrolling(1000);
+        selectAnyCB(number, getHotelFacilitiesList());
+    }
+
+    public void selectFirstAndLastFacilities() {
+        scrolling(1000);
+        selectFirstAndLastCB(getHotelFacilitiesList());
+    }
+
+    public void selectAllFacilities() {
+        scrolling(1000);
+        selectAllCB(getHotelFacilitiesList());
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
@@ -318,11 +315,19 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(forFamilyWithChildren);
     }
 
-    public CountryFiltersBlockPage selectFamilyWithChildren(int number) {
-        scrolling(1000);
-        WebElement element = getFamilyWithChildrenList().get(number);
-        element.click();
-        return this;
+    public void selectAnyVariationFamilyWithChildren(int number) {
+        scrolling(1200);
+        selectAnyCB(number, getFamilyWithChildrenList());
+    }
+
+    public void selectFirstAndLastFamilyWithChildren() {
+        scrolling(1200);
+        selectFirstAndLastCB(getFamilyWithChildrenList());
+    }
+
+    public void selectAllFamilyWithChildren() {
+        scrolling(1200);
+        selectAllCB(getFamilyWithChildrenList());
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
@@ -332,29 +337,19 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         return findAll(tourOperators);
     }
 
-    private void showAllTourOperators() {
-        find(showAllTourOperators).click();
+    public void selectAnyTourOperator(int number) {
+        scrolling(1500);
+        selectAnyCB(number, getTourOperatorsList(), showAllTourOperators);
     }
 
-    public CountryFiltersBlockPage selectAnyTourOperator(int number) {
-        scrolling(1100);
-        List<WebElementFacade> webElements = getTourOperatorsList();
-        if (!webElements.get(number - 1).isDisplayed()) {
-            showAllTourOperators();
-            webElements.get(number - 1).click();
-        }
-        webElements.get(number - 1).click();
-        return this;
+    public void selectFirstAndLastTourOperators(){
+        scrolling(1500);
+        selectFirstAndLastCB(getTourOperatorsList(), showAllTourOperators);
     }
 
-    public CountryFiltersBlockPage selectAllTourOperators() {
-        scrolling(1100);
-        List<WebElementFacade> webElements = getTourOperatorsList();
-        showAllTourOperators();
-        for (WebElement element : webElements) {
-            element.click();
-        }
-        return this;
+    public void selectAllTourOperators() {
+        scrolling(1500);
+        selectAllCB(getTourOperatorsList(), showAllTourOperators);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -363,24 +358,22 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     public CountryFiltersBlockPage clickLocalClearFilter() {
         WebElement element = find(clearOneTypeFilter);
         element.click();
-        return new CountryFiltersBlockPage();
+        return this;
     }
 
-    public CountryFiltersBlockPage clickFewLocalClearFilter() {
+    public void clickFewLocalClearFilter() {
         List<WebElementFacade> webElements = findAll(clearOneTypeFilter);
         if (webElements.size() > 0) {
             for (WebElement element : webElements) {
                 element.click();
             }
         }
-        return new CountryFiltersBlockPage();
     }
 
     //Сбросить все фильтры:
-    public CountryFiltersBlockPage clickAllClearFilter() {
-        scrolling(1200);
+    public void clickAllClearFilter() {
+        scrolling(1600);
         find(clearAllFiltersButton).click();
-        return new CountryFiltersBlockPage();
     }
 
 
@@ -388,10 +381,25 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
     //Общие служебные методы:
     //Продолжить переносить сюда методы встречающиеся не единожды по классу!
 
+    private void selectAnyCB(int CbNumber, List<WebElementFacade> list) {
+        list.get(CbNumber - 1).click();
+    }
+
+    private void selectAnyCB(int CbNumber, List<WebElementFacade> list, By by) {
+        WebElement element = list.get(CbNumber - 1);
+        WebElement showElement = find(by);
+        if (!element.isDisplayed() || !element.isEnabled()) {
+            showElement.click();
+            element.click();
+        } else {
+            element.click();
+        }
+    }
+
     private void selectFirstAndLastCB(List<WebElementFacade> facadeList) {
         LinkedList<WebElementFacade> list = new LinkedList<>(facadeList);
-        list.getFirst().waitUntilClickable().click();
-        list.getLast().waitUntilClickable().click();
+        list.getFirst().click();
+        list.getLast().click();
     }
 
     private void selectFirstAndLastCB(List<WebElementFacade> facadeList, By by) {
@@ -403,7 +411,7 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
 
     private void selectAllCB(List<WebElementFacade> facadeList) {
         for (WebElementFacade element : facadeList) {
-            element.waitUntilClickable().click();
+            element.click();
         }
     }
 
@@ -411,8 +419,9 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
         for (WebElementFacade element : facadeList) {
             if (!element.isDisplayed()) {
                 find(by).waitUntilClickable().click();
+            } else {
+                element.waitUntilClickable().click();
             }
-            element.waitUntilClickable().click();
         }
     }
 

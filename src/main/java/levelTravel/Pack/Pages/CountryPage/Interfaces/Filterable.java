@@ -1,11 +1,7 @@
 package levelTravel.Pack.Pages.CountryPage.Interfaces;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
-import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public interface Filterable {
 
@@ -93,19 +89,19 @@ public interface Filterable {
     ///////////////////////////////////////////////////////////////////////////////////
     //Фильтруем по видам питания:
 
-    CountryFiltersBlockPage selectTypeFood(int number);
+    void selectTypeFood(int number);
 
     void selectAllFoodType();
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем по виду местности:
 
-    CountryFiltersBlockPage selectRegionType(int regionNumber);
+    void selectRegionType(int regionNumber);
 
     /////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем список регионов:
 
-    CountryFiltersBlockPage selectAnyRegion(int number);
+    void selectAnyRegion(int number);
 
     void selectFirstAndLastRegion();
 
@@ -113,43 +109,61 @@ public interface Filterable {
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Выбираем тип отеля:
-    CountryFiltersBlockPage selectHotelType(int number);
+    void selectHotelType(int number);
+
+    void selectFirstAndLastHotelTypes();
+
+    void selectAllHotelTypes();
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по наличию wi-fi:
 
-    CountryFiltersBlockPage selectWiFiInput(int elementNumber, boolean b);
+    void selectWiFiInput(int elementNumber, boolean b);
 
     //////////////////////////////////////////////////////////////////////////////////////////
     //Наличие вида игр на воде:
 
-    CountryFiltersBlockPage selectWaterGame(int number);
+    void selectWaterGame(int number);
+
+    void selectFirstAndLastWaterGames();
+
+    void selectAllWaterGames();
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Удобства в номере отеля:
 
-    CountryFiltersBlockPage selectHotelFacility(int number);
+    void selectHotelFacility(int number);
+
+    void selectFirstAndLastFacilities();
+
+    void selectAllFacilities();
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Работа со списком услуг для семей с детьми:
 
-    CountryFiltersBlockPage selectFamilyWithChildren(int number);
+    void selectAnyVariationFamilyWithChildren(int number);
+
+    void selectFirstAndLastFamilyWithChildren();
+
+    void selectAllFamilyWithChildren();
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по списку операторов:
 
-    CountryFiltersBlockPage selectAnyTourOperator(int number);
+    void selectAnyTourOperator(int number);
 
-    CountryFiltersBlockPage selectAllTourOperators();
+    void selectFirstAndLastTourOperators();
+
+    void selectAllTourOperators();
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     //Сброс одной и более настроек фильтра:
 
     CountryFiltersBlockPage clickLocalClearFilter();
 
-    CountryFiltersBlockPage clickFewLocalClearFilter();
+    void clickFewLocalClearFilter();
 
     //Сбросить все фильтры:
-    CountryFiltersBlockPage clickAllClearFilter();
+    void clickAllClearFilter();
 
 }

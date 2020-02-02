@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CountryFiltersBlockPageSteps {
 
-    CountryFiltersBlockPage page;
+    private CountryFiltersBlockPage page;
 
     @Step
     public void openPage() {
@@ -135,6 +135,16 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
+    public void selectFirstAndLastHotelTypes() {
+        page.selectFirstAndLastHotelTypes();
+    }
+
+    @Step
+    public void selectAllHotelTypes(){
+        page.selectAllHotelTypes();
+    }
+
+    @Step
     public void selectWiFiInput(int elementNumber, boolean b) {
         page.selectWiFiInput(elementNumber, b);
     }
@@ -145,18 +155,53 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
+    public void selectFirstAndLastWaterGames(){
+        page.selectFirstAndLastWaterGames();
+    }
+
+    @Step
+    public void selectAllWaterGames(){
+        page.selectAllWaterGames();
+    }
+
+    @Step
     public void selectHotelFacility(int number) {
         page.selectHotelFacility(number);
     }
 
     @Step
+    public void selectFirstAndLastFacilities(){
+        page.selectFirstAndLastFacilities();
+    }
+
+    @Step
+    public void selectAllFacilities(){
+        page.selectAllFacilities();
+    }
+
+    @Step
     public void selectFamilyWithChildren(int number) {
-        page.selectFamilyWithChildren(number);
+        page.selectAnyVariationFamilyWithChildren(number);
+    }
+
+    @Step
+    public void selectFirstAndLastFamilyWithChildren() {
+        page.selectFirstAndLastFamilyWithChildren();
+    }
+
+    @Step
+    public void selectAllFamilyWithChildren() {
+        page.selectAllFamilyWithChildren();
     }
 
     @Step
     public void selectAnyTourOperator(int number) {
         page.selectAnyTourOperator(number);
+    }
+
+    @Step
+    public void selectFirstAndLastTourOperators(){
+        page.selectFirstAndLastTourOperators();
     }
 
     @Step
@@ -224,6 +269,7 @@ public class CountryFiltersBlockPageSteps {
 
     @Step
     public void checkToursResultIsPresent(int number) {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
         String s = "//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div[%s]";
         WebElement element = page.find(By.xpath(String.format(s, number))).waitUntilVisible();
         Assertions.assertThat(element.isEnabled()).isTrue();
@@ -332,13 +378,17 @@ public class CountryFiltersBlockPageSteps {
     }
 
     @Step
-    public void isDisplayedAnyCbOfFoodList(int number) {
-        Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-pansion__list']//label").get(number).isDisplayed()).isTrue();
-    }
-
-    @Step
-    public void isEnabledAnyElementOfRegionList(int number) {
-        Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-region__list']//li//input").get(number).isEnabled()).isTrue();
+    public void compareRightRegion(String anyRegion){
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
+        List<WebElementFacade> list = page.findAll("//div[@class='ReactVirtualized__Grid__innerScrollContainer']//div[@class='location-label']");
+        List<WebElementFacade> factList = new ArrayList<>();
+        for (WebElementFacade element: list) {
+            String factRegion = element.getText();
+            if (factRegion.contains(anyRegion)){
+                factList.add(element);
+            }
+        }
+        Assertions.assertThat(list.size() == factList.size()).isTrue();
     }
 
     @Step
@@ -353,11 +403,12 @@ public class CountryFiltersBlockPageSteps {
 
     @Step
     public void isSelectedAnyTourOperator(int number) {
-        Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-operator__list']//li").get(number).isDisplayed()).isTrue();
+        Assertions.assertThat(page.findAll("//ul[@class='checkbox-group__list filter-operator__list']//li").get(number - 1).isDisplayed()).isTrue();
     }
 
     @Step
     public void isSelectedAnyFilter(int number) {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
         Assertions.assertThat(page.findAll("//div[@class='filter-rating']//li").get(number).isDisplayed()).isTrue();
     }
 

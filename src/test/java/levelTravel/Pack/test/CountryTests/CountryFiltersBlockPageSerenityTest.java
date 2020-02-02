@@ -12,27 +12,28 @@ import org.openqa.selenium.WebDriver;
 public class CountryFiltersBlockPageSerenityTest {
 
     @Steps
+    private
     CountryFiltersBlockPageSteps steps;
 
     @Managed
     WebDriver driver;
 
     @Test
-    public void getToursListWithOnSwitch(){
+    public void getToursListWithOnSwitch() {
         steps.openPage();
         steps.switchMomentConfirmTumbler(true);
         steps.checkToursResultGreaterNull();
     }
 
     @Test
-    public void getToursWithSelectPriceTower(){
+    public void getToursWithSelectPriceTower() {
         steps.openPage();
         steps.selectAnyPriceTower(1);
         steps.checkToursResultGreaterNull();
     }
 
     @Test
-    public void getToursWithSelectFirstAndLastPriceTowers(){
+    public void getToursWithSelectFirstAndLastPriceTowers() {
         steps.openPage();
         steps.selectAnyPriceTower(1);
         steps.selectAnyPriceTower(5);
@@ -40,7 +41,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void getToursAfterClearAnyTower(){
+    public void getToursAfterClearAnyTower() {
         steps.openPage();
         steps.selectAnyPriceTower(3);
         steps.clickLocalClearFilter();
@@ -48,7 +49,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void getToursSelectTowerTwice(){
+    public void getToursSelectTowerTwice() {
         steps.openPage();
         steps.selectAnyPriceTower(3);
         steps.selectAnyPriceTower(3);
@@ -56,7 +57,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void checkSendPricesOnPriceInputs(){
+    public void checkSendPricesOnPriceInputs() {
         steps.openPage();
         steps.selectAnyPriceTower(2);
         steps.checkPriceInputsIsNotNull();
@@ -85,7 +86,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void writeBufferPrice(){
+    public void writeBufferPrice() {
         steps.openPage();
         steps.writeMinIntervalPrice("55555");
         steps.pasteBufferPrice(true);
@@ -93,7 +94,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void enterWrongValuesOfPriceInterval(){
+    public void enterWrongValuesOfPriceInterval() {
         steps.openPage();
         steps.writeMinIntervalPrice("55555");
         steps.writeMaxIntervalPrice("44444");
@@ -101,7 +102,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void enterZeroValues(){
+    public void enterZeroValues() {
         steps.openPage();
         steps.writeMinIntervalPrice("0");
         steps.writeMaxIntervalPrice("0");
@@ -114,32 +115,33 @@ public class CountryFiltersBlockPageSerenityTest {
     public void selectAnyStarsOfHotel() {
         steps.openPage();
         steps.selectAnyStarsHotel(true, 3, 3);
-        steps.checkSelectingCheckBox(false,3);
-    }
-    @Test
-    public void selectFirstAndLastStarsOfHotel() {
-        steps.openPage();
-        steps.selectAnyStarsHotel(true,3, 3);
-        steps.selectAnyStarsHotel(false,3, 3);
         steps.checkSelectingCheckBox(false, 3);
     }
 
     @Test
-    public void selectFirstAndLastStars(){
+    public void selectFirstAndLastStarsOfHotel() {
         steps.openPage();
-        steps.selectFirstAndLastStars();
-        steps.checkCountSelectingCB(2);
+        steps.selectAnyStarsHotel(true, 3, 3);
+        steps.selectAnyStarsHotel(false, 3, 3);
+        steps.checkSelectingCheckBox(false, 3);
     }
 
     @Test
-    public void selectAllStars(){
+    public void selectFirstAndLastStars() {
+        steps.openPage();
+        steps.selectFirstAndLastStars();
+        steps.checkCountSelectingCB(2); //переписать нормально
+    }
+
+    @Test
+    public void selectAllStars() {
         steps.openPage();
         steps.selectAllStars();
         steps.checkToursResultGreaterNull();
     }
 
     @Test
-    public void selectAnyStarsAfterClearFilter(){
+    public void selectAnyStarsAfterClearFilter() {
         steps.openPage();
         steps.selectAnyStarsHotel(true, 2, 2);
         steps.clickLocalClearFilter();
@@ -162,7 +164,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void writeHotelNameFromBuffer(){
+    public void writeHotelNameFromBuffer() {
         steps.openPage();
         steps.writeHotelNameFromBuffer("Green Nature Diamond Hotel");
         steps.checkToursResultGreaterNull();
@@ -194,7 +196,7 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void compareOnlyGoodRating(){
+    public void compareOnlyGoodRating() {
         steps.openPage();
         steps.selectRatingHotel(5);
         steps.compareRatingOfGetResultList(9.0);
@@ -203,21 +205,21 @@ public class CountryFiltersBlockPageSerenityTest {
     ///////////////////////////////////////////////////////////
 
     @Test
-    public void getAllToursForAnythingDistanceToSea(){
+    public void getAllToursForAnyDistanceToSea() {
         steps.openPage();
         steps.selectDistanceToSea(3);
         steps.checkToursResultGreaterNull();
     }
 
     @Test
-    public void getOnlyFirstDistanceToSea(){
+    public void getOnlyFirstDistanceToSea() {
         steps.openPage();
         steps.selectDistanceToSea(1);
         steps.compareDistanceOfGetResultList(1);
     }
 
     @Test
-    public void selectDistanceTwiceAfterClearFilter(){
+    public void selectDistanceTwiceAfterClearFilter() {
         steps.openPage();
         steps.selectDistanceToSea(1);
         steps.clickLocalClearFilter();
@@ -260,14 +262,14 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void selectFirstAndLastBeachTypes(){
+    public void selectFirstAndLastBeachTypes() {
         steps.openPage();
         steps.selectFirstAndLastBeachType();
         steps.checkToursResultGreaterNull();
     }
 
     @Test
-    public void selectBeachTypeTwice(){
+    public void selectBeachTypeTwice() {
         steps.openPage();
         steps.selectTypeOfBeach(2, true);
         steps.clickLocalClearFilter();
@@ -280,7 +282,7 @@ public class CountryFiltersBlockPageSerenityTest {
     @Test
     public void selectAnyFoodType() {
         steps.openPage();
-        steps.selectTypeFood(2);
+        steps.selectTypeFood(4);
         steps.checkToursResultGreaterNull();
     }
 
@@ -310,8 +312,8 @@ public class CountryFiltersBlockPageSerenityTest {
     @Test
     public void selectAnyRegion() {
         steps.openPage();
-        steps.selectAnyRegion(3);
-        steps.checkToursResultGreaterNull();
+        steps.selectAnyRegion(5);
+        steps.compareRightRegion("Белек");
     }
 
     @Test
@@ -322,18 +324,36 @@ public class CountryFiltersBlockPageSerenityTest {
     }
 
     @Test
-    public void selectAllRegion() {
+    public void selectAllRegion() { //переписать нормально
         steps.openPage();
         steps.selectAllRegions();
         steps.checkToursResultGreaterNull();
     }
 
+    ////////////////////////////////////////////////////////
+
     @Test
-    public void typeHotelTests() {
+    public void selectAnyHotelType() {
         steps.openPage();
         steps.selectHotelType(3);
         steps.checkEqualString("Активный");
     }
+
+    @Test
+    public void selectFirstAndLastType() {
+        steps.openPage();
+        steps.selectFirstAndLastHotelTypes();
+        steps.checkToursResultGreaterNull();
+    }
+
+    @Test
+    public void selectAllHotelTypes() {
+        steps.openPage();
+        steps.selectAllHotelTypes();
+        steps.checkToursResultGreaterNull();
+    }
+
+    ////////////////////////////////////////////////////////
 
     @Test
     public void WiFiTests() {
@@ -342,40 +362,119 @@ public class CountryFiltersBlockPageSerenityTest {
         steps.isSelectedRbWifi(2);
     }
 
+    ////////////////////////////////////////////////////////
+
     @Test
-    public void waterGameTest() {
+    public void selectAnyWaterGame() {
         steps.openPage();
         steps.selectWaterGame(2);
-
     }
 
     @Test
-    public void hoTelFacilitiesTest() {
+    public void selectAnyWaterGameTwiceAfterClearFilter() {
+        steps.openPage();
+        steps.selectWaterGame(3);
+        steps.clickLocalClearFilter();
+        steps.checkToursResultGreaterNull();
+    }
+
+
+    @Test
+    public void selectFirstAndLastWaterGames() {
+        steps.openPage();
+        steps.selectFirstAndLastWaterGames();
+        steps.checkToursResultGreaterNull();
+    }
+
+    @Test
+    public void selectAllWaterGames() {
+        steps.openPage();
+        steps.selectAllWaterGames();
+        steps.checkToursResultGreaterNull();
+    }
+
+    ///////////////////////////////////////////////////////
+
+    @Test
+    public void selectAnyHotelFacility() {
         steps.openPage();
         steps.selectHotelFacility(3);
         steps.checkToursResultGreaterAnyNumber(0);
     }
 
     @Test
-    public void familyWithChild() {
+    public void selectFirstAndLastFacilities() {
+        steps.openPage();
+        steps.selectFirstAndLastFacilities();
+        steps.checkToursResultGreaterAnyNumber(0);
+    }
+
+    @Test
+    public void selectAllFacilities() {
+        steps.openPage();
+        steps.selectAllFacilities();
+        steps.checkToursResultGreaterAnyNumber(0);
+    }
+
+    //////////////////////////////////////////////////////
+
+    @Test
+    public void selectAnyVaryFamilyWithChildren() {
         steps.openPage();
         steps.selectFamilyWithChildren(2);
         steps.checkToursResultGreaterAnyNumber(0);
     }
 
     @Test
-    public void tourOperatorsTest() {
+    public void selectFirstAndLastVaryFamilyWithChildren() {
         steps.openPage();
-        steps.selectAllTourOperators();
-        //countryFiltersPage.selectAnyTourOperator(6);
-        steps.isSelectedAnyTourOperator(2);
+        steps.selectFirstAndLastFamilyWithChildren();
+        steps.checkToursResultGreaterAnyNumber(0);
     }
 
     @Test
-    public void clearFilterTest() {
-        //countryFiltersPage.clickAllClearFilter();
-//        countryFiltersPage.selectTypeFood(6);
-//        countryFiltersPage.clickLocalClearFilter();
+    public void selectAllVaryFamilyWithChildren() {
+        steps.openPage();
+        steps.selectAllFamilyWithChildren();
+        steps.checkToursResultGreaterAnyNumber(0);
+    }
+
+    /////////////////////////////////////////////////////
+
+    @Test
+    public void selectAnyTourOperator() {
+        steps.openPage();
+        steps.selectAnyTourOperator(6);
+        steps.isSelectedAnyTourOperator(6);
+    }
+
+    @Test
+    public void selectFirstAndLastTourOperators() {
+        steps.openPage();
+        steps.selectFirstAndLastTourOperators();
+        steps.checkToursResultGreaterNull();
+    }
+
+    @Test
+    public void selectAllTourOperators() {
+        steps.openPage();
+        steps.selectAllTourOperators();
+        steps.checkToursResultGreaterNull();
+    }
+
+    ////////////////////////////////////////////////////
+
+    @Test
+    public void selectAllClearFilter() {
+        steps.openPage();
+        steps.selectRatingHotel(3);
+        steps.selectDistanceToSea(2);
+        steps.clickAllClearFilter();
+        steps.isSelectedAnyFilter(2); //разобраться. Не совсем верно отрабатывает централизованный сброс фильтров.
+    }
+
+    @Test
+    public void selectFewClearFilter() {
         steps.openPage();
         steps.selectRatingHotel(3);
         steps.selectDistanceToSea(2);
