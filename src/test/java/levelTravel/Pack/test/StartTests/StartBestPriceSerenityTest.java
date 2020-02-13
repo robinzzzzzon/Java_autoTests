@@ -15,7 +15,7 @@ public class StartBestPriceSerenityTest {
     private StartBestPriceBlockSteps steps;
 
     @Managed
-    WebDriver driver;
+    private WebDriver driver;
 
 
     @Test

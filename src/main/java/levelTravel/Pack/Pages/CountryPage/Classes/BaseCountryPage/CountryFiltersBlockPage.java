@@ -379,7 +379,6 @@ public class CountryFiltersBlockPage extends AbstractBasePage implements Filtera
 
     /////////////////////////////////////////////////////////////////////////////////
     //Общие служебные методы:
-    //Продолжить переносить сюда методы встречающиеся не единожды по классу!
 
     private void selectAnyCB(int CbNumber, List<WebElementFacade> list) {
         list.get(CbNumber - 1).click();

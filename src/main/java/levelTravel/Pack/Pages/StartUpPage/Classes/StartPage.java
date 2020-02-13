@@ -12,24 +12,16 @@ public class StartPage extends AbstractBasePage {
     private StartSearchBlockPage startSearchBlockPage = new StartSearchBlockPage();
     private StartBestPriceBlockPage startBestPriceBlockPage = new StartBestPriceBlockPage();
 
-//    private void initStartPage(){
-//        StartHeaderBlockPage startHeaderBlockPage = new StartHeaderBlockPage(driver);
-//        StartMessengerBlockPage startMessengerBlockPage = new StartMessengerBlockPage(driver);
-//        StartSearchBlockPage startSearchBlockPage = new StartSearchBlockPage(driver);
-//        StartBestPriceBlockPage startBestPriceBlockPage = new StartBestPriceBlockPage(driver);
-//    }
-
     public StartPage doCorrectSignUp() {
-        startHeaderBlockPage.clickHeaderExit()
-                .writeMailInputExit("patrick.kelskyh@gmail.com")
-                .clickGoOnButton()
-                .writePassInput("oidEYRzs")
-                .clickSignUpButton();
+        startHeaderBlockPage.clickHeaderExit();
+        startHeaderBlockPage.writeMailInputExit("patrick.kelskyh@gmail.com");
+        startHeaderBlockPage.clickGoOnButton();
+        startHeaderBlockPage.writePassInput("123456");
+        startHeaderBlockPage.clickSignUpButton();
         String s = find(By.xpath("//div[@class='auth_success']")).getText();
         return new StartPage();
     }
 
 
     //Здесь буду уже писать общие методы по взаимодействию с программой.
-    //Методы объектов дочерних классов доступны только при создании метода.
 }

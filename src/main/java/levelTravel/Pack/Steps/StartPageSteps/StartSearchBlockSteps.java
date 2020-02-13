@@ -10,9 +10,9 @@ import org.openqa.selenium.By;
 
 public class StartSearchBlockSteps {
 
-    StartSearchBlockPage page;
-    CountryFiltersBlockPage countryFiltersBlockPage;
-    ItalyPage italyPage;
+    private StartSearchBlockPage page;
+    private CountryFiltersBlockPage countryFiltersBlockPage;
+    private ItalyPage italyPage;
 
     @Step
     public void openPage() {
@@ -163,6 +163,7 @@ public class StartSearchBlockSteps {
 
     @Step
     public void isSelectMomentConfirmSwitcher() {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
         Assertions.assertThat(countryFiltersBlockPage.find(By.xpath("//span[@class='toggle-switch__button']")).isSelected()).isFalse();
     }
 
@@ -179,6 +180,7 @@ public class StartSearchBlockSteps {
 
     @Step
     public void isEnabledSearchInput() {
+        page.find("//div[@class='overlay_container']").waitUntilNotVisible();
         Assertions.assertThat(countryFiltersBlockPage.find(By.xpath("//div[@class='search_container']")).isEnabled()).isTrue();
     }
 

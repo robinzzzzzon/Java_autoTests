@@ -42,7 +42,7 @@ public class TableForStartSearchBlockPage extends AbstractBasePage{
 
     //Итак, здесь мы подаем номер столбца и номер строки. Далее создаем лист листов и помещаем туда результат от getRowsWithColumns().
     //Теперь создаем элемент, в который помещаем результат поиска по получившейся двумерной коллекции,
-    //ну и возвращаем объявленный String на элементе методом getText().
+    //ну и возвращаем объявленный элемент пересечением get()
     public WebElement getValueFromCell(int rowNumber, int columnNumber){
         List<List<WebElement>> rowsWithColumns = getRowsWithColumns();
         return rowsWithColumns.get(rowNumber -1).get(columnNumber - 1);

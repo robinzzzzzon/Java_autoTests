@@ -49,7 +49,7 @@ public class StartSearchBlockPageSerenityTest {
         steps.clickCountryInput();
         steps.clickGettingWholeCountry(49);
         steps.clickSearchButton("Sou");
-        steps.checkContainsPartOfHeading("ею");
+        steps.checkContainsPartOfHeading("ию");
     }
 
     @Test

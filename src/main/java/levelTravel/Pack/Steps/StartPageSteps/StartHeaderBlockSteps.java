@@ -10,10 +10,10 @@ import org.openqa.selenium.By;
 
 public class StartHeaderBlockSteps {
 
-    StartHeaderBlockPage page;
-    PromoPage promoPage;
-    PressPage pressPage;
-    FaceBookPage faceBookPage;
+    private StartHeaderBlockPage page;
+    private PromoPage promoPage;
+    private PressPage pressPage;
+    private FaceBookPage faceBookPage;
 
     @Step
     public void openPage() {

@@ -22,27 +22,27 @@ public interface Toursable {
 
     /////////////////////////////////////////////////////////////
 
-    public CountryToursBlockPage clickFirstWishListButton(boolean b);
+    public void clickFirstWishListButton(boolean b);
 
-    public CountryToursBlockPage clickAnyWishListButton(int number);
-
-    /////////////////////////////////////////////////////////////
-
-    public HotelFirstDescPage clickFirstExploreHotel(boolean b);
-
-    public HotelFirstDescPage clickAnyExploreHotel(int number);
+    public void clickAnyWishListButton(int number);
 
     /////////////////////////////////////////////////////////////
 
-    public HotelFirstDescPage clickFirstHotelPriceLink(boolean b);
+    public void clickFirstExploreHotel(boolean b);
 
-    public HotelFirstDescPage clickAnyHotelPriceLink(int number);
+    public void clickAnyExploreHotel(int number);
+
+    /////////////////////////////////////////////////////////////
+
+    public void clickFirstHotelPriceLink(boolean b);
+
+    public void clickAnyHotelPriceLink(int number);
 
     ////////////////////////////////////////////////////////////
 
     public String getAnyNameHotelText(int number);
 
-    public HotelFirstDescPage clickFirstNameHotelLink(boolean b);
+    public void clickFirstNameHotelLink(boolean b);
 
-    public HotelFirstDescPage clickAnyNameHotelLink(int number);
+    public void clickAnyNameHotelLink(int number);
 }

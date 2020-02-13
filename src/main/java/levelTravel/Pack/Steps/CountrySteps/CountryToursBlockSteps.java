@@ -41,23 +41,23 @@ public class CountryToursBlockSteps {
     }
 
     @Step
-    public HotelFirstDescPage clickFirstExploreHotel(boolean b) {
-        return page.clickFirstExploreHotel(b);
+    public void clickFirstExploreHotel(boolean b) {
+        page.clickFirstExploreHotel(b);
     }
 
     @Step
-    public HotelFirstDescPage clickAnyExploreHotel(int number) {
-        return page.clickAnyExploreHotel(number);
+    public void clickAnyExploreHotel(int number) {
+        page.clickAnyExploreHotel(number);
     }
 
     @Step
-    public HotelFirstDescPage clickFirstHotelPriceLink(boolean b) {
-        return page.clickFirstHotelPriceLink(b);
+    public void clickFirstHotelPriceLink(boolean b) {
+        page.clickFirstHotelPriceLink(b);
     }
 
     @Step
-    public HotelFirstDescPage clickAnyHotelPriceLink(int number) {
-        return page.clickAnyHotelPriceLink(number);
+    public void clickAnyHotelPriceLink(int number) {
+        page.clickAnyHotelPriceLink(number);
     }
 
     @Step
@@ -66,16 +66,17 @@ public class CountryToursBlockSteps {
     }
 
     @Step
-    public HotelFirstDescPage clickFirstNameHotelLink(boolean b) {
-        return page.clickFirstNameHotelLink(b);
+    public void clickFirstNameHotelLink(boolean b) {
+        page.clickFirstNameHotelLink(b);
     }
 
     @Step
-    public HotelFirstDescPage clickAnyNameHotelLink(int number) {
-        return page.clickAnyNameHotelLink(number);
+    public void clickAnyNameHotelLink(int number) {
+        page.clickAnyNameHotelLink(number);
     }
 
     //////////////////////////////////////////////////////////////////
+    //Переделать на нормальные ассершны!
 
     @Step
     public void isEqualAttributeButtonBeforeAndAfterClick() {

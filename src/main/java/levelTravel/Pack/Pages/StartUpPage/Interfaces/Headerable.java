@@ -34,41 +34,41 @@ public interface Headerable {
     By signUpButton = By.xpath("//button[text()='Войти']");
     By emptyFieldError = By.xpath("//div[@class='simple_tooltip_body']");
 
-    StartHeaderBlockPage refreshStartPage();
+    void refreshStartPage();
 
-    StartHeaderBlockPage clickNumberField();
+    void clickNumberField();
 
-    StartHeaderBlockPage clickRecallMeButton();
+    void clickRecallMeButton();
 
-    StartHeaderBlockPage clickRecallMeRightNow();
+    void clickRecallMeRightNow();
 
     WhatsUpPage clickMessageIcon();
 
     String readRecallMeHeading();
 
-    StartHeaderBlockPage clickHeaderServices();
+    void clickHeaderServices();
 
     PromoPage selectAnyService(int serviceNumber);
 
-    StartHeaderBlockPage clickHeaderMyWishList();
+    void clickHeaderMyWishList();
 
     String getTextPartOfWishList(int wishListNumber);
 
-    StartHeaderBlockPage clickHeaderHelper();
+    void clickHeaderHelper();
 
     PressPage selectAnyHelper(int helperNumber);
 
-    StartHeaderBlockPage clickHeaderExit();
+    void clickHeaderExit();
 
     String getMailHeadingExitText();
 
-    StartHeaderBlockPage writeMailInputExit(String string);
+    void writeMailInputExit(String string);
 
-    StartHeaderBlockPage clickGoOnButton();
+    void clickGoOnButton();
 
-    StartHeaderBlockPage clickToCross();
+    void clickToCross();
 
-    StartHeaderBlockPage clickRegisterButton();
+    void clickRegisterButton();
 
     String getTextEmptyFieldError();
 
@@ -76,5 +76,5 @@ public interface Headerable {
 
     void clickSignUpButton();
 
-    StartHeaderBlockPage writePassInput(String pass);
+    void writePassInput(String pass);
 }

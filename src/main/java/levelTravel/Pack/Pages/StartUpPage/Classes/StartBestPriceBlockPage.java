@@ -1,38 +1,32 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
-import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.TurkeyPage;
+import levelTravel.Pack.Pages.HelperClass.CountryFactory;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.BestPricable;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 @DefaultUrl("https://level.travel/")
 public class StartBestPriceBlockPage extends AbstractBasePage implements BestPricable {
 
-    public StartBestPriceBlockPage clickCityStartDD() {
+    public void clickCityStartDD() {
         find(cityStartDD).click();
-        return this;
     }
 
     private List<WebElementFacade> getStartCityList() {
         return findAll(cityStartList);
     }
 
-    public StartBestPriceBlockPage selectAnyStartCity(int number) {
-        List<WebElementFacade> webElements = getStartCityList();
-        webElements.get(number - 1).click();
-        return new StartBestPriceBlockPage();
+    public void selectAnyStartCity(int number) {
+        selectAnyFromAnyList(getStartCityList(), number);
     }
 
-    public StartBestPriceBlockPage selectLastStartCity() {
+    public void selectLastStartCity() {
         //Вариант попроще: создаем LinkedList и в него результат выполнения нашего getStartCityList, где уже достаточно просто через getLast() кликнуть на элемент.
 //        LinkedList<WebElementFacade> list = new LinkedList<>(getStartCityList());
 //        list.getLast().click();
@@ -47,7 +41,6 @@ public class StartBestPriceBlockPage extends AbstractBasePage implements BestPri
                 element.click();
             }
         }
-        return new StartBestPriceBlockPage();
     }
 
     //////////////////////////////////////////////////////////////
@@ -56,10 +49,8 @@ public class StartBestPriceBlockPage extends AbstractBasePage implements BestPri
         return findAll(countPfNightsList);
     }
 
-    public StartBestPriceBlockPage selectAnyCountOfNights(int number) {
-        List<WebElementFacade> webElements = getCountOfNightsList();
-        webElements.get(number - 1).click();
-        return new StartBestPriceBlockPage();
+    public void selectAnyCountOfNights(int number) {
+        selectAnyFromAnyList(getCountOfNightsList(), number);
     }
 
     //////////////////////////////////////////////////////////////
@@ -68,17 +59,17 @@ public class StartBestPriceBlockPage extends AbstractBasePage implements BestPri
         return findAll(countryGraphList);
     }
 
-    public StartBestPriceBlockPage selectAnyCountry(int number) {
+    public void selectAnyCountry(int number) {
         if (number > 5) {
             find(invisibleCountryDD).click();
             List<WebElementFacade> webElements = getCountryGraphList();
-            scrolling(200, 1000);
+            scrolling(300);
             webElements.get(number - 1).waitUntilEnabled().click();
+        } else{
+            List<WebElementFacade> webElements = getCountryGraphList();
+            scrolling(300);
+            webElements.get(number - 1).click();
         }
-        List<WebElementFacade> webElements = getCountryGraphList();
-        scrolling(200, 1000);
-        webElements.get(number - 1).click();
-        return new StartBestPriceBlockPage();
     }
 
     //////////////////////////////////////////////////////////////
@@ -87,23 +78,28 @@ public class StartBestPriceBlockPage extends AbstractBasePage implements BestPri
         return findAll(priceColumnList);
     }
 
-    public CountryFiltersBlockPage selectAnyPriceOfGraph(int number, String countryName) {
-        List<WebElementFacade> webElements = getPriceGraphList();
-        webElements.get(number - 1).click();
-        //return new CountryFactory(getDriver()).createCountry(countryName);
-        return new CountryFiltersBlockPage();
+    public AbstractBasePage selectAnyPriceOfGraph(int number, String countryName) {
+        selectAnyFromAnyList(getPriceGraphList(), number);
+        return new CountryFactory().createCountry(countryName);
     }
 
-    private void scrolling(int number, int waitMs) {
+    ////////////////////////////////////////////////////////////////////////////////
+
+    private void selectAnyFromAnyList(List<WebElementFacade> list, int number){
+        WebElement element = list.get(number - 1);
+        element.click();
+    }
+
+    private void scrolling(int number) {
         JavascriptExecutor JSE = (JavascriptExecutor) getDriver();
         String s = "window.scrollBy(0, %s)";
         JSE.executeScript(String.format(s, number), "");
-        waiter(waitMs);
+        waiter();
     }
 
-    private void waiter(int waitMs) {
+    private void waiter() {
         try {
-            Thread.sleep(waitMs);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

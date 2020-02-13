@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 public class CountryToursBlockPageSerenityTest {
 
     @Steps
-    CountryToursBlockSteps steps;
+    private CountryToursBlockSteps steps;
 
     @Managed
     WebDriver driver;

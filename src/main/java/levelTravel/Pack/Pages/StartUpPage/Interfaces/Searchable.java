@@ -10,12 +10,12 @@ public interface Searchable {
     By searchCountryInput = By.xpath("//input[@data-reactid='.0.0.0.0.0.0']");
     By popularCountriesList = By.xpath("//ul[@data-reactid='.0.0.0.0.0.1.0.0.0']//li");
     By wholeCountriesList = By.xpath("//ul[@data-reactid='.0.0.0.0.0.1.0.0.1']//li");
-    //////////////////////
+    ///////////////////////
     By calendarInput = By.xpath("//span[@data-reactid='.0.0.0.0.1.0.0']");
     By switchToNextMonth = By.xpath("//div[@class='calendar-next-month']");
     String calendarTBody = "//tbody[@data-reactid='.0.0.0.0.1.2.0.1:$%s-2020.1.1']";
     By add2days = By.xpath("//span[@data-reactid='.0.0.0.0.1.2.0.2.1.0.1']");
-    ///////////////////////
+    /////////////////////
     By dayIntervalDD = By.xpath("//span[text()='7 ночей']");
     By minusDay = By.xpath("//div[@data-reactid='.0.0.0.0.2.2.0.0']");
     By plusDay = By.xpath("//div[@data-reactid='.0.0.0.0.2.2.0.2']");
@@ -37,20 +37,21 @@ public interface Searchable {
 
 
     /////////////////////////////
-    StartSearchBlockPage writeAnyCountryName(String anyPlace);
+    void writeAnyCountryName(String anyPlace);
 
-    StartSearchBlockPage clickCountryInput();
+    void clickCountryInput();
 
-    StartSearchBlockPage clickGettingPopularCountry(int number);
+    void clickGettingPopularCountry(int number);
 
-    StartSearchBlockPage clickGettingWholeCountry(int number);
+    void clickGettingWholeCountry(int number);
 
     /////////////////////////////
 
     boolean isErrorVisible(String message);
 
     /////////////////////////////
-    StartSearchBlockPage clickCalendarInput();
+
+    void clickCalendarInput();
 
     void clickAdd2Days();
 
@@ -67,26 +68,26 @@ public interface Searchable {
 
     void addMinCountNights(boolean b);
 
-    StartSearchBlockPage add2Nights(boolean b);
+    void add2Nights(boolean b);
 
     //////////////////////
     void clickCountOfPassengers();
 
-    StartSearchBlockPage selectVariationAddChild(int childNumber);
+    void selectVariationAddChild(int childNumber);
 
-    StartSearchBlockPage minusPassenger();
+    void minusPassenger();
 
-    StartSearchBlockPage plusPassenger();
+    void plusPassenger();
 
     void addMaxPassenger(boolean b);
 
-    StartSearchBlockPage clickStartPlaceInput();
+    void clickStartPlaceInput();
 
-    StartSearchBlockPage clearStartPlaceInput();
+    void clearStartPlaceInput();
 
-    StartSearchBlockPage writeStartPlaceInput(String anyString);
+    void writeStartPlaceInput(String anyString);
 
-    StartSearchBlockPage clickSelectingStartPlace(String startPlace);
+    void clickSelectingStartPlace(String startPlace);
 
     //////////////////////////////////////
     CountryPage clickSearchButton(String countryName);

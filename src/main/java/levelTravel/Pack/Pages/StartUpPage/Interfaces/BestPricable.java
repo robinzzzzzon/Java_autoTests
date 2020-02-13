@@ -1,5 +1,6 @@
 package levelTravel.Pack.Pages.StartUpPage.Interfaces;
 
+import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
 import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.TurkeyPage;
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartBestPriceBlockPage;
@@ -16,18 +17,18 @@ public interface BestPricable {
     By priceColumnList = By.xpath("//div[@class='price-stat-columns-wrap']//a");
     By priceListRightButton = By.xpath("//div[@class='ps_arrows-right']");
 
-    public StartBestPriceBlockPage clickCityStartDD();
+    void clickCityStartDD();
 
-    public StartBestPriceBlockPage selectAnyStartCity(int number);
+    void selectAnyStartCity(int number);
 
-    //////////////////////////////////////////////////////////////
-    public StartBestPriceBlockPage selectAnyCountOfNights(int number);
+    ////////////////////////////////////////////////////////
+    void selectAnyCountOfNights(int number);
 
-    //////////////////////////////////////////////////////////////
-    public StartBestPriceBlockPage selectAnyCountry(int number);
+    ////////////////////////////////////////////////////////
+    void selectAnyCountry(int number);
 
-    public StartBestPriceBlockPage selectLastStartCity();
+    void selectLastStartCity();
 
-    //////////////////////////////////////////////////////////////
-    public CountryFiltersBlockPage selectAnyPriceOfGraph(int number, String countryName);
+    ////////////////////////////////////////////////////////
+    AbstractBasePage selectAnyPriceOfGraph(int number, String countryName);
 }
