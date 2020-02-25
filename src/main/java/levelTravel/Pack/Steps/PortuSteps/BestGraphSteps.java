@@ -1,15 +1,22 @@
 package levelTravel.Pack.Steps.PortuSteps;
 
 import levelTravel.Pack.Pages.PortuSearcherPage.Classes.BestGraphFragmentPage;
+import levelTravel.Pack.Pages.PortuSearcherPage.Classes.LinerFragmentPage;
 import net.thucydides.core.annotations.Step;
 
 public class BestGraphSteps {
 
     private BestGraphFragmentPage page;
+    private LinerFragmentPage lPage;
 
     @Step
     public void openPage(){
         page.open();
+    }
+
+    @Step
+    public void clickAnyLinerNumber(int anyNumber){
+        lPage.clickAnyLabelOfLiner(anyNumber);
     }
 
     @Step

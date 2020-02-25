@@ -339,8 +339,9 @@ public class CountryFiltersBlockPageSteps {
     public void checkSelectedPBCheckBox(boolean b) {
         if (b) {
             Assertions.assertThat(page.find("//div[@class='checkbox-group__item-container filter-beach__item-container']/input").isSelected()).isTrue();
+        } else {
+            Assertions.assertThat(page.find("//div[@class='checkbox-group__item-container filter-beach__item-container']/input").isSelected()).isFalse();
         }
-        Assertions.assertThat(page.find("//div[@class='checkbox-group__item-container filter-beach__item-container']/input").isSelected()).isFalse();
     }
 
     @Step

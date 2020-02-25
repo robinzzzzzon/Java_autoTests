@@ -1,6 +1,9 @@
 package levelTravel.Pack.Pages.PortuSearcherPage.Interfaces;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
+
+import java.util.List;
 
 public interface BestGraphable {
 
@@ -11,5 +14,23 @@ public interface BestGraphable {
     By priceLinkPrev = By.xpath("//div[@class='ps_arrows-left']");
     By priceLinkNext = By.xpath("//div[@class='ps_arrows-right']");
 
+    void clickMonthPrev();
 
+    void clickMonthNext();
+
+    void clickMonthPrevFew(int anyCount);
+
+    void clickMonthNextFew(int anyCount);
+
+    String getCurrentMonthText();
+
+    void selectAnyPriceFromGraph(int anyNumber);
+
+    void selectPriceGraphPrev();
+
+    void selectPriceGraphNext();
+
+    void clickPriceGraphPrevFew(int anyNumber);
+
+    void clickPriceGraphNextFew(int anyNumber);
 }

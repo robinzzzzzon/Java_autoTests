@@ -44,11 +44,11 @@ public class BestGraphFragmentPage extends AbstractBasePage implements BestGraph
     }
 
     public void selectPriceGraphPrev(){
-        find(priceLinkPrev).click();
+        find(priceLinkPrev).waitUntilClickable().click();
     }
 
     public void selectPriceGraphNext(){
-        find(priceLinkNext).click();
+        find(priceLinkNext).waitUntilClickable().click();
     }
 
     public void clickPriceGraphPrevFew(int anyNumber){
