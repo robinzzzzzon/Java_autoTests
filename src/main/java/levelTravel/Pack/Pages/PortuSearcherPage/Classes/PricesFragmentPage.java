@@ -1,7 +1,7 @@
 package levelTravel.Pack.Pages.PortuSearcherPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.PortuSearcherPage.HelperClasses.TableClass;
+import levelTravel.Pack.Pages.HelperClasses.TableClass;
 import levelTravel.Pack.Pages.PortuSearcherPage.Interfaces.Priceable;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;

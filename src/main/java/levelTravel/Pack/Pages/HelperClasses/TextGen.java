@@ -1,4 +1,4 @@
-package levelTravel.Pack.Pages.PortuSearcherPage.HelperClasses;
+package levelTravel.Pack.Pages.HelperClasses;
 
 import java.util.*;
 
@@ -47,7 +47,7 @@ class Spliterator {
                     resultString = resultString.concat(s.toUpperCase());
                 }
             } else if (resultString.endsWith(",")) {
-                if (b){
+                if (b) {
                     i--;
                 } else {
                     resultString = resultString.concat(" ");

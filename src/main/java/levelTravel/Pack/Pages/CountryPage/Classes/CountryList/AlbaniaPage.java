@@ -1,10 +1,8 @@
 package levelTravel.Pack.Pages.CountryPage.Classes.CountryList;
 
 
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
-import org.openqa.selenium.WebDriver;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryWholePage;
 
-public class AlbaniaPage extends CountryPage {
+public class AlbaniaPage extends CountryWholePage {
 
 }

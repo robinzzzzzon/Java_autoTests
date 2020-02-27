@@ -1,7 +1,7 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.HelperClass.CountryFactory;
+import levelTravel.Pack.Pages.HelperClasses.CountryFactory;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.BestPricable;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;

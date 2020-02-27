@@ -46,7 +46,7 @@ public class CountryMapBlockPageSerenityTest {
     public void selectDynamicGraphs() {
         steps.openPage();
         steps.clickMaximizeButton();
-        steps.selectAnyDynamicGraph(steps.getAnyDynamicGraph(3));
+        steps.selectAnyDynamicGraph(3);
         steps.isEnableOneOfContentList(0);
     }
 }

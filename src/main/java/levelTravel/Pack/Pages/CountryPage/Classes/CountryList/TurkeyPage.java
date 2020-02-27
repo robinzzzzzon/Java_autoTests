@@ -1,7 +1,7 @@
 package levelTravel.Pack.Pages.CountryPage.Classes.CountryList;
 
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryWholePage;
 
-public class TurkeyPage extends CountryPage {
+public class TurkeyPage extends CountryWholePage {
 
 }

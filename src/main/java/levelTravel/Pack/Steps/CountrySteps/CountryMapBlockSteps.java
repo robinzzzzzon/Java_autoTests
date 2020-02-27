@@ -46,13 +46,8 @@ public class CountryMapBlockSteps {
     }
 
     @Step
-    public WebElement getAnyDynamicGraph(int number) {
-        return page.getAnyDynamicGraph(number);
-    }
-
-    @Step
-    public void selectAnyDynamicGraph(WebElement webElement) {
-        page.selectAnyDynamicGraph(webElement);
+    public void selectAnyDynamicGraph(int elementNumber) {
+        page.selectAnyDynamicGraph(elementNumber);
     }
 
     ////////////////////////////////////////////////////////

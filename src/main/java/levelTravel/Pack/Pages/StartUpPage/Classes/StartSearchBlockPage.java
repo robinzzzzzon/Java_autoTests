@@ -1,9 +1,9 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
-import levelTravel.Pack.Pages.HelperClass.CountryFactory;
-import levelTravel.Pack.Pages.HelperClass.TableForStartSearchBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryWholePage;
+import levelTravel.Pack.Pages.HelperClasses.CountryFactory;
+import levelTravel.Pack.Pages.HelperClasses.TableClass;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Searchable;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -97,8 +97,8 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //В итоге возвращаем объект ввиде ячейки календаря.
     private WebElement getCalendarDate(int row, int column, int setMonthNumber) {
         WebElement element = find(By.xpath(String.format(calendarTBody, setMonthNumber)));
-        TableForStartSearchBlockPage tableForStartSearchBlockPage = new TableForStartSearchBlockPage(element);
-        return tableForStartSearchBlockPage.getValueFromCell(row, column);
+        TableClass table = new TableClass(element);
+        return table.getValueFromCell(row, column);
     }
 
     //Параметризованный метод со входом countSwitch =< 3 для каждого месяца.
@@ -255,7 +255,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //В возвращаемое значение передаем новый экземпляр класса-хелпера с паттерном Factory,
     // который нам создает уже нужный объект страницы нашей страны:
 
-    public CountryPage clickSearchButton(String countryName) {
+    public CountryWholePage clickSearchButton(String countryName) {
         find(searchButton).click();
         return new CountryFactory().createCountry(countryName);
     }

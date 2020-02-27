@@ -236,7 +236,7 @@ public class CountryFiltersBlockPageSerenityTest {
         steps.checkSelectedPBCheckBox(false);
     }
 
-    @Test
+    @Test //проверить что не так с респонсом?
     public void getPrivateBeachListTwice() {
         steps.openPage();
         steps.selectPrivateBeachInput(true);
@@ -293,7 +293,7 @@ public class CountryFiltersBlockPageSerenityTest {
         steps.checkToursResultGreaterNull();
     }
 
-    @Test
+    @Test //проверить что не так сдесь после смены эндпоинта за другую дату
     public void selectAllFoodType() {
         steps.openPage();
         steps.selectAllFoodType();
@@ -309,10 +309,10 @@ public class CountryFiltersBlockPageSerenityTest {
         steps.checkToursResultGreaterNull();
     }
 
-    @Test
+    @Test //тут добавить вейтер инвизибла
     public void selectAnyRegion() {
         steps.openPage();
-        steps.selectAnyRegion(5);
+        steps.selectAnyRegion(6);
         steps.compareRightRegion("Белек");
     }
 

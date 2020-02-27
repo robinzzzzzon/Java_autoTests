@@ -7,11 +7,11 @@ import org.openqa.selenium.WebElement;
 public interface Mapable {
 
     By mapMaximizeButton = By.xpath("//div[@class='map-expand-btn']/button");
-    By zoomInButton = By.xpath("//div[@class='map-zoom-control']/button[1]");
-    By zoomOutButton = By.xpath("//div[@class='map-zoom-control']/button[2]");
-    By barAndCafeButton = By.xpath("//button[@class='layer-control-btn'][1]");
-    By theaterButton = By.xpath("//button[@class='layer-control-btn'][2]");
-    By shoppingButton = By.xpath("//button[@class='layer-control-btn'][3]");
+    By zoomInButton = By.xpath("//div[@class='lt-map-zoom-controls']/button[1]");
+    By zoomOutButton = By.xpath("//div[@class='lt-map-zoom-controls']/button[2]");
+    By barAndCafeButton = By.xpath("//div[@class='lt-map-layers-controls__buttons']//button[1]");
+    By theaterButton = By.xpath("//div[@class='lt-map-layers-controls__buttons']//button[2]");
+    By shoppingButton = By.xpath("//div[@class='lt-map-layers-controls__buttons']//button[3]");
     By priceDynamicGraphs = By.xpath("//div[@class='col_month_inside'][1]//a");
 
     public CountryMapBlockPage clickMaximizeButton();
@@ -26,7 +26,5 @@ public interface Mapable {
 
     public CountryMapBlockPage clickShoppingButton();
 
-    public WebElement getAnyDynamicGraph(int number);
-
-    public CountryMapBlockPage selectAnyDynamicGraph(WebElement element);
+    public CountryMapBlockPage selectAnyDynamicGraph(int elementNumber);
 }

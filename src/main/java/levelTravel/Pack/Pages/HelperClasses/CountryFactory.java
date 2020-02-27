@@ -1,13 +1,13 @@
-package levelTravel.Pack.Pages.HelperClass;
+package levelTravel.Pack.Pages.HelperClasses;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryWholePage;
 import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.*;
 import org.jetbrains.annotations.NotNull;
 
 public class CountryFactory extends AbstractBasePage {
 
-    public CountryPage createCountry(@NotNull String countryName) {
+    public CountryWholePage createCountry(@NotNull String countryName) {
 
         switch (countryName) {
             case "Turk":

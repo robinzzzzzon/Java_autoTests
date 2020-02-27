@@ -2,6 +2,7 @@ package levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Interfaces.Mapable;
+import levelTravel.Pack.Pages.HelperClasses.BaseMethods;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.jetbrains.annotations.NotNull;
@@ -9,46 +10,47 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-@DefaultUrl("https://level.travel/search/Moscow-RU-to-Any-TR-departure-20.01.2020-for-5..9-nights-2-adults-0-kids-1..5-stars")
+@DefaultUrl("https://level.travel/search/Moscow-RU-to-Any-TR-departure-15.04.2020-for-7-nights-2-adults-0-kids-1..5-stars")
 public class CountryMapBlockPage extends AbstractBasePage implements Mapable {
 
+    BaseMethods methods = new BaseMethods();
+
     public CountryMapBlockPage clickMaximizeButton() {
-        find(mapMaximizeButton).click();
+        methods.selectAnyElement(mapMaximizeButton);
         return this;
     }
 
     public CountryMapBlockPage clickZoomIn() {
-        find(zoomInButton).click();
+        methods.selectAnyElement(zoomInButton);
         return this;
     }
 
     public CountryMapBlockPage clickZoomOut() {
-        find(zoomOutButton).click();
+        methods.selectAnyElement(zoomOutButton);
         return this;
     }
 
     public CountryMapBlockPage clickBarAndCafe() {
-        find(barAndCafeButton).click();
+        methods.selectAnyElement(barAndCafeButton);
         return this;
     }
 
     public CountryMapBlockPage clickTheaterButton() {
-        find(theaterButton).click();
+        methods.selectAnyElement(theaterButton);
         return this;
     }
 
     public CountryMapBlockPage clickShoppingButton() {
-        find(shoppingButton).click();
+        methods.selectAnyElement(shoppingButton);
         return this;
     }
 
-    public WebElement getAnyDynamicGraph(int number) {
-        List<WebElementFacade> webElements = findAll(priceDynamicGraphs);
-        return webElements.get(number - 1);
+    private List<WebElementFacade> getPriceDynamicGraphs() {
+        return methods.getAnyList(priceDynamicGraphs);
     }
 
-    public CountryMapBlockPage selectAnyDynamicGraph(@NotNull WebElement element) {
-        element.click();
+    public CountryMapBlockPage selectAnyDynamicGraph(int elementNumber) {
+        methods.selectAnyElementFromList(elementNumber, getPriceDynamicGraphs());
         return new CountryMapBlockPage();
     }
 }
