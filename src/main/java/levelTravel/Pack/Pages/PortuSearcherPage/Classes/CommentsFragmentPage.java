@@ -1,10 +1,10 @@
 package levelTravel.Pack.Pages.PortuSearcherPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
+import levelTravel.Pack.Pages.HelperClasses.BaseMethods;
 import levelTravel.Pack.Pages.PortuSearcherPage.Interfaces.Commentable;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -12,16 +12,18 @@ import java.util.List;
 @DefaultUrl("https://level.travel/countries/portugal")
 public class CommentsFragmentPage extends AbstractBasePage implements Commentable {
 
+    BaseMethods methods = new BaseMethods();
+
     public void readAllComments(){
-        selectAnyElement(readComment);
+        methods.selectAnyElement(readComment);
     }
 
     private List<WebElementFacade> getCardActionsList(){
-        return findAll(cardActionsList);
+        return methods.getAnyList(cardActionsList);
     }
 
     public void selectActionPrev(int anyNumber){
-        selectAnyElementFromAnyList(getCardActionsList(), anyNumber);
+        methods.selectAnyElementFromList(anyNumber, getCardActionsList());
     }
 
     public void selectActionPrevWhileGetDisabled(int anyNumber){
@@ -34,15 +36,15 @@ public class CommentsFragmentPage extends AbstractBasePage implements Commentabl
     ////////////////////////////////////////////////////
 
     private List<WebElementFacade> getAllCommentsText(){
-        return findAll(commentsTextList);
+        return methods.getAnyList(commentsTextList);
     }
 
     public String getAnyCommentText(int anyNumber){
-        return getAnyTextFromAnyElementOfList(getAllCommentsText(), anyNumber);
+        return methods.getTextFromAnyElementOfList(getAllCommentsText(), anyNumber);
     }
 
     private List<WebElementFacade> getReadWholeTextLinksList(){
-        return findAll(linkReadWholeText);
+        return methods.getAnyList(linkReadWholeText);
     }
 
     public String getAnyCommentTextWhole(int anyNumber){
@@ -50,36 +52,24 @@ public class CommentsFragmentPage extends AbstractBasePage implements Commentabl
     }
 
     private List<WebElementFacade> getNamesOfClientsList(){
-        return findAll(namesOfClientsList);
+        return methods.getAnyList(namesOfClientsList);
     }
 
     public String getAnyNameFromClientNameList(int anyNumber){
-        return getAnyTextFromAnyElementOfList(getNamesOfClientsList(), anyNumber);
+        return methods.getTextFromAnyElementOfList(getNamesOfClientsList(), anyNumber);
     }
 
     private List<WebElementFacade> getTourLinksFromCommentsList(){
-        return findAll(tourLinksFromCommentsList);
+        return methods.getAnyList(tourLinksFromCommentsList);
     }
 
     public void selectAnyTourLinkFromCommentsList(int anyNumber){
-        selectAnyElementFromAnyList(getTourLinksFromCommentsList(), anyNumber);
+        methods.selectAnyElementFromList(anyNumber, getTourLinksFromCommentsList());
     }
 
     //////////////////////////////////////////////
-
-    private void selectAnyElement(By by){
-        find(by).click();
-    }
-
-    private void selectAnyElementFromAnyList(List<WebElementFacade> list, int anyNumber){
-        WebElement element = list.get(anyNumber - 1);
-        element.click();
-    }
-
-    private String getAnyTextFromAnyElementOfList(List<WebElementFacade> list, int anyNumber){
-        WebElement element = list.get(anyNumber - 1);
-        return element.getText();
-    }
+    //Подумать, как можно объединить этот метод с базовым получением куска текста из списка элементов.
+    //Пока оставлю метод тут
 
     private String getAnyTextFromAnyElementOfList(List<WebElementFacade> list, List<WebElementFacade> readWholeList, int anyNumber){
         WebElement element = list.get(anyNumber - 1);

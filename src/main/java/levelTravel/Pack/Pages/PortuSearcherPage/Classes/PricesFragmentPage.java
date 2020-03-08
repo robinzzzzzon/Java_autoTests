@@ -1,6 +1,7 @@
 package levelTravel.Pack.Pages.PortuSearcherPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
+import levelTravel.Pack.Pages.HelperClasses.BaseMethods;
 import levelTravel.Pack.Pages.HelperClasses.TableClass;
 import levelTravel.Pack.Pages.PortuSearcherPage.Interfaces.Priceable;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -12,17 +13,10 @@ import java.util.List;
 @DefaultUrl("https://level.travel/countries/portugal")
 public class PricesFragmentPage extends AbstractBasePage implements Priceable {
 
+    BaseMethods methods = new BaseMethods();
+
     private String getPriceHeading(){
-        return find(priceHeading).getText();
-    }
-
-    //Работаем с номерным лайнером:
-    private List<WebElementFacade> getLinerLabelList(){
-        return findAll(linerLabelList);
-    }
-
-    public void clickAnyLabelOfLiner(int anyNumber){
-        selectAnyElementFromList(getLinerLabelList(), anyNumber);
+        return methods.getTextFromAnyElement(priceHeading);
     }
 
     ////////////////////////////////////////////
@@ -44,70 +38,62 @@ public class PricesFragmentPage extends AbstractBasePage implements Priceable {
     ////////////////////////////////////////////
 
     public void clickGuaranteeLink(){
-       find(guaranteeDescLink).click();
+       methods.selectAnyElement(guaranteeDescLink);
     }
 
     public void clickToGuaranteeCross(){
-        find(guaranteeDescPageCross).click();
+        methods.selectAnyElement(guaranteeDescPageCross);
     }
 
     /////////////////////////////////////////////
 
     public void clickExchangeLeftDD(){
-        find(exchangeLeftDD).click();
+        methods.selectAnyElement(exchangeLeftDD);
     }
 
     private List<WebElementFacade> getLeftCurrencyExchangeList(){
-        return findAll(exchangeLeftOptions);
+        return methods.getAnyList(exchangeLeftOptions);
     }
 
     public void selectAnyLeftExOption(int anyNumber){
-        selectAnyElementFromList(getLeftCurrencyExchangeList(), anyNumber);
+        methods.selectAnyElementFromList(anyNumber, getLeftCurrencyExchangeList());
     }
 
     public void clickExchangeRightDD(){
-        find(exchangeRightDD).click();
+        methods.selectAnyElement(exchangeRightDD);
     }
 
     private List<WebElementFacade> getRightCurrencyExchangeList(){
-        return findAll(exchangeRightOptions);
+        return methods.getAnyList(exchangeRightOptions);
     }
 
     public void selectAnyRightExOption(int anyNumber){
-        selectAnyElementFromList(getRightCurrencyExchangeList(), anyNumber);
+        methods.selectAnyElementFromList(anyNumber, getRightCurrencyExchangeList());
     }
 
     public void writeToLeftCurInput(String anySum){
-        find(exchangeLeftInput).sendKeys(anySum);
+        methods.writeTextToAnyElement(exchangeLeftInput, anySum);
     }
 
     public void writeToRightCurInput(String anySum){
-        find(exchangeRightInput).sendKeys(anySum);
+        methods.writeTextToAnyElement(exchangeRightInput, anySum);
     }
 
     /////////////////////////////////////////////////////
 
     public void clickPortugalWidget(){
-        find(widgetPortugalPhoto).click();
+        methods.selectAnyElement(widgetPortugalPhoto);
     }
 
     public void closeWidget(){
-        find(photoCross).click();
+        methods.selectAnyElement(photoCross);
     }
 
     public void clickToPrevPhoto(){
-        find(photoPrev).click();
+        methods.selectAnyElement(photoPrev);
     }
 
     public void clickToNextPhoto(){
-        find(photoNext).click();
+        methods.selectAnyElement(photoNext);
     }
-
-    //////////////////////////////////////////////////
-
-    private void selectAnyElementFromList(List<WebElementFacade> list, int anyNumber){
-        WebElement element = list.get(anyNumber - 1);
-        element.click();
-    }
-
 }

@@ -1,11 +1,13 @@
 package levelTravel.Pack.Steps.PortuSteps;
 
+import levelTravel.Pack.Pages.PortuSearcherPage.Classes.LinerFragmentPage;
 import levelTravel.Pack.Pages.PortuSearcherPage.Classes.PricesFragmentPage;
 import net.thucydides.core.annotations.Step;
 
 public class PricePageSteps {
 
-    PricesFragmentPage page;
+    private PricesFragmentPage page;
+    private LinerFragmentPage lPage;
 
     @Step
     public void openPage(){
@@ -14,7 +16,7 @@ public class PricePageSteps {
 
     @Step
     public void clickLinerNumber(int anyNumber){
-        page.clickAnyLabelOfLiner(anyNumber);
+        lPage.clickAnyLabelOfLiner(anyNumber);
     }
 
     @Step

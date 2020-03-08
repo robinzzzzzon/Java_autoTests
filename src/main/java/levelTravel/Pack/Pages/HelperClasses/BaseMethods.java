@@ -60,9 +60,14 @@ public class BaseMethods extends PageObject {
     public void selectAnyElementFew(int anyCount, By by) {
         int i = 0;
         WebElement element = find(by);
-        while (i < anyCount) {
+        if (!element.isEnabled()){
+            waitFor(element).waitUntilVisible();
             element.click();
-            i++;
+        } else{
+            while (i < anyCount) {
+                element.click();
+                i++;
+            }
         }
     }
 

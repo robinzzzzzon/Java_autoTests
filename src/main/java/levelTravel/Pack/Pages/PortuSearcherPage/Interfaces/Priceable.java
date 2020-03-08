@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 public interface Priceable {
 
     By priceHeading = By.xpath("//div[@class='card_title']//p");
-    By linerLabelList = By.xpath("//div[@class='sidebar_content']//span[@class='nav_label']");
     By priceTable = By.xpath("//table[@class='montly_stats']");
     By guaranteeDescLink = By.xpath("//a[text()='Подробнее о гарантии']");
     By guaranteePageMailLink = By.xpath("//a[text()='manager@level.travel']");

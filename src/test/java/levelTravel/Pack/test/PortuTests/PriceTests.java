@@ -75,8 +75,8 @@ public class PriceTests {
     @Test
     public void lookToPortugalWidget(){
         steps.openPage();
-        steps.clickLinerNumber(2);
+        steps.clickLinerNumber(3);
         steps.clickPortugalWidget();
-        steps.closeWidget();
+        //steps.closeWidget();
     }
 }

@@ -1,6 +1,7 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
+import levelTravel.Pack.Pages.HelperClasses.BaseMethods;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Messengerable;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.AppStorePage;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.GooglePlayPage;
@@ -10,32 +11,34 @@ import org.openqa.selenium.WebElement;
 @DefaultUrl("https://level.travel/")
 public class StartMessengerBlockPage extends AbstractBasePage implements Messengerable {
 
+    BaseMethods methods = new BaseMethods();
+
     public WebElement getHeading() {
         return find(bigHeading);
     }
 
     public StartMessengerBlockPage getBigHeadingText() {
-        find(bigHeading).getText();
+        methods.getTextFromAnyElement(bigHeading);
         return this;
     }
 
     public GooglePlayPage moveToGooglePlayPage() {
-        find(googlePlayLink).click();
+        methods.selectAnyElement(googlePlayLink);
         return new GooglePlayPage();
     }
 
     public AppStorePage moveToAppStorePage() {
-        find(appStoreLink).click();
+        methods.selectAnyElement(appStoreLink);
         return new AppStorePage();
     }
 
     public StartMessengerBlockPage getHowItWorksBanner() {
-        find(howItWorksLink).click();
+        methods.selectAnyElement(howItWorksLink);
         return this;
     }
 
     public StartMessengerBlockPage closeHowItWorksBanner() {
-        find(closeHowItWorksLink).click();
+        methods.selectAnyElement(closeHowItWorksLink);
         return this;
     }
 

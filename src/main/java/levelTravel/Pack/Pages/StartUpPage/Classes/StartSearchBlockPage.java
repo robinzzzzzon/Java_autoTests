@@ -2,6 +2,7 @@ package levelTravel.Pack.Pages.StartUpPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryWholePage;
+import levelTravel.Pack.Pages.HelperClasses.BaseMethods;
 import levelTravel.Pack.Pages.HelperClasses.CountryFactory;
 import levelTravel.Pack.Pages.HelperClasses.TableClass;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Searchable;
@@ -21,6 +22,8 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 @DefaultUrl("https://level.travel/")
 public class StartSearchBlockPage extends AbstractBasePage implements Searchable {
 
+    BaseMethods methods = new BaseMethods();
+
     ////////////////////////////
     //Работа со списками стран и с самим полем выбора страны:
 
@@ -30,25 +33,23 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
     public void clickCountryInput() {
-        find(searchCountryInput).click();
+        methods.selectAnyElement(searchCountryInput);
     }
 
     private List<WebElementFacade> getPopularCountryList() {
-        return findAll(popularCountriesList);
+        return methods.getAnyList(popularCountriesList);
     }
 
     public void clickGettingPopularCountry(int number) {
-       WebElement element = getPopularCountryList().get(number - 1);
-       element.click();
+       methods.selectAnyElementFromList(number, getPopularCountryList());
     }
 
     private List<WebElementFacade> getWholeCountryList() {
-        return findAll(wholeCountriesList);
+        return methods.getAnyList(wholeCountriesList);
     }
 
     public void clickGettingWholeCountry(int number) {
-        WebElement element = getWholeCountryList().get(number - 1);
-        element.click();
+        methods.selectAnyElementFromList(number, getWholeCountryList());
     }
 
     /////////////////////////////
@@ -56,12 +57,12 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
 
     //Получаем лист объектов класса Error:
     private List<WebElementFacade> getErrors() {
-        return findAll(errorListByClass);
+        return methods.getAnyList(errorListByClass);
     }
 
     //Получает текст ошибки по номеру объекта ошибки из колекции:
     public String getErrorByText(int number) {
-        return getErrors().get(number - 1).getText();
+        return methods.getTextFromAnyElementOfList(getErrors(), number);
     }
 
     //Возвращает true, если:
@@ -75,13 +76,13 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     /////////////////////////////
     //Работа с календарем и выбором даты:
     public void clickCalendarInput() {
-        find(calendarInput).click();
+        methods.selectAnyElement(calendarInput);
     }
 
     //Метод для пролистывания месяцев календаря:
     private void clickSwitchToNextMonth(int countMonth) {
         for (int i = 0; i < countMonth; i++) {
-            find(switchToNextMonth).click();
+            methods.selectAnyElement(switchToNextMonth);
         }
     }
 
@@ -151,22 +152,22 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
     public void clickAdd2Days() {
-        find(add2days).click();
+        methods.selectAnyElement(add2days);
     }
 
     ////////////////////////////////////////////////////////////////////////////////
     //Работа с полем выбора периода кол-ва ночей:
 
     public void clickCountOfNights() {
-        find(dayIntervalDD).click();
+        methods.selectAnyElement(dayIntervalDD);
     }
 
     public void minusNight() {
-        find(minusDay).click();
+        methods.selectAnyElement(minusDay);
     }
 
     public void plusNight() {
-        find(plusDay).click();
+        methods.selectAnyElement(plusDay);
     }
 
     public void addMaxCountNights(boolean b) {
@@ -184,40 +185,31 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     }
 
     public void add2Nights(boolean b) {
-        WebElement element = find(plusOrMinus2Days);
-        if (!element.isSelected() == b) {
-            element.click();
-        }
+        methods.selectOrDeselectAnyElement(plusOrMinus2Days, b);
     }
 
     /////////////////////////////
     //Выбираем кол-во пассажиров:
 
     public void clickCountOfPassengers() {
-        find(countOfPassengersDD).click();
+        methods.selectAnyElement(countOfPassengersDD);
     }
 
     private void addChildren() {
-        find(addChildrenDD).click();
-    }
-
-    private WebElement getVariableAddChildren(int variationChild) {
-        addChildren();
-        List<WebElementFacade> webElements = findAll(childVaryingList);
-        return webElements.get(variationChild);
+        methods.selectAnyElement(addChildrenDD);
     }
 
     public void selectVariationAddChild(int childNumber) {
-        WebElement element = getVariableAddChildren(childNumber);
-        element.click();
+        addChildren();
+        methods.selectAnyElementFromList(childNumber, methods.getAnyList(childVaryingList));
     }
 
     public void minusPassenger() {
-        find(minusPassenger).click();
+        methods.selectAnyElement(minusPassenger);
     }
 
     public void plusPassenger() {
-        find(plusPassenger).click();
+        methods.selectAnyElement(plusPassenger);
     }
 
     public void addMaxPassenger(boolean b) {
@@ -231,7 +223,7 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     //Выбираем стартовую точку вылета:
 
     public void clickStartPlaceInput() {
-        find(startPlaceInput).click();
+        methods.selectAnyElement(startPlaceInput);
     }
 
     //Метод для очищения дефолтного значения "Москва":
@@ -240,14 +232,22 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
         find(startPlaceInput).sendKeys(Keys.BACK_SPACE);
     }
 
+    //Пробую серенити метод typeInto():
+    public void typeIntoString(String anyString){
+        WebElement element = find(startPlaceInput);
+        typeInto(element, anyString);
+    }
+
 
     public void writeStartPlaceInput(String anyString) {
-        find(startPlaceInput).sendKeys(anyString);
+        methods.writeTextToAnyElement(startPlaceInput, anyString);
     }
 
     //Метод для выбора любого значения из списка дропдауна городов для вылета, с заданием ожидания до отображения элемента на странице:
     public void clickSelectingStartPlace(String startPlace) {
-        new WebDriverWait(getDriver(), 5).until(visibilityOfElementLocated(By.xpath(String.format(startPlaceList, startPlace)))).click();
+        //new WebDriverWait(getDriver(), 5).until(visibilityOfElementLocated(By.xpath(String.format(startPlaceList, startPlace)))).click();
+        WebElement element = find(By.xpath(String.format(startPlaceList, startPlace)));
+        element.click();
     }
 
     ////////////////////////////////////////
@@ -256,12 +256,12 @@ public class StartSearchBlockPage extends AbstractBasePage implements Searchable
     // который нам создает уже нужный объект страницы нашей страны:
 
     public CountryWholePage clickSearchButton(String countryName) {
-        find(searchButton).click();
+        methods.selectAnyElement(searchButton);
         return new CountryFactory().createCountry(countryName);
     }
 
     public void clickConfirmButtonWithAnyEmptyFields() {
-        find(searchButton).click();
+        methods.selectAnyElement(searchButton);
     }
 
 }

@@ -1,77 +1,61 @@
 package levelTravel.Pack.Pages.PortuSearcherPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
+import levelTravel.Pack.Pages.HelperClasses.BaseMethods;
 import levelTravel.Pack.Pages.PortuSearcherPage.Interfaces.BestGraphable;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import org.jetbrains.annotations.NotNull;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
 @DefaultUrl("https://level.travel/countries/portugal")
 public class BestGraphFragmentPage extends AbstractBasePage implements BestGraphable {
 
+    BaseMethods methods = new BaseMethods();
+
     public void clickMonthPrev(){
-        find(monthPrev).click();
+        methods.selectAnyElement(monthPrev);
     }
 
     public void clickMonthNext(){
-        find(monthNext).click();
+        methods.selectAnyElement(monthNext);
     }
 
     public void clickMonthPrevFew(int anyCount){
-        clickAnyElementFew(anyCount, monthPrev);
+        methods.selectAnyElementFew(anyCount, monthPrev);
     }
 
     public void clickMonthNextFew(int anyCount){
-        clickAnyElementFew(anyCount, monthNext);
+        methods.selectAnyElementFew(anyCount, monthNext);
     }
 
     public String getCurrentMonthText(){
-        return find(monthCurrent).getText();
+        return methods.getTextFromAnyElement(monthCurrent);
     }
 
     /////////////////////////////////////////////
 
     private List<WebElementFacade> getPriceGraphList(){
-        return findAll(priceMonthLinkList);
+        return methods.getAnyList(priceMonthLinkList);
     }
 
     public void selectAnyPriceFromGraph(int anyNumber){
-        selectAnyElementFromList(getPriceGraphList(), anyNumber);
+        methods.selectAnyElementFromList(anyNumber, getPriceGraphList());
     }
 
     public void selectPriceGraphPrev(){
-        find(priceLinkPrev).waitUntilClickable().click();
+        methods.selectAnyElement(priceLinkPrev);
     }
 
     public void selectPriceGraphNext(){
-        find(priceLinkNext).waitUntilClickable().click();
+        methods.selectAnyElement(priceLinkNext);
     }
 
     public void clickPriceGraphPrevFew(int anyNumber){
-        clickAnyElementFew(anyNumber, priceLinkPrev);
+        methods.selectAnyElementFew(anyNumber, priceLinkPrev);
     }
 
     public void clickPriceGraphNextFew(int anyNumber){
-        clickAnyElementFew(anyNumber, priceLinkNext);
-    }
-
-    /////////////////////////////////////////////
-
-    private void selectAnyElementFromList(@NotNull List<WebElementFacade> list, int anyNumber){
-        WebElement element = list.get(anyNumber - 1);
-        element.click();
-    }
-
-    private void clickAnyElementFew(int anyCount, By by){
-        int i = 0;
-        WebElement element = find(by);
-        while(i < anyCount){
-            element.click();
-            i++;
-        }
+        methods.selectAnyElementFew(anyNumber, priceLinkNext);
     }
 }

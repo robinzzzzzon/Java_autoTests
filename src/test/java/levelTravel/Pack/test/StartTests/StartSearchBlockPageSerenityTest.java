@@ -47,17 +47,17 @@ public class StartSearchBlockPageSerenityTest {
     public void searchSouthKoreaTours() {
         steps.openPage();
         steps.clickCountryInput();
-        steps.clickGettingWholeCountry(49);
-        steps.clickSearchButton("Sou");
+        steps.clickGettingWholeCountry(47);
+        steps.clickSearchButton("Jap");
         steps.checkContainsPartOfHeading("ию");
     }
 
     @Test
     public void searchToursWithWriteAnyPlace() {
         steps.openPage();
-        steps.writeAnyCountryName("Рим");
-        steps.clickSearchButton("Ita");
-        steps.checkEqualHeadingText("Загружаем туры в Рим, Италия");
+        steps.writeAnyCountryName("Порту");
+        steps.clickSearchButton("Por");
+        steps.checkEqualHeadingText("Выберите тур в Порту, Португалия");
     }
 
     @Test
@@ -105,6 +105,7 @@ public class StartSearchBlockPageSerenityTest {
         steps.clickCountOfPassengers();
         steps.minusPassenger();
         steps.clickSearchButton("Thai");
+        steps.selectSwitcher();
         steps.isSelectMomentConfirmSwitcher();
     }
 
@@ -127,7 +128,7 @@ public class StartSearchBlockPageSerenityTest {
         steps.clickGettingPopularCountry(5);
         steps.clickCountOfPassengers();
         steps.minusPassenger();
-        steps.selectVariationAddChild(1);
+        steps.selectVariationAddChild(4);
         steps.clickSearchButton("Rus");
         steps.checkGetToursList();
     }
@@ -151,7 +152,7 @@ public class StartSearchBlockPageSerenityTest {
         steps.clickGettingPopularCountry(5);
         steps.clickCountOfPassengers();
         steps.addMaxPassenger(true);
-        steps.selectVariationAddChild(1);
+        steps.selectVariationAddChild(2);
         steps.selectVariationAddChild(8);
         steps.selectVariationAddChild(17);
         steps.clickSearchButton("Rus");
@@ -179,8 +180,8 @@ public class StartSearchBlockPageSerenityTest {
         steps.addMinCountNights(true);
         steps.add2Nights(true);
         steps.clickSearchButton("Viet");
-        //steps.checkVisibleHeadingOfEmptyToursList("Именно таких туров не нашлось");
-        steps.isVisibleHotelStarsList();
+        steps.checkVisibleHeadingOfEmptyToursList("Именно таких туров не нашлось");
+        //steps.isVisibleHotelStarsList();
     }
 
     @Test
@@ -224,6 +225,16 @@ public class StartSearchBlockPageSerenityTest {
         steps.clickStartPlaceInput();
         steps.clearStartPlaceInput();
         steps.clickSelectingStartPlace("Самара");
+        steps.clickSearchButton("Rus");
+        steps.isEnabledSearchInput();
+    }
+
+    @Test
+    public void checkTypeInto() {
+        steps.openPage();
+        steps.clickCountryInput();
+        steps.clickGettingPopularCountry(5);
+        steps.typeIntoString("Самара"); //Метод typeInto() прекрасно работает из коробки!!!
         steps.clickSearchButton("Rus");
         steps.isEnabledSearchInput();
     }

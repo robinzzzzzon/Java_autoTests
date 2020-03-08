@@ -21,7 +21,7 @@ public class BestGraphTests {
     public void clickPrevAndNextMonth(){
         steps.openPage();
         steps.clickAnyLinerNumber(4);
-        steps.clickMonthPrev();
+        //steps.clickMonthPrev();
         steps.clickMonthNext();
     }
 
@@ -32,12 +32,12 @@ public class BestGraphTests {
         steps.getCurrentMonthText();
     }
 
-    @Test
+    @Test //Поработать над базовым методом неск. кликов!
     public void clickNextOrPrevElementFew(){
         steps.openPage();
         steps.clickAnyLinerNumber(4);
         steps.clickMonthNextFew(5);
-        steps.clickMonthPrevFew(7);
+        //steps.clickMonthPrevFew(4);
     }
 
     @Test
@@ -52,7 +52,7 @@ public class BestGraphTests {
         steps.openPage();
         steps.clickAnyLinerNumber(4);
         steps.clickPriceGraphNextFew(3);
-        steps.clickPriceGraphPrevFew(4);
+        //steps.clickPriceGraphPrevFew(4);
     }
 
     @Test
@@ -60,6 +60,5 @@ public class BestGraphTests {
         steps.openPage();
         steps.clickAnyLinerNumber(4);
         steps.selectPriceGraphNext();
-        steps.selectPriceGraphPrev();
     }
 }

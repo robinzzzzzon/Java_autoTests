@@ -7,6 +7,7 @@ import levelTravel.Pack.Pages.StartUpPage.Classes.StartSearchBlockPage;
 import net.thucydides.core.annotations.Step;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class StartSearchBlockSteps {
 
@@ -135,6 +136,11 @@ public class StartSearchBlockSteps {
     }
 
     @Step
+    public void typeIntoString(String anyString){
+        page.typeIntoString(anyString);
+    }
+
+    @Step
     public void clickSelectingStartPlace(String startPlace) {
         page.clickSelectingStartPlace(startPlace);
     }
@@ -147,6 +153,11 @@ public class StartSearchBlockSteps {
     @Step
     public void clickConfirmButtonWithAnyEmptyFields() {
         page.clickConfirmButtonWithAnyEmptyFields();
+    }
+
+    @Step
+    public void selectSwitcher(){
+        countryFiltersBlockPage.switchMomentConfirmTumbler(true);
     }
 
     ///////////////////////////////////////////////////////

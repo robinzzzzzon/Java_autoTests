@@ -3,7 +3,6 @@ package levelTravel.Pack.test.PortuTests;
 import levelTravel.Pack.Steps.PortuSteps.BuyInstructSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +14,7 @@ public class BuyInstructTests {
     @Steps
     private BuyInstructSteps steps;
 
-    @Managed
+    @Managed (driver = "chrome")
     private WebDriver driver;
 
     @Test

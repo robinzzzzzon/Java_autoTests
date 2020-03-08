@@ -1,6 +1,7 @@
 package levelTravel.Pack.Pages.StartUpPage.Classes;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
+import levelTravel.Pack.Pages.HelperClasses.BaseMethods;
 import levelTravel.Pack.Pages.StartUpPage.Interfaces.Headerable;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.*;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -14,48 +15,50 @@ import java.util.List;
 @DefaultUrl("https://level.travel/")
 public class StartHeaderBlockPage extends AbstractBasePage implements Headerable {
 
+    BaseMethods methods = new BaseMethods();
+
     /////////////////////////////////
     //Методы по работе с полем номера телефона:
 
     @Override
     public void refreshStartPage() {
-        find(levelTravelLink).click();
+        methods.selectAnyElement(levelTravelLink);
     }
 
     public void clickNumberField() {
-        find(numberField).click();
+        methods.selectAnyElement(numberField);
     }
 
     public void clickRecallMeButton() {
-        find(recallMeButton).click();
+        methods.selectAnyElement(recallMeButton);
     }
 
     public void clickRecallMeRightNow() {
-        find(recallMeRightNow).click();
+        methods.selectAnyElement(recallMeRightNow);
     }
 
     public WhatsUpPage clickMessageIcon() {
-        find(linkWhatsUp).click();
+        methods.selectAnyElement(linkWhatsUp);
         return new WhatsUpPage();
     }
 
     public String readRecallMeHeading() {
-        return find(recallMeHeading).getText();
+        return methods.getTextFromAnyElement(recallMeHeading);
     }
 
     //////////////////////////////////
     //Работаем с дропдауном "Сервисы":
 
     public void clickHeaderServices() {
-        find(headerServices).click();
+        methods.selectAnyElement(headerServices);
     }
 
     private List<WebElementFacade> getServicesList() {
-        return findAll(headerServicesDD);
+       return methods.getAnyList(headerServicesDD);
     }
 
     public PromoPage selectAnyService(int serviceNumber) {
-        selectAnyFromAnyList(getServicesList(), serviceNumber);
+        methods.selectAnyElementFromList(serviceNumber, getServicesList());
         return new PromoPage();
     }
 
@@ -63,7 +66,7 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     //Работаем с дропдауном "Мой список":
 
     public void clickHeaderMyWishList() {
-        find(headerMyWishList).click();
+        methods.selectAnyElement(headerMyWishList);
     }
 
     public String getTextPartOfWishList(int wishListNumber) {
@@ -75,15 +78,15 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     //Работаем с дропдауном "Помощь":
 
     public void clickHeaderHelper() {
-        find(headerHelper).click();
+        methods.selectAnyElement(headerHelper);
     }
 
     private List<WebElementFacade> getHelperList() {
-        return findAll(headerHelperDD);
+        return methods.getAnyList(headerHelperDD);
     }
 
     public PressPage selectAnyHelper(int helperNumber) {
-        selectAnyFromAnyList(getHelperList(), helperNumber);
+        methods.selectAnyElementFromList(helperNumber, getHelperList());
         return new PressPage();
     }
 
@@ -91,37 +94,34 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
     //Раздел "Вход":
 
     public void clickHeaderExit() {
-        find(headerExit).click();
+        methods.selectAnyElement(headerExit);
     }
 
     public String getMailHeadingExitText() {
-        return find(mailHeadingExit).getText();
+        return methods.getTextFromAnyElement(mailHeadingExit);
     }
 
     public void writeMailInputExit(String string) {
-        find(mailInputExit).sendKeys(string);
+        methods.writeTextToAnyElement(mailInputExit, string);
     }
 
     /////////////////////////////
     //Работа с элементами при регистрации/входе уже зарегистрированного пользователя:
 
     public void clickGoOnButton() {
-        WebElement element = find(goOnButton);
-        if (element.isEnabled()) {
-            element.click();
-        }
+        methods.selectAnyElement(goOnButton);
     }
 
     public void clickRegisterButton() {
-        find(registryButton).click();
+        methods.selectAnyElement(registryButton);
     }
 
     public void clickToCross() {
-        find(cross).click();
+        methods.selectAnyElement(cross);
     }
 
     public String getTextEmptyFieldError() {
-        return find(emptyFieldError).getText();
+        return methods.getTextFromAnyElement(emptyFieldError);
     }
 
 //    public void verifySignUpButtonVisibility(){
@@ -132,29 +132,22 @@ public class StartHeaderBlockPage extends AbstractBasePage implements Headerable
 //    }
 
     public FaceBookPage clickFaceBookLink() {
-        find(fbButton).click();
+        methods.selectAnyElement(fbButton);
         return new FaceBookPage();
     }
 
     public VKPage clickVKLink() {
-        find(vkButton).click();
+        methods.selectAnyElement(vkButton);
         return new VKPage();
     }
 
 
     public void writePassInput(String pass) {
-        find(signUpInputPass).sendKeys(pass);
+        methods.writeTextToAnyElement(signUpInputPass, pass);
     }
 
     public void clickSignUpButton() {
-        find(signUpButton).click();
-    }
-
-    ////////////////////////////////////////////////////////
-
-    private void selectAnyFromAnyList(List<WebElementFacade> list, int number){
-        WebElement element = list.get(number - 1);
-        element.click();
+        methods.selectAnyElement(signUpButton);
     }
 
 }
