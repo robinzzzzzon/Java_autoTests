@@ -1,12 +1,10 @@
 package levelTravel.Pack.Pages.StartUpPage.Interfaces;
 
-import levelTravel.Pack.Pages.StartUpPage.Classes.StartHeaderBlockPage;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.FaceBookPage;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.PressPage;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.PromoPage;
 import levelTravel.Pack.Pages.StartUpPage.SubPages.WhatsUpPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public interface Headerable {
 

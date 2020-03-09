@@ -1,6 +1,6 @@
 package levelTravel.Pack.Steps.PortuSteps;
 
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersFragmentPage;
 import levelTravel.Pack.Pages.HelperClasses.BaseMethods;
 import levelTravel.Pack.Pages.PortuSearcherPage.Classes.BestGraphFragmentPage;
 import levelTravel.Pack.Pages.PortuSearcherPage.Classes.LinerFragmentPage;
@@ -15,8 +15,8 @@ public class WholeSteps {
     private LinerFragmentPage linerPage;
     private PricesFragmentPage pricePage;
     private BestGraphFragmentPage bestGraphPage;
-    private CountryFiltersBlockPage filtersPage;
-    private CountryFiltersBlockPage countryFiltersBlockPage;
+    private CountryFiltersFragmentPage filtersPage;
+    private CountryFiltersFragmentPage countryFiltersFragmentPage;
 
     @Step
     public void openPage(){
@@ -65,8 +65,8 @@ public class WholeSteps {
 
     @Step
     public void selectAnyPriceTowerr(int number) {
-        countryFiltersBlockPage.waitForRenderedElements(By.xpath("//div[@class='filter-budget__cols']//button"));
-        countryFiltersBlockPage.selectAnyPriceTower(number);
+        countryFiltersFragmentPage.waitForRenderedElements(By.xpath("//div[@class='filter-budget__cols']//button"));
+        countryFiltersFragmentPage.selectAnyPriceTower(number);
     }
 
     //////////////////////////////////////////////////////
@@ -87,12 +87,12 @@ public class WholeSteps {
 
     @Step
     public void switchBack(String backHandle) {
-        countryFiltersBlockPage.getDriver().switchTo().window(backHandle);
+        countryFiltersFragmentPage.getDriver().switchTo().window(backHandle);
     }
 
     @Step
     void navigateBack() {
-        countryFiltersBlockPage.getDriver().navigate().back();
+        countryFiltersFragmentPage.getDriver().navigate().back();
     }
 
 }

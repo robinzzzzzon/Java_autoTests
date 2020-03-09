@@ -9,9 +9,9 @@ import java.util.List;
 public class HotelFirstDescPage extends AbstractBasePage {
 
     private By circleHeader = By.xpath("//div[@class='pie-wrapper progress-79']");
-    private By favoriteButton = By.xpath("//span[text()='В избранное']");
+    private By favoriteButton = By.xpath("//span[@class='hotel-wishlist__text']");
     private By seePriceButton = By.xpath("//button[text()='Посмотреть цены']");
-    private By photoList = By.xpath("//div[@class='rtee-images-root'][1]//li//img");
+    private By photoList = By.xpath("//div[@id='lt-hotel-gallery']//img");
     private By priceByDateList = By.xpath("//ul[@data-reactid='.2.0.1.0.0.0']//li");
     private By foodChoiceDD = By.xpath("//td[text()='Тип проживания']/parent::tr/td[2]");
     private By foodChoiceList = By.xpath("//td[text()='Тип проживания']/parent::tr/td[2]//label");
@@ -39,6 +39,7 @@ public class HotelFirstDescPage extends AbstractBasePage {
     //////////////////////////////////////////////////////////////
 
     private List<WebElementFacade> getPhotoList() {
+        waitForRenderedElements(photoList);
         return findAll(photoList);
     }
 

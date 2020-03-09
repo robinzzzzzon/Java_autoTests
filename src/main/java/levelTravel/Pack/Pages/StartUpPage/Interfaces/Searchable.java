@@ -40,9 +40,9 @@ public interface Searchable {
 
     void clickCountryInput();
 
-    void clickGettingPopularCountry(int number);
+    void selectPopularCountry(int number);
 
-    void clickGettingWholeCountry(int number);
+    void selectWholeCountry(int number);
 
     /////////////////////////////
 
@@ -52,7 +52,7 @@ public interface Searchable {
 
     void clickCalendarInput();
 
-    void clickAdd2Days();
+    void add2Days();
 
     void selectCalendarDate(int row, int column, int countSwitch);
 

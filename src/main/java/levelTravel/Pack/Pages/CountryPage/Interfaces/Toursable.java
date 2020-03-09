@@ -1,7 +1,6 @@
 package levelTravel.Pack.Pages.CountryPage.Interfaces;
 
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryToursBlockPage;
-import levelTravel.Pack.Pages.HotelDescPage.HotelFirstDescPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryToursFragmentPage;
 import org.openqa.selenium.By;
 
 public interface Toursable {
@@ -14,11 +13,11 @@ public interface Toursable {
     By hotelPriceLinks = By.xpath("//span[@class='hotel__price']/parent::a");
     By nameHotelLinks = By.xpath("//a[@class='hotel-explore-link']");
 
-    public CountryToursBlockPage clickRecommendFilter();
+    public CountryToursFragmentPage clickRecommendFilter();
 
-    public CountryToursBlockPage clickPriceFilter();
+    public CountryToursFragmentPage clickPriceFilter();
 
-    public CountryToursBlockPage clickRateFilter();
+    public CountryToursFragmentPage clickRateFilter();
 
     /////////////////////////////////////////////////////////////
 

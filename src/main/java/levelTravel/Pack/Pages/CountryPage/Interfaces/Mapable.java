@@ -1,8 +1,7 @@
 package levelTravel.Pack.Pages.CountryPage.Interfaces;
 
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryMapBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryMapFragmentPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public interface Mapable {
 
@@ -14,17 +13,17 @@ public interface Mapable {
     By shoppingButton = By.xpath("//div[@class='lt-map-layers-controls__buttons']//button[3]");
     By priceDynamicGraphs = By.xpath("//div[@class='col_month_inside'][1]//a");
 
-    public CountryMapBlockPage clickMaximizeButton();
+    public CountryMapFragmentPage clickMaximizeButton();
 
-    public CountryMapBlockPage clickZoomIn();
+    public CountryMapFragmentPage clickZoomIn();
 
-    public CountryMapBlockPage clickZoomOut();
+    public CountryMapFragmentPage clickZoomOut();
 
-    public CountryMapBlockPage clickBarAndCafe();
+    public CountryMapFragmentPage clickBarAndCafe();
 
-    public CountryMapBlockPage clickTheaterButton();
+    public CountryMapFragmentPage clickTheaterButton();
 
-    public CountryMapBlockPage clickShoppingButton();
+    public CountryMapFragmentPage clickShoppingButton();
 
-    public CountryMapBlockPage selectAnyDynamicGraph(int elementNumber);
+    public CountryMapFragmentPage selectAnyDynamicGraph(int elementNumber);
 }

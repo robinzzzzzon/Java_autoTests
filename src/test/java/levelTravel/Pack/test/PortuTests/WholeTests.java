@@ -23,7 +23,7 @@ public class WholeTests {
         steps.clickAnyLabelOfLiner(4);
         steps.clickMonthNextFew(2);
         steps.getWindowHandle();
-        steps.selectAnyPriceFromGraph(5);
+        steps.selectAnyPriceFromGraph(13);
         steps.switchToNextWindow();
         steps.selectAnyPriceTowerr(2);
     }

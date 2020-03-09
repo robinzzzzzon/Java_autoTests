@@ -7,9 +7,9 @@ public class CountryWholePage extends AbstractBasePage {
 
     private By mainHeading = By.xpath("//h1[@class='search-page-title']/span");
 
-    CountryFiltersBlockPage countryFiltersBlockPage = new CountryFiltersBlockPage();
-    CountryToursBlockPage countryToursBlockPage = new CountryToursBlockPage();
-    CountryMapBlockPage countryMapBlockPage = new CountryMapBlockPage();
+    CountryFiltersFragmentPage countryFiltersFragmentPage = new CountryFiltersFragmentPage();
+    CountryToursFragmentPage countryToursFragmentPage = new CountryToursFragmentPage();
+    CountryMapFragmentPage countryMapFragmentPage = new CountryMapFragmentPage();
 
     public String getMainHeadingText() {
         return find(mainHeading).getText();

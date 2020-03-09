@@ -27,7 +27,11 @@ public class BaseMethods extends PageObject {
 
     //Выбрать любой элемент из списка:
     public void selectAnyElementFromList(int CbNumber, @NotNull List<WebElementFacade> list) {
-        list.get(CbNumber - 1).click();
+        if (!list.get(CbNumber - 1).isClickable()){
+            waitFor(list.get(CbNumber - 1)).waitUntilClickable().click();
+        } else {
+            list.get(CbNumber - 1).click();
+        }
     }
 
     //Выбрать изначально скрытый элемент из списка:
@@ -62,12 +66,10 @@ public class BaseMethods extends PageObject {
         WebElement element = find(by);
         if (!element.isEnabled()){
             waitFor(element).waitUntilVisible();
+        }
+        while (i < anyCount) {
             element.click();
-        } else{
-            while (i < anyCount) {
-                element.click();
-                i++;
-            }
+            i++;
         }
     }
 
@@ -122,6 +124,9 @@ public class BaseMethods extends PageObject {
     //Выбрать все элементы:
     public void selectAllElements(@NotNull List<WebElementFacade> list) {
         for (WebElementFacade element : list) {
+            if(!element.isEnabled()){
+                element.waitUntilEnabled();
+            }
             element.click();
         }
     }
@@ -130,11 +135,29 @@ public class BaseMethods extends PageObject {
     public void selectAllElements(@NotNull List<WebElementFacade> facadeList, By by) {
         for (WebElementFacade element : facadeList) {
             if (!element.isDisplayed()) {
-                find(by).waitUntilClickable().click();
-            } else {
-                element.waitUntilClickable().click();
+                find(by).click();
             }
+            element.click();
         }
+    }
+
+    /////////////////////////////////////////////////////////
+
+    //Получаем заголовок текущей вкладки:
+    public String getCurrentHandle(){
+        return getDriver().getWindowHandle();
+    }
+
+    //Переключение на последнюю вкладку:
+    public void switchToNextHandle(){
+        for (String tab : getDriver().getWindowHandles()) {
+            getDriver().switchTo().window(tab);
+        }
+    }
+
+    //Переключение на первоначальную вкладку:
+    public void switchToInitHandle(String initHandle){
+        getDriver().switchTo().window(initHandle);
     }
 
     //Прочее:
@@ -151,14 +174,14 @@ public class BaseMethods extends PageObject {
     }
 
     //метод скроллинга с учетом внутреннего метода задержки треда:
-    public void scrolling(int number, int countOfMs) {
+    public void scrolling(int number) {
         JavascriptExecutor JSE = (JavascriptExecutor) getDriver();
         String s = "window.scrollBy(0, %s)";
         JSE.executeScript(String.format(s, number), "");
-        waitMethod(countOfMs);
+        //waitMethod(1000); // для нижних списков все таки ожидание пропажи оверлея недостаточно, нужно ждать еще и рендеринга.
     }
 
-    //метод задержки треда:
+    //метод задержки треда(не лучшаяя практика. Попробовать переделать на ожидание рендеринга нужных элементов):
     private void waitMethod(int countOfMs) {
         try {
             Thread.sleep(countOfMs);

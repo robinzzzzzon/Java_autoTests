@@ -1,10 +1,11 @@
 package levelTravel.Pack.Pages.CountryPage.Interfaces;
 
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
+import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersFragmentPage;
 import org.openqa.selenium.By;
 
 public interface Filterable {
 
+    By overlay = By.xpath("//div[@class='overlay_container']");
     By speedAcceptTumbler = By.xpath("//span[@class='toggle-switch__button-pin']");
     By priceTowers = By.xpath("//div[@class='filter-budget__cols']//button");
     By priceInputs = By.xpath("//div[@class='filter-budget__fields']//input");
@@ -33,18 +34,18 @@ public interface Filterable {
     By clearAllFiltersButton = By.xpath("//button[text()='Сбросить все фильтры']");
 
     //свитчер моментального подтверждения:
-    public CountryFiltersBlockPage switchMomentConfirmTumbler(boolean b);
+    public CountryFiltersFragmentPage switchMomentConfirmTumbler(boolean b);
 
     ///////////////////////////////////////////////////////////////////////
     //Работа с ценовыми столбцами и интервалом цен в инпутах:
 
     void selectAnyPriceTower(int number);
 
-    CountryFiltersBlockPage writeMinIntervalPrice(String anyPrice);
+    CountryFiltersFragmentPage writeMinIntervalPrice(String anyPrice);
 
-    CountryFiltersBlockPage writeMaxIntervalPrice(String anyPrice);
+    CountryFiltersFragmentPage writeMaxIntervalPrice(String anyPrice);
 
-    void putAnyPriceInPriceInput(boolean b);
+    void putAnyPriceInPriceInput(boolean b, String anyPrice);
 
     //////////////////////////////////////////////////////////////////////////////////////
     //Фильтруем отели по кол-ву звезд:
@@ -58,33 +59,33 @@ public interface Filterable {
     /////////////////////////////////////////////////////////////////////////////////
     //Ищем отель по наименованию:
 
-    CountryFiltersBlockPage writeHotelName(String hotelName);
+    CountryFiltersFragmentPage writeHotelName(String hotelName);
 
-    CountryFiltersBlockPage writeHotelNameFromBuffer(String anyHotelName);
+    CountryFiltersFragmentPage writeHotelNameFromBuffer(String anyHotelName);
 
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация отелей по рейтингу:
 
-    CountryFiltersBlockPage selectRatingHotel(int number);
+    CountryFiltersFragmentPage selectRatingHotel(int number);
 
     /////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по удаленности от моря:
 
-    CountryFiltersBlockPage selectDistanceToSea(int number);
+    CountryFiltersFragmentPage selectDistanceToSea(int number);
 
     ///////////////////////////////////////////////////////////////////////////////
     //Фильтрация частных пляжей:
 
-    CountryFiltersBlockPage selectPrivateBeachInput(boolean b);
+    CountryFiltersFragmentPage selectPrivateBeachInput(boolean b);
 
     //////////////////////////////////////////////////////////////////////////////////
     //Фильтрация по типам поверхности пляжа:
 
-    CountryFiltersBlockPage selectTypeOfBeach(int typeNumber, boolean b);
+    CountryFiltersFragmentPage selectTypeOfBeach(int typeNumber, boolean b);
 
     void selectFirstAndLastBeachType();
 
-    CountryFiltersBlockPage selectAllTypeOfBeach();
+    CountryFiltersFragmentPage selectAllTypeOfBeach();
 
     ///////////////////////////////////////////////////////////////////////////////////
     //Фильтруем по видам питания:
@@ -159,7 +160,7 @@ public interface Filterable {
     ///////////////////////////////////////////////////////////////////////////////////////////////
     //Сброс одной и более настроек фильтра:
 
-    CountryFiltersBlockPage clickLocalClearFilter();
+    CountryFiltersFragmentPage clickLocalClearFilter();
 
     void clickFewLocalClearFilter();
 

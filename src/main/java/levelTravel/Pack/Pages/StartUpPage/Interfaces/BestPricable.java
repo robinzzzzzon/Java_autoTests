@@ -1,9 +1,6 @@
 package levelTravel.Pack.Pages.StartUpPage.Interfaces;
 
 import levelTravel.Pack.Pages.AbstractPage.AbstractBasePage;
-import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersBlockPage;
-import levelTravel.Pack.Pages.CountryPage.Classes.CountryList.TurkeyPage;
-import levelTravel.Pack.Pages.StartUpPage.Classes.StartBestPriceBlockPage;
 import org.openqa.selenium.By;
 
 
