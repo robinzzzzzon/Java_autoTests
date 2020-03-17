@@ -13,35 +13,35 @@ public interface Toursable {
     By hotelPriceLinks = By.xpath("//span[@class='hotel__price']/parent::a");
     By nameHotelLinks = By.xpath("//a[@class='hotel-explore-link']");
 
-    public CountryToursFragmentPage clickRecommendFilter();
+    CountryToursFragmentPage clickRecommendFilter();
 
-    public CountryToursFragmentPage clickPriceFilter();
+    CountryToursFragmentPage clickPriceFilter();
 
-    public CountryToursFragmentPage clickRateFilter();
-
-    /////////////////////////////////////////////////////////////
-
-    public void clickFirstWishListButton(boolean b);
-
-    public void clickAnyWishListButton(int number);
+    CountryToursFragmentPage clickRateFilter();
 
     /////////////////////////////////////////////////////////////
 
-    public void clickFirstExploreHotel(boolean b);
+    void clickFirstWishListButton(boolean b);
 
-    public void clickAnyExploreHotel(int number);
+    void clickAnyWishListButton(int number);
 
     /////////////////////////////////////////////////////////////
 
-    public void clickFirstHotelPriceLink(boolean b);
+    void clickFirstExploreHotel(boolean b);
 
-    public void clickAnyHotelPriceLink(int number);
+    void clickAnyExploreHotel(int number);
+
+    /////////////////////////////////////////////////////////////
+
+    void clickFirstHotelPriceLink(boolean b);
+
+    void clickAnyHotelPriceLink(int number);
 
     ////////////////////////////////////////////////////////////
 
-    public String getAnyNameHotelText(int number);
+    String getAnyNameHotelText(int number);
 
-    public void clickFirstNameHotelLink(boolean b);
+    void clickFirstNameHotelLink(boolean b);
 
-    public void clickAnyNameHotelLink(int number);
+    void clickAnyNameHotelLink(int number);
 }

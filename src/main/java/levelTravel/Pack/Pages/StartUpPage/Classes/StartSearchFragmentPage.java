@@ -25,8 +25,10 @@ public class StartSearchFragmentPage extends AbstractBasePage implements Searcha
     //Работа со списками стран и с самим полем выбора страны:
 
     public void writeAnyCountryName(String anyPlace) {
-        find(searchCountryInput).sendKeys(anyPlace);
-        find(searchCountryInput).sendKeys(Keys.chord(Keys.ENTER));
+        WebElement element = find(searchCountryInput);
+        typeInto(element, anyPlace);
+        //find(searchCountryInput).sendKeys(anyPlace);
+        //find(searchCountryInput).sendKeys(Keys.chord(Keys.ENTER));
     }
 
     public void clickCountryInput() {

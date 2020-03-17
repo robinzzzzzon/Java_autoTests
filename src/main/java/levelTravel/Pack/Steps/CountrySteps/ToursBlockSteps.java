@@ -1,7 +1,7 @@
 package levelTravel.Pack.Steps.CountrySteps;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryToursFragmentPage;
-import levelTravel.Pack.Pages.HotelDescPage.HotelFirstDescPage;
+import levelTravel.Pack.Pages.HotelDescPage.Classes.HotelFirstDescPage;
 import net.thucydides.core.annotations.Step;
 import org.assertj.core.api.Assertions;
 

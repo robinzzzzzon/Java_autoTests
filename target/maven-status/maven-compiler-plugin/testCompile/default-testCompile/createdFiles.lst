@@ -1,0 +1,17 @@
+levelTravel\Pack\test\CountryTests\CountryMapFragmentTest.class
+levelTravel\Pack\test\PortuTests\CommentsFragmentTest.class
+levelTravel\Pack\test\PortuTests\PriceFragmentTest.class
+levelTravel\Pack\test\PortuTests\BuyInstructFragmentTest.class
+levelTravel\Pack\test\PortuTests\WholeTests.class
+levelTravel\Pack\test\CountryTests\CountryFiltersFragmentTest.class
+levelTravel\Pack\test\PortuTests\FlameFragmentTest.class
+levelTravel\Pack\test\CountryTests\CountryToursFragmentTest.class
+levelTravel\Pack\test\PortuTests\BestGraphFragmentTest.class
+levelTravel\Pack\test\PortuTests\CountryFragmentTest.class
+levelTravel\Pack\test\StartTests\MessengerFragmentTest.class
+levelTravel\Pack\test\PortuTests\LinerFragmentTest.class
+levelTravel\Pack\test\PortuTests\FooterFragmentTest.class
+levelTravel\Pack\test\StartTests\HeaderFragmentTest.class
+levelTravel\Pack\test\StartTests\SearchFragmentTest.class
+levelTravel\Pack\test\StartTests\BestPriceFragmentTest.class
+levelTravel\Pack\test\CombinedFiltersTests.class

@@ -13,17 +13,17 @@ public interface Mapable {
     By shoppingButton = By.xpath("//div[@class='lt-map-layers-controls__buttons']//button[3]");
     By priceDynamicGraphs = By.xpath("//div[@class='col_month_inside'][1]//a");
 
-    public CountryMapFragmentPage clickMaximizeButton();
+    CountryMapFragmentPage clickMaximizeButton();
 
-    public CountryMapFragmentPage clickZoomIn();
+    CountryMapFragmentPage clickZoomIn();
 
-    public CountryMapFragmentPage clickZoomOut();
+    CountryMapFragmentPage clickZoomOut();
 
-    public CountryMapFragmentPage clickBarAndCafe();
+    CountryMapFragmentPage clickBarAndCafe();
 
-    public CountryMapFragmentPage clickTheaterButton();
+    CountryMapFragmentPage clickTheaterButton();
 
-    public CountryMapFragmentPage clickShoppingButton();
+    CountryMapFragmentPage clickShoppingButton();
 
-    public CountryMapFragmentPage selectAnyDynamicGraph(int elementNumber);
+    CountryMapFragmentPage selectAnyDynamicGraph(int elementNumber);
 }

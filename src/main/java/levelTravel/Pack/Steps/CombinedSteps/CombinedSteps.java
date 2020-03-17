@@ -2,7 +2,7 @@ package levelTravel.Pack.Steps.CombinedSteps;
 
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryFiltersFragmentPage;
 import levelTravel.Pack.Pages.CountryPage.Classes.BaseCountryPage.CountryToursFragmentPage;
-import levelTravel.Pack.Pages.HotelDescPage.HotelFirstDescPage;
+import levelTravel.Pack.Pages.HotelDescPage.Classes.HotelFirstDescPage;
 import levelTravel.Pack.Pages.StartUpPage.Classes.StartSearchFragmentPage;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
@@ -120,14 +120,13 @@ public class CombinedSteps extends ScenarioSteps {
     //////////////////////////////////////////////////////
 
     @Step
-    public void clickFavoriteButton(){
-        hotelFirstPage.clickFavoriteButton();
+    public void selectAnyOfferButton(int number) {
+        hotelFirstPage.selectAnyOfferButton(number);
     }
 
-    @Step
-    public void selectAnyPhoto(int number){
-        hotelFirstPage.selectAnyPhoto(number);
-    }
+    ////////////////////////////////////////////////////
+
+
 
     /////////////////////////////////////////////////////
 

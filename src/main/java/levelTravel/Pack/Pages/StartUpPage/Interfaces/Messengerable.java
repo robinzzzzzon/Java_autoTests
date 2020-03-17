@@ -13,13 +13,13 @@ public interface Messengerable {
     By howItWorksLink = By.xpath("//button[text()='Как работает сервис']");
     By closeHowItWorksLink = By.xpath("//div[@class='hiw_close']");
 
-    public StartMessengerFragmentPage getBigHeadingText();
+    StartMessengerFragmentPage getBigHeadingText();
 
-    public GooglePlayPage moveToGooglePlayPage();
+    GooglePlayPage moveToGooglePlayPage();
 
-    public AppStorePage moveToAppStorePage();
+    AppStorePage moveToAppStorePage();
 
-    public StartMessengerFragmentPage getHowItWorksBanner();
+    StartMessengerFragmentPage getHowItWorksBanner();
 
-    public StartMessengerFragmentPage closeHowItWorksBanner();
+    StartMessengerFragmentPage closeHowItWorksBanner();
 }
